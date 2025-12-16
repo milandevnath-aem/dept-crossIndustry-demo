@@ -2,7 +2,10 @@
   "mappings": [
     "/content/dept-crossIndustry/:/",
     "/content/dept-crossIndustry/configuration:/.helix/config.json",
-    "/content/dept-crossIndustry/metadata:/metadata.json"
+    "/content/dept-crossIndustry/metadata:/metadata.json",
+    "/content/dept-crossIndustry/component-models.json:/component-models.json",
+    "/content/dept-crossIndustry/component-definition.json:/component-definition.json",
+    "/content/dept-crossIndustry/component-filters.json:/component-filters.json"
   ],
   "includes": [
     "/content/dept-crossIndustry",
