@@ -30,7 +30,7 @@ import {
 
 /**
  * Loads and applies theme configuration from spreadsheet
- * Fetches CSS variables from theme-configuration page and applies them to :root
+ * Fetches CSS variables from theme-configuration page and injects as <style> tag
  * @param {string} themePath - Path to the theme configuration spreadsheet (optional)
  * @returns {Promise<void>}
  */
@@ -71,19 +71,29 @@ async function loadThemeConfiguration(themePath) {
       return;
     }
 
-    // Apply CSS variables to :root
-    const root = document.documentElement;
+    // Build CSS variable declarations for :root
+    const cssVariables = [];
     json.data.forEach((row) => {
       const { key, value } = row;
 
       // Skip empty rows or rows without key/value
       if (!key || !value) return;
 
-      // Apply CSS variable
-      // If key doesn't start with --, add it
+      // Ensure key has -- prefix
       const cssVarName = key.startsWith('--') ? key : `--${key}`;
-      root.style.setProperty(cssVarName, value.trim());
+      cssVariables.push(`  ${cssVarName}: ${value.trim()};`);
     });
+
+    // Create or update style tag
+    let styleTag = document.getElementById('theme-configuration-styles');
+    if (!styleTag) {
+      styleTag = document.createElement('style');
+      styleTag.id = 'theme-configuration-styles';
+      document.head.appendChild(styleTag);
+    }
+
+    // Inject CSS with :root selector
+    styleTag.textContent = `:root {\n${cssVariables.join('\n')}\n}`;
 
     console.log(`Theme configuration loaded from ${configPath}`, json.data.length, 'variables applied');
   } catch (error) {
