@@ -25,8 +25,71 @@ import {
   setPageLanguage,
   PATH_PREFIX,
   createSource,
-  getHostname
+  getHostname,
 } from './utils.js';
+
+/**
+ * Loads and applies theme configuration from spreadsheet
+ * Fetches CSS variables from theme-configuration page and applies them to :root
+ * @param {string} themePath - Path to the theme configuration spreadsheet (optional)
+ * @returns {Promise<void>}
+ */
+async function loadThemeConfiguration(themePath) {
+  try {
+    // Determine theme configuration path
+    let configPath = themePath;
+
+    // If no path provided, try to get from metadata or use default
+    if (!configPath) {
+      const metadataTheme = getMetadata('theme-configuration');
+      if (metadataTheme) {
+        configPath = metadataTheme;
+      } else {
+        // Default path based on language
+        const lang = getLanguage();
+        configPath = `/${lang}/theme-configuration`;
+      }
+    }
+
+    // Ensure .json extension
+    if (!configPath.endsWith('.json')) {
+      configPath = `${configPath}.json`;
+    }
+
+    // Fetch the theme configuration spreadsheet
+    const response = await fetch(configPath);
+    if (!response.ok) {
+      console.warn(`Theme configuration not found at ${configPath}`);
+      return;
+    }
+
+    const json = await response.json();
+
+    // Check if data exists
+    if (!json.data || !Array.isArray(json.data)) {
+      console.warn('Invalid theme configuration format');
+      return;
+    }
+
+    // Apply CSS variables to :root
+    const root = document.documentElement;
+    json.data.forEach((row) => {
+      const { key, value } = row;
+
+      // Skip empty rows or rows without key/value
+      if (!key || !value) return;
+
+      // Apply CSS variable
+      // If key doesn't start with --, add it
+      const cssVarName = key.startsWith('--') ? key : `--${key}`;
+      root.style.setProperty(cssVarName, value.trim());
+    });
+
+    console.log(`Theme configuration loaded from ${configPath}`, json.data.length, 'variables applied');
+  } catch (error) {
+    console.error('Error loading theme configuration:', error);
+  }
+}
 
 function addPreconnect(origin) {
   try {
@@ -65,9 +128,9 @@ export function moveAttributes(from, to, attributes) {
 }
 
 export function isAuthorEnvironment() {
-  if(window?.location?.origin?.includes('author')){
+  if (window?.location?.origin?.includes('author')) {
     return true;
-  }else{
+  } else {
     return false;
   }
   /*
@@ -278,7 +341,7 @@ export function decorateMain(main) {
 
 
 async function renderWBDataLayer() {
-  
+
   //const config = await fetchPlaceholders();
   const lastPubDateStr = getMetadata('published-time');
   const firstPubDateStr = getMetadata('content_date') || lastPubDateStr;
@@ -305,6 +368,10 @@ async function renderWBDataLayer() {
  */
 async function loadEager(doc) {
   setPageLanguage();
+
+  // Load theme configuration early (before decorating)
+  await loadThemeConfiguration();
+
   // Preconnect dynamically to speed up LCP fetch without hardcoding hosts
   try {
     addPreconnect(window.location.origin);
@@ -409,67 +476,67 @@ export function decorateDMImages(main) {
     const url = new URL(a.href.split('?')[0]);
     if (url.hostname.endsWith('.adobeaemcloud.com')) {
 
-        const blockBeingDecorated = whatBlockIsThis(a);
-        let blockName = '';
-        let rotate = '';
-        let flip = '';
-        let crop = '';
-        if(blockBeingDecorated && blockBeingDecorated.classList){
-            blockName = Array.from(blockBeingDecorated.classList).find(className => className !== 'block');
-        }
-       const videoExtensions = ['.mp4', '.mov', '.avi', '.webm', '.ogg', '.m4v', '.mkv'];
-       const isVideoAsset = videoExtensions.some(ext => url.href.toLowerCase().includes(ext));
-       // Skip blocks that handle their own image decoration
-       const excludedBlocks = ['video', 'carousel', 'cards'];
-       if (isVideoAsset || excludedBlocks.includes(blockName)) return;
-        if(blockName && blockName === 'dynamicmedia-image'){
-          rotate = blockBeingDecorated?.children[3]?.textContent?.trim();
-          flip = blockBeingDecorated?.children[4]?.textContent?.trim();
-          crop = blockBeingDecorated?.children[5]?.textContent?.trim();
-        }
+      const blockBeingDecorated = whatBlockIsThis(a);
+      let blockName = '';
+      let rotate = '';
+      let flip = '';
+      let crop = '';
+      if (blockBeingDecorated && blockBeingDecorated.classList) {
+        blockName = Array.from(blockBeingDecorated.classList).find(className => className !== 'block');
+      }
+      const videoExtensions = ['.mp4', '.mov', '.avi', '.webm', '.ogg', '.m4v', '.mkv'];
+      const isVideoAsset = videoExtensions.some(ext => url.href.toLowerCase().includes(ext));
+      // Skip blocks that handle their own image decoration
+      const excludedBlocks = ['video', 'carousel', 'cards'];
+      if (isVideoAsset || excludedBlocks.includes(blockName)) return;
+      if (blockName && blockName === 'dynamicmedia-image') {
+        rotate = blockBeingDecorated?.children[3]?.textContent?.trim();
+        flip = blockBeingDecorated?.children[4]?.textContent?.trim();
+        crop = blockBeingDecorated?.children[5]?.textContent?.trim();
+      }
 
-        const uuidPattern = /([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/i;
-        const match = url.href?.match(uuidPattern);
-        let aliasname = '';
-        if (!match) {
-            throw new Error('No asset UUID found in URL');
-        }else{
-          aliasname = match[1];
-        }
-        let hrefWOExtn =  url.href?.substring(0, url.href?.lastIndexOf('.'))?.replace(/\/original\/(?=as\/)/, '/');
-        const pictureEl = picture(
-          source({ 
-              srcset: `${hrefWOExtn}.webp?width=1400&quality=85&preferwebp=true${rotate ? '&rotate=' + rotate : ''}${flip ? '&flip=' + flip.toLowerCase() : ''}${crop ? '&crop=' + crop.toLowerCase() : ''}`, 
-              type: 'image/webp', 
-              media: '(min-width: 992px)' 
-          }),
-          source({ 
-              srcset: `${hrefWOExtn}.webp?width=1320&quality=85&preferwebp=true${rotate ? '&rotate=' + rotate : ''}${flip ? '&flip=' + flip.toLowerCase() : ''}${crop ? '&crop=' + crop.toLowerCase() : ''}`, 
-              type: 'image/webp', 
-              media: '(min-width: 768px)' 
-          }),
-          source({ 
-              srcset: `${hrefWOExtn}.webp?width=780&quality=85&preferwebp=true${rotate ? '&rotate=' + rotate : ''}${flip ? '&flip=' + flip.toLowerCase() : ''}${crop ? '&crop=' + crop.toLowerCase() : ''}`, 
-              type: 'image/webp', 
-              media: '(min-width: 320px)' 
-          }),
-          source({ 
-              srcset: `${hrefWOExtn}.webp?width=1400&quality=85${rotate ? '&rotate=' + rotate : ''}${flip ? '&flip=' + flip.toLowerCase() : ''}${crop ? '&crop=' + crop.toLowerCase() : ''}`, 
-              media: '(min-width: 992px)' 
-          }),
-          source({ 
-              srcset: `${hrefWOExtn}.webp?width=1320&quality=85${rotate ? '&rotate=' + rotate : ''}${flip ? '&flip=' + flip.toLowerCase() : ''}${crop ? '&crop=' + crop.toLowerCase() : ''}`, 
-              media: '(min-width: 768px)' 
-          }),
-          source({ 
-              srcset: `${hrefWOExtn}.webp?width=780&quality=85${rotate ? '&rotate=' + rotate : ''}${flip ? '&flip=' + flip.toLowerCase() : ''}${crop ? '&crop=' + crop.toLowerCase() : ''}`, 
-              media: '(min-width: 320px)' 
-          }),
-          img({ 
-              src: `${hrefWOExtn}.webp?width=1400&quality=85${rotate ? '&rotate=' + rotate : ''}${flip ? '&flip=' + flip.toLowerCase() : ''}${crop ? '&crop=' + crop.toLowerCase() : ''}`, 
-              alt: a.innerText 
-          }),
-        );
+      const uuidPattern = /([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/i;
+      const match = url.href?.match(uuidPattern);
+      let aliasname = '';
+      if (!match) {
+        throw new Error('No asset UUID found in URL');
+      } else {
+        aliasname = match[1];
+      }
+      let hrefWOExtn = url.href?.substring(0, url.href?.lastIndexOf('.'))?.replace(/\/original\/(?=as\/)/, '/');
+      const pictureEl = picture(
+        source({
+          srcset: `${hrefWOExtn}.webp?width=1400&quality=85&preferwebp=true${rotate ? '&rotate=' + rotate : ''}${flip ? '&flip=' + flip.toLowerCase() : ''}${crop ? '&crop=' + crop.toLowerCase() : ''}`,
+          type: 'image/webp',
+          media: '(min-width: 992px)'
+        }),
+        source({
+          srcset: `${hrefWOExtn}.webp?width=1320&quality=85&preferwebp=true${rotate ? '&rotate=' + rotate : ''}${flip ? '&flip=' + flip.toLowerCase() : ''}${crop ? '&crop=' + crop.toLowerCase() : ''}`,
+          type: 'image/webp',
+          media: '(min-width: 768px)'
+        }),
+        source({
+          srcset: `${hrefWOExtn}.webp?width=780&quality=85&preferwebp=true${rotate ? '&rotate=' + rotate : ''}${flip ? '&flip=' + flip.toLowerCase() : ''}${crop ? '&crop=' + crop.toLowerCase() : ''}`,
+          type: 'image/webp',
+          media: '(min-width: 320px)'
+        }),
+        source({
+          srcset: `${hrefWOExtn}.webp?width=1400&quality=85${rotate ? '&rotate=' + rotate : ''}${flip ? '&flip=' + flip.toLowerCase() : ''}${crop ? '&crop=' + crop.toLowerCase() : ''}`,
+          media: '(min-width: 992px)'
+        }),
+        source({
+          srcset: `${hrefWOExtn}.webp?width=1320&quality=85${rotate ? '&rotate=' + rotate : ''}${flip ? '&flip=' + flip.toLowerCase() : ''}${crop ? '&crop=' + crop.toLowerCase() : ''}`,
+          media: '(min-width: 768px)'
+        }),
+        source({
+          srcset: `${hrefWOExtn}.webp?width=780&quality=85${rotate ? '&rotate=' + rotate : ''}${flip ? '&flip=' + flip.toLowerCase() : ''}${crop ? '&crop=' + crop.toLowerCase() : ''}`,
+          media: '(min-width: 320px)'
+        }),
+        img({
+          src: `${hrefWOExtn}.webp?width=1400&quality=85${rotate ? '&rotate=' + rotate : ''}${flip ? '&flip=' + flip.toLowerCase() : ''}${crop ? '&crop=' + crop.toLowerCase() : ''}`,
+          alt: a.innerText
+        }),
+      );
       a.replaceWith(pictureEl);
     }
   });
