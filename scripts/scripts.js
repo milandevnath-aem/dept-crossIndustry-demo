@@ -593,3 +593,4 @@ async function loadPage() {
 }
 
 loadPage();
+// document.querySelector('.highlight').style.backgroundColor = 'var(--primery-color)';
