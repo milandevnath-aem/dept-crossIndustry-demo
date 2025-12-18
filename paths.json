@@ -2,7 +2,8 @@
   "mappings": [
     "/content/dept-crossIndustry/:/",
     "/content/dept-crossIndustry/configuration:/.helix/config.json",
-    "/content/dept-crossIndustry/metadata:/metadata.json"
+    "/content/dept-crossIndustry/metadata:/metadata.json",
+    "/content/dept-crossIndustry/us/theme-configuration:/us/theme-configuration.json"
   ],
   "includes": [
     "/content/dept-crossIndustry",
