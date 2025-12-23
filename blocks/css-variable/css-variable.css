@@ -1,0 +1,24 @@
+.css-variable {
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.css-variable-key {
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+  font-family: monospace;
+}
+
+.css-variable-value {
+  color: #28a745;
+  font-family: monospace;
+  padding-left: 1rem;
+}
+
+.css-variable[data-key]::before {
+  content: '🎨 ';
+  margin-right: 0.5rem;
+}
