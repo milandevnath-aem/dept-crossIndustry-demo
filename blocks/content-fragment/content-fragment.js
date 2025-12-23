@@ -12,7 +12,7 @@ export default async function decorate(block) {
   const CONFIG = {
     WRAPPER_SERVICE_URL: 'https://3635370-refdemoapigateway-stage.adobeioruntime.net/api/v1/web/ref-demo-api-gateway/fetch-cf',
     GRAPHQL_QUERY: '/graphql/execute.json/ref-demo-eds/CTAByPath',
-    EXCLUDED_THEME_KEYS: new Set(['brandSite', 'brandLogo'])
+    EXCLUDED_THEME_KEYS: new Set(['brandSite', 'brandLogo']),
   };
 
   const hostnameFromPlaceholders = await getHostname();
@@ -21,18 +21,17 @@ export default async function decorate(block) {
 
   const aempublishurl = hostname?.replace('author', 'publish')?.replace(/\/$/, '');
 
-  //const aempublishurl = getMetadata('publishurl') || '';
+  // const aempublishurl = getMetadata('publishurl') || '';
 
   const persistedquery = '/graphql/execute.json/ref-demo-eds/CTAByPath';
 
-  //const properties = readBlockConfig(block);
-
+  // const properties = readBlockConfig(block);
 
   const contentPath = block.querySelector(':scope div:nth-child(1) > div a')?.textContent?.trim();
-  //const variationname = block.querySelector(':scope div:nth-child(2) > div')?.textContent?.trim()?.toLowerCase()?.replace(' ', '_') || 'master';
+  // const variationname = block.querySelector(':scope div:nth-child(2) > div')?.textContent?.trim()?.toLowerCase()?.replace(' ', '_') || 'master';
 
-  //console.log("variation : "+properties.variation);
-  //let variationname = properties.variation ? properties.variation : 'master';
+  // console.log("variation : "+properties.variation);
+  // let variationname = properties.variation ? properties.variation : 'master';
 
   const variationname = block.querySelector(':scope div:nth-child(2) > div')?.textContent?.trim()?.toLowerCase()?.replace(' ', '_') || 'master';
   const displayStyle = block.querySelector(':scope div:nth-child(3) > div')?.textContent?.trim() || '';
@@ -47,7 +46,7 @@ export default async function decorate(block) {
     ? {
       url: `${aemauthorurl}${CONFIG.GRAPHQL_QUERY};path=${contentPath};variation=${variationname};ts=${Date.now()}`,
       method: 'GET',
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
     }
     : {
       url: `${CONFIG.WRAPPER_SERVICE_URL}`,
@@ -56,8 +55,8 @@ export default async function decorate(block) {
       body: JSON.stringify({
         graphQLPath: `${aempublishurl}${CONFIG.GRAPHQL_QUERY}`,
         cfPath: contentPath,
-        variation: `${variationname};ts=${Date.now()}`
-      })
+        variation: `${variationname};ts=${Date.now()}`,
+      }),
     };
 
   try {
@@ -89,7 +88,7 @@ export default async function decorate(block) {
         stack: error.stack,
         contentPath,
         variationname,
-        isAuthor
+        isAuthor,
       });
       block.innerHTML = '';
       return;
@@ -101,7 +100,7 @@ export default async function decorate(block) {
       console.error('Error parsing response from GraphQL request - no valid data found', {
         response: offer,
         contentPath,
-        variationname
+        variationname,
       });
       block.innerHTML = '';
       return; // Exit early if no valid data
