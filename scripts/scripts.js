@@ -109,7 +109,7 @@ async function loadThemeFromPage(themePagePath) {
       const html = await resp.text();
       const doc = new DOMParser().parseFromString(html, 'text/html');
       const cssObj = {};
-      doc.querySelectorAll('.css-variable>div').forEach((varDiv) => {
+      doc.querySelectorAll('.css-variable').forEach((varDiv) => {
         const key = varDiv.querySelector(':scope > div:nth-child(1)')?.textContent?.trim();
         const value = varDiv.querySelector(':scope > div:nth-child(2)')?.textContent?.trim();
         if (key && value) {
