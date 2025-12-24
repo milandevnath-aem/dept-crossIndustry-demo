@@ -174,12 +174,6 @@ export function isAuthorEnvironment() {
     return true;
   } else {
     return false;
-  }
-  /*
-  if(document.querySelector('*[data-aue-resource]') !== null){
-    return true;
-  }*/
-  //return false;
 }
 
 /**
