@@ -75,12 +75,12 @@ function focusNavSection() {
  * @param {Boolean} expanded Whether the element should be expanded or collapsed
  */
 function toggleAllNavSections(sections, expanded = false) {
-    const navSections = sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li');
-    if (navSections && navSections.length > 0) {
-      navSections.forEach((section) => {
-        section.setAttribute('aria-expanded', expanded);
-      });
-    }
+  const navSections = sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li');
+  if (navSections && navSections.length > 0) {
+    navSections.forEach((section) => {
+      section.setAttribute('aria-expanded', expanded);
+    });
+  }
 }
 
 async function overlayLoad(navSections) {
@@ -113,7 +113,7 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
   } else {
     return;
   }*/
-  
+
   const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
   const button = nav.querySelector('.nav-hamburger button');
   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
@@ -174,8 +174,8 @@ function handleEnterKey(event) {
   if (event.key !== 'Enter') return;
   const inputValue = document.querySelector('.search-container input').value;
   //const url = (listOfAllPlaceholdersData.searchRedirectUrl || 'https://wknd.site/en/search?q=') + inputValue;
-  
-  const url = `/content/${siteName}/search-results.html?q=`+ inputValue;
+
+  const url = `/content/${siteName}/search-results.html?q=` + inputValue;
 
   if (inputValue) window.location.href = url;
 }
@@ -251,7 +251,7 @@ function createSearchBox() {
     const searchContainerWrapper = div({ class: 'search-input-wrapper' });
     searchContainerWrapper.append(searchInputContainer);
     searchContainer.appendChild(searchContainerWrapper);
-    
+
     navTools.appendChild(searchContainer);
   }
 }
@@ -274,7 +274,7 @@ function closeSearchBox() {
   // if(searchContainer){
   //   searchContainer.style.display = 'none';
   // }
-  if(cancelContainer){
+  if (cancelContainer) {
     cancelContainer.style.display = 'none';
   }
   if (searchImage) {
@@ -294,8 +294,8 @@ const closeSearchOnFocusOut = (e, navTools) => {
     const cancelContainer = navTools ? navTools.querySelector('.cancel-container') : null;
     const searchImage = navTools ? navTools.querySelector('.icon-search-light') : null;
     const isClickInside = (searchContainer && searchContainer.contains && searchContainer.contains(e.target))
-    || (cancelContainer && cancelContainer.contains && cancelContainer.contains(e.target))
-    || (searchImage && searchImage.contains && searchImage.contains(e.target));
+      || (cancelContainer && cancelContainer.contains && cancelContainer.contains(e.target))
+      || (searchImage && searchImage.contains && searchImage.contains(e.target));
     if (!isClickInside) {
       closeSearchBox();
     }
@@ -308,40 +308,40 @@ async function addLogoLink(langCode) {
   const currentLang = langCode || getLanguage();
   const aueResource = document.body.getAttribute('data-aue-resource')
     ?.replace(new RegExp(`^.*?(\\/content.*?\\/${currentLang}).*$`), '$1');
-  
-  let logoLink = '';
-    if(aueResource !== null && aueResource !== undefined && aueResource !== ''){
-      logoLink = aueResource+'.html';
-    } else {
-      if(langCode === 'en') {
-        logoLink = window.location.origin;
-      } else {
-        logoLink = window.location.origin + `/${langCode}`;
-      }
-    }
 
-    try {
-      const logoImage = document.querySelector('.nav-brand img');
-      const anchor = document.createElement('a');
-      Object.assign(anchor, {
-          href: logoLink,
-          title: logoImage?.alt,
-      });
-      const picture = document.querySelector('.nav-brand picture');
-      if (picture) anchor.appendChild(picture);
-      const targetElement = document.querySelector('.nav-brand .default-content-wrapper');
-      if (targetElement) {
-          targetElement.appendChild(anchor);
-      }
-    } catch (error) {
-      console.error('Error in addLogoLink:', error);
+  let logoLink = '';
+  if (aueResource !== null && aueResource !== undefined && aueResource !== '') {
+    logoLink = aueResource + '.html';
+  } else {
+    if (langCode === 'en') {
+      logoLink = window.location.origin;
+    } else {
+      logoLink = window.location.origin + `/${langCode}`;
     }
+  }
+
+  try {
+    const logoImage = document.querySelector('.nav-brand img');
+    const anchor = document.createElement('a');
+    Object.assign(anchor, {
+      href: logoLink,
+      title: logoImage?.alt,
+    });
+    const picture = document.querySelector('.nav-brand picture');
+    if (picture) anchor.appendChild(picture);
+    const targetElement = document.querySelector('.nav-brand .default-content-wrapper');
+    if (targetElement) {
+      targetElement.appendChild(anchor);
+    }
+  } catch (error) {
+    console.error('Error in addLogoLink:', error);
+  }
 }
 
 
 async function applyCFTheme(themeCFReference) {
-   if (!themeCFReference) return;
-  
+  if (!themeCFReference) return;
+
   const CONFIG = {
     WRAPPER_SERVICE_URL: 'https://3635370-refdemoapigateway-stage.adobeioruntime.net/api/v1/web/ref-demo-api-gateway/fetch-cf',
     GRAPHQL_QUERY: '/graphql/execute.json/ref-demo-eds/BrandThemeByPath',
@@ -357,22 +357,22 @@ async function applyCFTheme(themeCFReference) {
     const isAuthor = isAuthorEnvironment();
 
     // Prepare request configuration based on environment
-    const requestConfig = isAuthor 
+    const requestConfig = isAuthor
       ? {
-          url: `${aemauthorurl}${CONFIG.GRAPHQL_QUERY};path=${decodedThemeCFReference};ts=${Date.now()}`,
-          method: 'GET',
-          headers: { 'Content-Type': 'application/json' }
-        }
+        url: `${aemauthorurl}${CONFIG.GRAPHQL_QUERY};path=${decodedThemeCFReference};ts=${Date.now()}`,
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+      }
       : {
-          url: `${CONFIG.WRAPPER_SERVICE_URL}`,
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            graphQLPath: `${aempublishurl}${CONFIG.GRAPHQL_QUERY}`,
-            cfPath: decodedThemeCFReference,
-            variation: `master;ts=${Date.now()}`
-          })
-        };
+        url: `${CONFIG.WRAPPER_SERVICE_URL}`,
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          graphQLPath: `${aempublishurl}${CONFIG.GRAPHQL_QUERY}`,
+          cfPath: decodedThemeCFReference,
+          variation: `master;ts=${Date.now()}`
+        })
+      };
 
     // Fetch theme data
     const response = await fetch(requestConfig.url, {
@@ -382,17 +382,17 @@ async function applyCFTheme(themeCFReference) {
     });
 
     if (!response.ok) {
-       console.error(`HTTP error! status: ${response.status}`);
+      console.error(`HTTP error! status: ${response.status}`);
     }
 
     let themeCFRes;
 
-    
+
     try {
 
 
-       const responseText = await response.text();
-      
+      const responseText = await response.text();
+
       if (!responseText || responseText.trim() === '') {
         console.warn('Empty response received from server');
         return;
@@ -410,7 +410,7 @@ async function applyCFTheme(themeCFReference) {
 
     // Apply theme colors to CSS variables
     const cssVariables = Object.entries(themeColors)
-      .filter(([key, value]) => 
+      .filter(([key, value]) =>
         value != null && !CONFIG.EXCLUDED_THEME_KEYS.has(key)
       )
       .map(([key, value]) => `  --brand-${key.replace(/([A-Z])/g, '-$1').toLowerCase()}: ${value};`)
@@ -421,13 +421,10 @@ async function applyCFTheme(themeCFReference) {
       styleElement.textContent = `:root {\n${cssVariables}\n}`;
       document.head.appendChild(styleElement);
     }
-
   } catch (error) {
     console.error('Error applying theme:', error);
   }
 }
-
-
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
@@ -435,25 +432,24 @@ async function applyCFTheme(themeCFReference) {
 export default async function decorate(block) {
   // load nav as fragment
   //const locale = getMetadata('nav');
-
   const themeCFReference = getMetadata('theme_cf_reference');
   applyCFTheme(themeCFReference);
-  
 
-  
+
+
   const navMeta = getMetadata('nav');
   const langCode = getLanguage();
-  console.log("langCode :"+langCode);
+  console.log("langCode :" + langCode);
 
-   const isAuthor = isAuthorEnvironment();
-    let navPath =`/${langCode}/nav`;
-  
-    if(isAuthor){
-      navPath = navMeta ? new URL(navMeta, window.location).pathname : `/content/${siteName}${PATH_PREFIX}/${langCode}/nav`;
-    }
-   
+  const isAuthor = isAuthorEnvironment();
+  let navPath = `/${langCode}/nav`;
 
-  
+  if (isAuthor) {
+    navPath = navMeta ? new URL(navMeta, window.location).pathname : `/content/${siteName}${PATH_PREFIX}/${langCode}/nav`;
+  }
+
+
+
   //const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
 
   const pathSegments = window.location.pathname.split('/').filter(Boolean);
@@ -594,7 +590,7 @@ export default async function decorate(block) {
       }
     });
   }
-  
+
   // hamburger for mobile
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
@@ -615,16 +611,16 @@ export default async function decorate(block) {
   settingAltTextForSearchIcon();
   //fetchingPlaceholdersData();
   addLogoLink(langCode);
-    // Ensure search icon mask uses correct base path in UE/author/local
-    try {
-      const iconEl = document.querySelector('header .search.search-icon .icon');
-      if (iconEl && window.hlx && window.hlx.codeBasePath) {
-        const iconUrl = `${window.hlx.codeBasePath}/icons/search.svg`;
-        iconEl.style.webkitMask = `url(${iconUrl}) no-repeat center / contain`;
-        iconEl.style.mask = `url(${iconUrl}) no-repeat center / contain`;
-      }
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.debug('search icon mask init skipped', e);
+  // Ensure search icon mask uses correct base path in UE/author/local
+  try {
+    const iconEl = document.querySelector('header .search.search-icon .icon');
+    if (iconEl && window.hlx && window.hlx.codeBasePath) {
+      const iconUrl = `${window.hlx.codeBasePath}/icons/search.svg`;
+      iconEl.style.webkitMask = `url(${iconUrl}) no-repeat center / contain`;
+      iconEl.style.mask = `url(${iconUrl}) no-repeat center / contain`;
     }
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.debug('search icon mask init skipped', e);
+  }
 }

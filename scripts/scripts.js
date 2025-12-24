@@ -17,7 +17,7 @@ import {
   toClassName,
   toCamelCase
 } from './aem.js';
-import { picture, source, img } from './dom-helpers.js';
+import { picture, source, img, a } from './dom-helpers.js';
 
 import {
   getLanguage,
@@ -98,6 +98,38 @@ async function loadThemeConfiguration(themePath) {
     console.log(`Theme configuration loaded from ${configPath}`, json.data.length, 'variables applied');
   } catch (error) {
     console.error('Error loading theme configuration:', error);
+  }
+}
+
+async function loadThemeFromPage(themePagePath) {
+  try {
+    const url = themePagePath || '/content/dept-crossIndustry/theme-configurator-root';
+    const resp = await fetch(`${url}.plain.html`);
+    if (resp.ok) {
+      const html = await resp.text();
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const cssObj = {};
+      doc.querySelectorAll('.css-variable>div').forEach((varDiv) => {
+        const key = varDiv.querySelector(':scope > div:nth-child(1)')?.textContent?.trim();
+        const value = varDiv.querySelector(':scope > div:nth-child(2)')?.textContent?.trim();
+        if (key && value) {
+          cssObj[key] = value;
+        }
+      });
+      let styleTag = document.getElementById('theme-configuration-styles');
+      if (!styleTag) {
+        styleTag = document.createElement('style');
+        styleTag.id = 'theme-configuration-styles';
+        document.head.appendChild(styleTag);
+      }
+      const cssVariables = Object.entries(cssObj).map(([key, value]) => {
+        const cssVarName = key.startsWith('--') ? key : `--${key}`;
+        return `  ${cssVarName}: ${value};`;
+      });
+      styleTag.textContent = `:root {\n${cssVariables.join('\n')}\n}`;
+    }
+  } catch (e) {
+    console.error('Error loading theme from page:', e);
   }
 }
 
@@ -380,7 +412,8 @@ async function loadEager(doc) {
   setPageLanguage();
 
   // Load theme configuration early (before decorating)
-  await loadThemeConfiguration();
+  // await loadThemeConfiguration();
+  await loadThemeFromPage();
 
   // Preconnect dynamically to speed up LCP fetch without hardcoding hosts
   try {
