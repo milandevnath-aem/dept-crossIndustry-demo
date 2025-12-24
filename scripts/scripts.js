@@ -103,7 +103,7 @@ async function loadThemeConfiguration(themePath) {
 
 async function loadThemeFromPage(themePagePath) {
   try {
-    const url = themePagePath || '/content/dept-crossIndustry/theme-configurator-root';
+    const url = themePagePath || '/theme-configurator-root';
     const resp = await fetch(`${url}.plain.html`);
     if (resp.ok) {
       const html = await resp.text();
