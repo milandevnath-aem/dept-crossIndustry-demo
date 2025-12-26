@@ -6062,6 +6062,10 @@
     ]
   },
   {
+    "id": "theme-preview",
+    "fields": []
+  },
+  {
     "id": "video",
     "fields": [
       {
