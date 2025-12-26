@@ -104,7 +104,6 @@ export default async function decorate(block) {
       GRAPHQL_QUERY: '/graphql/execute.json/ref-demo-eds/DynamicMediaTemplateByPath',
     };
 
-
     const hostnameFromPlaceholders = await getHostname();
     const hostname = hostnameFromPlaceholders ? hostnameFromPlaceholders : getMetadata('hostname');
     const aemauthorurl = getMetadata('authorurl') || '';

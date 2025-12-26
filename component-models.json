@@ -6049,6 +6049,19 @@
     ]
   },
   {
+    "id": "theme-configurator",
+    "fields": [
+      {
+        "component": "text",
+        "name": "id",
+        "label": "Block ID",
+        "description": "Set a unique ID for this theme configurator block (e.g., primary-theme, dark-theme)",
+        "valueType": "string",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "video",
     "fields": [
       {
