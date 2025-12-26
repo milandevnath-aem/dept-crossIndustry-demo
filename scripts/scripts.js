@@ -173,15 +173,9 @@ export function isAuthorEnvironment() {
   if (window?.location?.origin?.includes('author')) {
     return true;
   } else {
-    return false;
+    return false
   }
-  /*
-  if(document.querySelector('*[data-aue-resource]') !== null){
-    return true;
-  }*/
-  //return false;
 }
-
 /**
  * Move instrumentation attributes from a given element to another given element.
  * @param {Element} from the element to copy attributes from
@@ -413,6 +407,8 @@ async function loadEager(doc) {
 
   // Load theme configuration early (before decorating)
   // await loadThemeConfiguration();
+  
+  // Load theme from page (theme-configurator-root)
   await loadThemeFromPage();
 
   // Preconnect dynamically to speed up LCP fetch without hardcoding hosts

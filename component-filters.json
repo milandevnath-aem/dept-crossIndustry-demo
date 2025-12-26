@@ -23,6 +23,8 @@
       "search",
       "teaser",
       "text",
+      "theme-configurator",
+      "theme-preview",
       "title",
       "video"
     ]
