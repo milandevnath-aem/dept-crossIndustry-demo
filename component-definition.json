@@ -118,7 +118,7 @@
           }
         },
         {
-          "title": "Blogs",
+          "title": "blogs",
           "id": "blogs",
           "plugins": {
             "xwalk": {

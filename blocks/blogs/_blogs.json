@@ -1,7 +1,7 @@
 {
     "definitions": [
         {
-            "title": "Blogs",
+            "title": "blogs",
             "id": "blogs",
             "plugins": {
                 "xwalk": {
@@ -22,12 +22,13 @@
             "fields": [
                 {
                     "component": "text",
-                    "name": "imageAlt",
-                    "label": "Alt Text"
+                    "valueType": "string",
+                    "value": "Your text will show here.",
+                    "name": "title",
+                    "label": "Title"
                 }
             ]
         }
     ],
-    "filters": [
-    ]
+    "filters": []
 }
