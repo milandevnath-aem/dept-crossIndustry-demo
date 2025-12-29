@@ -26,6 +26,41 @@
                     "value": "Your text will show here.",
                     "name": "title",
                     "label": "Title"
+                },
+                {
+                    "component": "aem-content",
+                    "valueType": "string",
+                    "name": "formPath",
+                    "value": "",
+                    "label": "Form Path",
+                    "validation": {
+                        "rootPath": "/content"
+                    }
+                },
+                {
+                    "component": "select",
+                    "name": "teaserStyle",
+                    "value": "image",
+                    "label": "Style",
+                    "valueType": "string",
+                    "options": [
+                        {
+                            "name": "Video",
+                            "value": "video"
+                        },
+                        {
+                            "name": "Image",
+                            "value": "image"
+                        }
+                    ]
+                },
+                {
+                    "component": "boolean",
+                    "label": "Enable Swoosh Effect",
+                    "description": "Enable Circular effect on the component",
+                    "name": "useSwoosh",
+                    "value": "true",
+                    "valueType": "boolean"
                 }
             ]
         }
