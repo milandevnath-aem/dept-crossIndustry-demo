@@ -1,21 +1,82 @@
-function createColorsPreview() {
+function createHeroPreview() {
+  const section = document.createElement('div');
+  section.className = 'preview-section preview-hero';
+  section.innerHTML = `
+    <div class="preview-hero-content">
+      <h1>Experience the Power of Your Brand</h1>
+      <p>Discover how your theme comes to life with real components and engaging content that resonates with your audience.</p>
+      <div class="preview-hero-actions">
+        <button class="preview-btn primary-btn">Get Started</button>
+        <button class="preview-btn outline-btn">Learn More</button>
+      </div>
+    </div>
+  `;
+  return section;
+}
+
+function createCardsPreview() {
   const section = document.createElement('div');
   section.className = 'preview-section';
   section.innerHTML = `
-    <h3>Colors</h3>
-    <div class="color-swatches">
-      <div class="color-swatch" style="background-color: var(--primary-color, #007bff);">
-        <span>Primary</span>
+    <h3>Component Preview</h3>
+    <div class="preview-cards">
+      <div class="preview-card">
+        <div class="preview-card-header" style="background-color: var(--primary-color, #007bff);">
+          Feature One
+        </div>
+        <div class="preview-card-body">
+          <p>Experience seamless integration with powerful features designed to enhance your workflow and boost productivity.</p>
+          <button class="preview-btn primary-btn">Explore</button>
+        </div>
       </div>
-      <div class="color-swatch" style="background-color: var(--secondary-color, #6c757d);">
-        <span>Secondary</span>
+      <div class="preview-card">
+        <div class="preview-card-header" style="background-color: var(--secondary-color, #6c757d);">
+          Feature Two
+        </div>
+        <div class="preview-card-body">
+          <p>Customize every aspect to match your brand identity and create a unique experience for your users.</p>
+          <button class="preview-btn secondary-btn">Discover</button>
+        </div>
       </div>
-      <div class="color-swatch" style="background-color: var(--light-color, #f8f9fa); color: #000;">
-        <span>Light</span>
+      <div class="preview-card">
+        <div class="preview-card-header" style="background-color: var(--dark-color, #343a40);">
+          Feature Three
+        </div>
+        <div class="preview-card-body">
+          <p>Built with modern technologies and best practices to ensure optimal performance and reliability.</p>
+          <button class="preview-btn outline-btn">View Details</button>
+        </div>
       </div>
-      <div class="color-swatch" style="background-color: var(--dark-color, #343a40);">
-        <span>Dark</span>
-      </div>
+    </div>
+  `;
+  return section;
+}
+
+function createTypographyPreview() {
+  const section = document.createElement('div');
+  section.className = 'preview-section';
+  section.innerHTML = `
+    <h3>Typography & Content</h3>
+    <div class="typography-samples">
+      <h1 style="color: var(--primary-color, #007bff);">Headline Level 1</h1>
+      <h2 style="color: var(--secondary-color, #6c757d);">Headline Level 2</h2>
+      <p>This is a paragraph demonstrating how your body text will appear with the current theme. The typography should be clear, readable, and maintain proper hierarchy throughout your content.</p>
+      <p style="color: var(--text-color, #555);">Secondary text provides additional context and information to support your main content while maintaining visual consistency.</p>
+    </div>
+  `;
+  return section;
+}
+
+function createButtonsPreview() {
+  const section = document.createElement('div');
+  section.className = 'preview-section';
+  section.innerHTML = `
+    <h3>Interactive Elements</h3>
+    <div class="button-samples">
+      <button class="preview-btn primary-btn">Primary Action</button>
+      <button class="preview-btn secondary-btn">Secondary Action</button>
+      <button class="preview-btn outline-btn">Outline Style</button>
+      <button class="preview-btn light-btn">Light Button</button>
     </div>
   `;
   return section;
@@ -63,7 +124,10 @@ export default function decorate(block) {
 
   // Create preview sections
   const sections = [
-    createColorsPreview(),
+    createHeroPreview(),
+    createCardsPreview(),
+    createTypographyPreview(),
+    createButtonsPreview(),
   ];
 
   sections.forEach((section) => previewContainer.appendChild(section));
