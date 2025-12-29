@@ -177,7 +177,8 @@
       	"video",
         "blogs",
         "form",
-        "embed-adaptive-form"
+        "embed-adaptive-form",
+        "blogs"
       ]
     }
   ]
