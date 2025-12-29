@@ -175,9 +175,9 @@
       	"text",
       	"title",
       	"video",
+        "blogs",
         "form",
-        "embed-adaptive-form",
-        "blogs"
+        "embed-adaptive-form"
       ]
     }
   ]
