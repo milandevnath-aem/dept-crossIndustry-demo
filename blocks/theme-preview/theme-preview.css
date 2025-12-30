@@ -109,6 +109,18 @@
   color: #333;
 }
 
+.typography-samples h1.primary-text {
+  color: var(--primary-color, #007bff);
+}
+
+.typography-samples h2.secondary-text {
+  color: var(--secondary-color, #6c757d);
+}
+
+.typography-samples p.muted-text {
+  color: var(--text-color, #555);
+}
+
 /* Buttons Preview */
 .button-samples {
   display: flex;
@@ -188,6 +200,18 @@
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
+}
+
+.preview-card-header.primary-bg {
+  background-color: var(--primary-color, #007bff);
+}
+
+.preview-card-header.secondary-bg {
+  background-color: var(--secondary-color, #6c757d);
+}
+
+.preview-card-header.dark-bg {
+  background-color: var(--dark-color, #343a40);
 }
 
 .preview-card-body {
