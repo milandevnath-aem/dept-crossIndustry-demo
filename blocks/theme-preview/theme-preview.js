@@ -21,7 +21,7 @@ function createCardsPreview() {
     <h3>Component Preview</h3>
     <div class="preview-cards">
       <div class="preview-card">
-        <div class="preview-card-header" style="background-color: var(--primary-color, #007bff);">
+        <div class="preview-card-header primary-bg">
           Feature One
         </div>
         <div class="preview-card-body">
@@ -30,7 +30,7 @@ function createCardsPreview() {
         </div>
       </div>
       <div class="preview-card">
-        <div class="preview-card-header" style="background-color: var(--secondary-color, #6c757d);">
+        <div class="preview-card-header secondary-bg">
           Feature Two
         </div>
         <div class="preview-card-body">
@@ -39,7 +39,7 @@ function createCardsPreview() {
         </div>
       </div>
       <div class="preview-card">
-        <div class="preview-card-header" style="background-color: var(--dark-color, #343a40);">
+        <div class="preview-card-header dark-bg">
           Feature Three
         </div>
         <div class="preview-card-body">
@@ -58,10 +58,10 @@ function createTypographyPreview() {
   section.innerHTML = `
     <h3>Typography & Content</h3>
     <div class="typography-samples">
-      <h1 style="color: var(--primary-color, #007bff);">Headline Level 1</h1>
-      <h2 style="color: var(--secondary-color, #6c757d);">Headline Level 2</h2>
+      <h1 class="primary-text">Headline Level 1</h1>
+      <h2 class="secondary-text">Headline Level 2</h2>
       <p>This is a paragraph demonstrating how your body text will appear with the current theme. The typography should be clear, readable, and maintain proper hierarchy throughout your content.</p>
-      <p style="color: var(--text-color, #555);">Secondary text provides additional context and information to support your main content while maintaining visual consistency.</p>
+      <p class="muted-text">Secondary text provides additional context and information to support your main content while maintaining visual consistency.</p>
     </div>
   `;
   return section;
