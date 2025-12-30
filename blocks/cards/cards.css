@@ -114,9 +114,10 @@
 .cards > ul > li .cards-card-body {
   display: block;
   background-color: var(--background-color);
-  padding: 20px;
+  padding: 0px;
   box-sizing: border-box;
   margin: 0;
+      margin-top: 16px;
 }
 .cards > ul > li .cards-card-body h1 {
   margin: 0;
@@ -124,12 +125,19 @@
   line-height: 36px;
 }
 .cards > ul > li .cards-card-body p {
-  margin: 10px 0;
+  margin: 8px 0;
   font-size: 18px;
   line-height: 26px;
+
+
+  color: #5E5E60;
+font-family: Inter;
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
 }
 .cards > ul > li .cards-card-body p.button-container {
-  margin: 0;
+  margin: 24px 0 0;
 }
 
 
@@ -457,4 +465,187 @@
     padding: 0 4%;
   }
   
+}
+
+
+.blog-cards .default-content-wrapper{
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+padding: 0px;
+margin: 0px;
+max-width: unset;
+margin-bottom: 40px;
+}
+
+.blog-cards .default-content-wrapper h2{
+margin-top: 0px;
+    margin-bottom: 0px;
+    color: #1B1B1E;
+font-family: "DM Sans";
+font-size: 30px;
+font-weight: 500;
+line-height: 40px;
+}
+.blog-cards .default-content-wrapper .button-container a{
+color: #FFF;
+font-family: "DM Sans";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px;
+}
+
+ .blog-cards .default-content-wrapper .button-container{
+  display: flex;
+    height: 52px;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    background: #1B1B1E;
+    /* margin-top: 0px; */
+ }
+.blog-cards .default-content-wrapper .button-container::after {
+display: none;
+}
+.blog-cards .default-content-wrapper .button-container .button{
+
+}
+
+.blog-cards .default-content-wrapper .button-container .button::after{
+display: none;
+}
+
+.blog-cards {
+  /* padding: 40px 0; */
+        width: 1264px;
+    margin: 0 auto !important;
+    padding-top: 60px;
+    /* background-color: #F7F7F7; */
+}
+.blog-cards .cards-card-image img {
+    border-radius: 10px;
+    height: unset !important;
+    min-height: unset !important;
+}
+.blog-cards .cards > ul > li {
+  background: transparent !important;
+}
+.blog-cards .cards .cards-card-body {
+  background: transparent !important;
+}
+.blog-cards .cards-wrapper {
+   max-width: unset;
+  /*margin: 0 auto; */
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.blog-cards .cards.block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  /* grid-template-columns: repeat(3, 1fr); */
+  gap: 32px;
+}
+
+.blog-cards .cards.block li {
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 14px;
+  color: #929292;
+  /* box-shadow: 0 2px 12px rgba(0,0,0,0.05); */
+  transition: transform 0.25s ease;
+  position: relative;
+}
+.blog-cards .cards.block li::before {
+  content: "";
+  position: absolute;
+    left: -2px;
+    top: 13px;
+    width: 4px;
+    height: 4px;
+  background: #929292; /* disc color */
+  border-radius: 50%;
+}
+.blog-cards .cards.block li:first-of-type:before {
+  display: none;
+}
+/* .cards.block li:hover {
+  transform: translateY(-4px);
+} */
+
+.blog-cards .cards-card-image picture,
+.blog-cards .cards-card-image img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.blog-cards .cards-card-body {
+  padding: 24px;
+}
+
+.blog-cards .cards-card-body h4 {
+  color: #1B1B1E;
+  font-family: "DM Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.blog-cards .cards-card-body p {
+  margin: 0 0 12px 0;
+  color: #555;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.blog-cards .cards-card-body ul {
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  font-size: 14px;
+  color: #777;
+}
+
+.blog-cards .cards-card-body .button-container {
+  margin-top: 16px;
+}
+
+.blog-cards .cards .cards-card-body .button {
+  text-decoration: none;
+  font-weight: 600;
+  color: #1F4DA8;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.blog-cards .cards .cards-card-body .button::after {
+  display: none;
+}
+
+/* .cards-card-body .button:hover {
+  text-decoration: underline;
+} */
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .blog-cards .cards.block ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-cards .cards.block ul {
+    grid-template-columns: 1fr;
+  }
 }
