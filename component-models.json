@@ -300,14 +300,6 @@
         "label": "Image Properties",
         "name": "imageProperties",
         "valueType": "string",
-        "condition": {
-          "===": [
-            {
-              "var": "teaserStyle"
-            },
-            "image"
-          ]
-        },
         "fields": [
           {
             "component": "reference",
