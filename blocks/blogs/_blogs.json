@@ -28,39 +28,82 @@
                     "label": "Title"
                 },
                 {
-                    "component": "aem-content",
+                    "component": "container",
+                    "label": "Image Properties",
+                    "name": "imageProperties",
                     "valueType": "string",
-                    "name": "formPath",
-                    "value": "",
-                    "label": "Form Path",
-                    "validation": {
-                        "rootPath": "/content"
-                    }
-                },
-                {
-                    "component": "select",
-                    "name": "teaserStyle",
-                    "value": "image",
-                    "label": "Style",
-                    "valueType": "string",
-                    "options": [
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "teaserStyle"
+                            },
+                            "image"
+                        ]
+                    },
+                    "fields": [
                         {
-                            "name": "Video",
-                            "value": "video"
+                            "component": "reference",
+                            "valueType": "string",
+                            "name": "imageRef",
+                            "label": "Image",
+                            "multi": false
                         },
                         {
-                            "name": "Image",
-                            "value": "image"
+                            "component": "text",
+                            "valueType": "string",
+                            "name": "alt",
+                            "value": "Default alt",
+                            "label": "Alt Text"
                         }
                     ]
                 },
                 {
-                    "component": "boolean",
-                    "label": "Enable Swoosh Effect",
-                    "description": "Enable Circular effect on the component",
-                    "name": "useSwoosh",
-                    "value": "true",
-                    "valueType": "boolean"
+                    "component": "container",
+                    "label": "Button Properties",
+                    "name": "buttonProperties",
+                    "valueType": "string",
+                    "fields": [
+                        {
+                            "component": "text",
+                            "valueType": "string",
+                            "name": "buttonText",
+                            "value": "Button",
+                            "label": "Button Text"
+                        },
+                        {
+                            "component": "aem-content",
+                            "name": "btn-link",
+                            "label": "Button Link",
+                            "valueType": "string",
+                            "rootPath": "",
+                            "description": "Path to linked AEM content"
+                        },
+                        {
+                            "component": "select",
+                            "name": "ctastyle",
+                            "label": "CTA Style",
+                            "valueType": "string",
+                            "value": "button",
+                            "options": [
+                                {
+                                    "name": "Default Button",
+                                    "value": "default"
+                                },
+                                {
+                                    "name": "Primary Button",
+                                    "value": "button"
+                                },
+                                {
+                                    "name": "Secondary Button",
+                                    "value": "button-secondary"
+                                },
+                                {
+                                    "name": "Dark Button",
+                                    "value": "button-dark"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }
