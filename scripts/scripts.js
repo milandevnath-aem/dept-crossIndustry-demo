@@ -103,7 +103,54 @@ async function loadThemeConfiguration(themePath) {
 
 async function loadThemeFromPage(themePagePath) {
   try {
-    const url = themePagePath || '/theme-configurator-root';
+    let url = themePagePath;
+
+    // If no explicit path provided, search for theme-configurator in hierarchy
+    if (!url) {
+      const currentPath = window.location.pathname;
+      const pathSegments = currentPath.split('/').filter(segment => segment);
+
+      // Build candidate paths from most specific to least specific
+      const candidatePaths = [];
+
+      // 1. Current page path + /theme-configurator
+      candidatePaths.push(`${currentPath}${currentPath.endsWith('/') ? '' : '/'}theme-configurator`);
+
+      // 2. Parent paths going up the hierarchy
+      for (let i = pathSegments.length; i > 0; i--) {
+        const parentPath = '/' + pathSegments.slice(0, i).join('/');
+        candidatePaths.push(`${parentPath}/theme-configurator`);
+      }
+
+      // 3. Root level theme-configurator
+      candidatePaths.push('/theme-configurator');
+
+      // Try each candidate path
+      let found = false;
+      // eslint-disable-next-line no-restricted-syntax
+      for (let i = 0; i < candidatePaths.length; i += 1) {
+        const candidate = candidatePaths[i];
+        try {
+          // eslint-disable-next-line no-await-in-loop
+          const testResp = await fetch(`${candidate}.plain.html`);
+          if (testResp.ok) {
+            url = candidate;
+            found = true;
+            console.log(`Theme configurator found at: ${candidate}`);
+            break;
+          }
+        } catch (e) {
+          // Continue to next candidate
+        }
+      }
+
+      // 4. Fallback to default
+      if (!found) {
+        url = '/theme-configurator-root';
+        console.log('Using fallback theme configurator: /theme-configurator-root');
+      }
+    }
+
     const resp = await fetch(`${url}.plain.html`);
     if (resp.ok) {
       const html = await resp.text();
@@ -407,7 +454,7 @@ async function loadEager(doc) {
 
   // Load theme configuration early (before decorating)
   // await loadThemeConfiguration();
-  
+
   // Load theme from page (theme-configurator-root)
   await loadThemeFromPage();
 
