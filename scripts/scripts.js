@@ -113,11 +113,16 @@ async function loadThemeFromPage(themePagePath) {
       // Build candidate paths from most specific to least specific
       const candidatePaths = [];
 
-      // 1. Current page path + /theme-configurator
-      candidatePaths.push(`${currentPath}${currentPath.endsWith('/') ? '' : '/'}theme-configurator`);
+      // 1. Same level as current page (sibling) - e.g., /us/en/theme-configurator
+      if (pathSegments.length > 0) {
+        const currentDir = '/' + pathSegments.slice(0, -1).join('/');
+        if (currentDir !== '/') {
+          candidatePaths.push(`${currentDir}/theme-configurator`);
+        }
+      }
 
-      // 2. Parent paths going up the hierarchy
-      for (let i = pathSegments.length; i > 0; i--) {
+      // 2. Parent paths going up the hierarchy - e.g., /us/theme-configurator
+      for (let i = pathSegments.length - 1; i > 0; i -= 1) {
         const parentPath = '/' + pathSegments.slice(0, i).join('/');
         candidatePaths.push(`${parentPath}/theme-configurator`);
       }
