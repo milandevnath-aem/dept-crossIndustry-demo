@@ -4,8 +4,8 @@ export default function decorate(block) {
     console.log(block);
     // bannerType1();
     let getType = block.classList;
-     block.textContent = '';
-             block.append(bannerType1());
+    //  block.textContent = '';
+            //  block.append(bannerType1());
 
     //  if(getType.contains("type-1")) {
     //      block.append(bannerType1());
