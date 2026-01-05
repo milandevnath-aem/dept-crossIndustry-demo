@@ -187,10 +187,6 @@
           {
             "name": "Highlight",
             "value": "highlight"
-          },
-          {
-            "name": "Blogcards",
-            "value": "blog-cards"
           }
         ]
       }
@@ -5851,6 +5847,46 @@
         "value": "",
         "label": "iFrame URL",
         "description": "Please provide a URL to an iFrame app."
+      }
+    ]
+  },
+  {
+    "id": "promotionalbanner",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "ctastyle",
+        "label": "CTA Style",
+        "valueType": "string",
+        "value": "button",
+        "options": [
+          {
+            "name": "Primary Button",
+            "value": "button"
+          },
+          {
+            "name": "Secondary Button",
+            "value": "button-secondary"
+          },
+          {
+            "name": "Dark Button",
+            "value": "button-dark"
+          }
+        ]
       }
     ]
   },

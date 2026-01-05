@@ -6,10 +6,11 @@ export default async function decorate(block) {
 }
 */
 
-import { createOptimizedPicture } from '../../scripts/aem.js';
+import { createOptimizedPicture, loadCSS } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
-
+import Swiper from './swiper.min.js';
 export default function decorate(block) {
+  loadCSS(`${window.hlx.codeBasePath}/blocks/cards/swiper.min.css`);
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
@@ -78,7 +79,26 @@ export default function decorate(block) {
     moveInstrumentation(img, optimizedPic.querySelector('img'));
     img.closest('picture').replaceWith(optimizedPic);
   });
- 
   block.textContent = '';
   block.append(ul);
-}
+  block.classList.add('swiper');
+  block.querySelector("ul").classList.add("swiper-wrapper");
+  Array.from(block.children[0].children).forEach((element) => {
+        element.classList.add('swiper-slide');
+        element.classList.add('blogs-card');
+        // swiperWrapper.appendChild(element);
+    });
+const paginationEl = document.createElement('div');
+    paginationEl.classList.add('swiper-pagination');
+    block.appendChild(paginationEl);
+        // Initialize Swiper
+    setTimeout(() => {
+      Swiper(".swiper", {
+slidesPerView: 3,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+      });
+    }, 100);
+    }
