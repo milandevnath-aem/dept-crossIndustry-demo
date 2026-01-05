@@ -4,14 +4,14 @@ export default function decorate(block) {
     console.log(block);
     // bannerType1();
     let getType = block.classList;
-    //  block.textContent = '';
+     block.textContent = '';
             //  block.append(bannerType1());
 
-    //  if(getType.contains("type-1")) {
-    //      block.append(bannerType1());
-    //  } else {
-    //     block.append(bannerType1());
-    //  }
+     if(getType.contains("type-1")) {
+         block.append(bannerType1());
+     } else {
+        block.append(bannerType1());
+     }
 }
 
 
@@ -32,7 +32,7 @@ function bannerType1() {
             fetchpriority: "high",
             alt: "",
             src:
-              "",
+              "./media_1622bbba7242f74f6882b07c26ebb94a6b552fcd6.png?width=750&format=png&optimize=medium",
             width: "750",
             height: "525",
           })
