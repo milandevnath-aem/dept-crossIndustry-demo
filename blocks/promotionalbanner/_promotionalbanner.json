@@ -25,16 +25,25 @@
           "component": "select",
           "name": "classes",
           "value": "",
-          "label": "Background style",
+          "label": "select type",
           "valueType": "string",
           "options": [
-            { "name": "Transparent / White / Default", "value": "bg-default" },
-            { "name": "Dark Background Container", "value": "bg-primary-blue" },
-            { "name": "Primary Blue 90", "value": "bg-primary-blue-90" },
-            { "name": "Primary Blue 70", "value": "bg-primary-blue-70" },
-            { "name": "Neutrals 10", "value": "bg-neutrals-10" },
-            { "name": "Neutrals 20", "value": "bg-neutrals-20" },
-            { "name": "Background Image", "value": "bg-image" }
+            {
+              "name": "Type 1",
+              "value": "Type 1"
+            },
+            {
+              "name": "Type 2",
+              "value": "Type 2"
+            },
+            {
+              "name": "Type 3",
+              "value": "Type 3"
+            },
+            {
+              "name": "Type 4",
+              "value": "Type 4"
+            }
           ]
         },
         {
