@@ -169,3 +169,81 @@
     padding: 24px;
   }
 }
+
+/* Vertical Tabs Variant */
+.tabs.vertical {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.tabs.vertical .tabs-list {
+  flex-direction: column;
+  border-bottom: none;
+  border-right: 2px solid var(--light-color);
+  padding-right: 1rem;
+  overflow-x: visible;
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.tabs.vertical .tabs-list button {
+  text-align: left;
+  border-bottom: none;
+  border-right: 3px solid transparent;
+  padding: 16px 20px;
+  white-space: normal;
+  position: relative;
+  right: -1rem;
+  border-radius: 4px 0 0 4px;
+}
+
+.tabs.vertical .tabs-list button:hover {
+  background-color: var(--tab-background-color);
+}
+
+.tabs.vertical .tabs-list button[aria-selected='true'] {
+  border-right-color: var(--main-accent-color);
+  border-bottom-color: transparent;
+  background-color: var(--tab-background-color);
+}
+
+.tabs.vertical .tabs-panel {
+  margin-top: 0;
+}
+
+/* Responsive - Stack vertical tabs on mobile */
+@media (width <= 768px) {
+  .tabs.vertical {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tabs.vertical .tabs-list {
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 2px solid var(--light-color);
+    padding-right: 0;
+    padding-bottom: 0;
+    overflow-x: auto;
+    overflow-y: visible;
+    max-height: none;
+  }
+
+  .tabs.vertical .tabs-list button {
+    text-align: center;
+    border-right: none;
+    border-bottom: 3px solid transparent;
+    right: 0;
+    bottom: -2px;
+    border-radius: 0;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .tabs.vertical .tabs-list button[aria-selected='true'] {
+    border-bottom-color: var(--main-accent-color);
+    border-right-color: transparent;
+  }
+}
