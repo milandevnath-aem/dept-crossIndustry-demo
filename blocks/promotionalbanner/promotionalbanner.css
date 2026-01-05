@@ -2,7 +2,13 @@
 .banner-varient1 {
     padding-top: 60px;
     background-color: #C8E5F5;
-    height: 491px;
+    padding-top: 82px;
+    margin-top: 44px !important;
+}
+
+.banner-varient1 img {
+    margin-bottom: -8px;
+    max-width: none;
 }
 
 .banner-varient1 .promotionalbanner-wrapper {
@@ -11,8 +17,14 @@
     margin: 0 auto;
 }
 
+.banner-varient1 .bannner-image {
+    padding-top: 61px;
+    width: 56%;
+}
+
 .banner-varient1 .promotionalbanner {
     position: relative;
+    display: flex;
 }
 
 .banner-varient1 h2 {
@@ -30,7 +42,6 @@
     margin-top: 0;
     margin-bottom: 48px;
     color: #5E5E60;
-
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -39,10 +50,8 @@
 }
 
 .banner-varient1 .banner-conetent {
-    position: absolute;
-    right: 16%;
-    top: 82px;
     max-width: 462px;
+    width: 40%;
 }
 
 .banner-varient1 .redirections {
@@ -87,14 +96,15 @@
 
 @media screen and (max-width: 1024px) {
     .banner-varient1 {
-        height: 462px;
         margin-top: 90px !important;
         background-size: contain;
     }
 
-    .banner-varient1 .promotionalbanner-wrapper {}
-
-    .banner-varient1 .promotionalbanner {}
+    .banner-varient1 .promotionalbanner {
+        display: flex;
+        flex-direction: column-reverse;
+        overflow: hidden;
+    }
 
     .banner-varient1 h2 {
         line-height: 34px;
@@ -104,31 +114,37 @@
     .banner-varient1 p {
         font-size: 14px;
         line-height: 20px;
+        margin-bottom: 24px;
+    }
+
+    .banner-varient1 .bannner-image {
+        width: 100%;
+        padding-top: 0px;
+    }
+
+    .banner-varient1 img {
+        width: 100%;
     }
 
     .banner-varient1 .banner-conetent {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, 18%);
-        width: 86%;
-
+        padding: 56px 24px 0px;
+        width: 100%;
     }
 
-    .banner-varient1 .redirections {}
-
-    .banner-varient1 .redirections a::after {}
-
-    .banner-varient1 .redirections a:hover,
-    .banner-varient1 .redirections a:focus {}
+    .banner-varient1 .redirections {
+        margin-bottom: 38px;
+    }
 
     .banner-varient1 .redirections a:first-child {
         padding: 12px 24px;
         line-height: 28px;
+        font-size: 14px;
     }
 
     .banner-varient1 .redirections a:nth-child(2) {
         padding: 12px 24px;
         line-height: 28px;
+        font-size: 14px;
     }
 }
 

@@ -35,7 +35,7 @@ function bannerType1(block) {
       "data-block-status": "loaded",
     },
     // -------- Image Section --------
-    div({},
+    div({ class:"bannner-image"},
       div({},
           img({
             loading: "eager",
@@ -57,7 +57,7 @@ function bannerType1(block) {
         ),
         p(
           {},
-          "Earn accelerated points, premium benefits, and access exclusive partner offers, all from one powerful card.fjwbfjsjfbsj"
+          "Earn accelerated points, premium benefits, and access exclusive partner offers, all from one powerful card."
         ),
         p({ class:"redirections"},
           a(
@@ -152,10 +152,6 @@ function bannerType2(block) {
       )
     ),
 
-    // -------- Empty Config / Spacer --------
-    div({},
-      div({})
-    )
   );
 
           block.textContent = '';
