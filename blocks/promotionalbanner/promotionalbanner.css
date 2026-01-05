@@ -1,0 +1,135 @@
+/* variant 1 */
+.banner-varient1 {
+    padding-top: 60px;
+    background-color: #C8E5F5;
+    height: 491px;
+}
+
+.banner-varient1 .promotionalbanner-wrapper {
+    padding: 0px;
+    max-width: none;
+    margin: 0 auto;
+}
+
+.banner-varient1 .promotionalbanner {
+    position: relative;
+}
+
+.banner-varient1 h2 {
+    color: #1B1B1E;
+    font-family: "DM Sans";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 54px;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.banner-varient1 p {
+    margin-top: 0;
+    margin-bottom: 48px;
+    color: #5E5E60;
+
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.banner-varient1 .banner-conetent {
+    position: absolute;
+    right: 16%;
+    top: 82px;
+    max-width: 462px;
+}
+
+.banner-varient1 .redirections {
+    display: flex;
+    gap: 16px;
+}
+
+.banner-varient1 .redirections a::after {
+    display: none;
+}
+
+.banner-varient1 .redirections a:hover,
+.banner-varient1 .redirections a:focus {
+    text-decoration: none;
+}
+
+.banner-varient1 .redirections a:first-child {
+    height: 52px;
+    padding: 16px 48px;
+    border-radius: 100px;
+    background: #1B1B1E;
+    color: #FFF;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.banner-varient1 .redirections a:nth-child(2) {
+    padding: 16px 48px;
+    border-radius: 100px;
+    border: 1px solid #1B1B1E;
+    color: #1B1B1E;
+
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    .banner-varient1 {
+        height: 462px;
+        margin-top: 90px !important;
+        background-size: contain;
+    }
+
+    .banner-varient1 .promotionalbanner-wrapper {}
+
+    .banner-varient1 .promotionalbanner {}
+
+    .banner-varient1 h2 {
+        line-height: 34px;
+        font-size: 30px;
+    }
+
+    .banner-varient1 p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .banner-varient1 .banner-conetent {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 18%);
+        width: 86%;
+
+    }
+
+    .banner-varient1 .redirections {}
+
+    .banner-varient1 .redirections a::after {}
+
+    .banner-varient1 .redirections a:hover,
+    .banner-varient1 .redirections a:focus {}
+
+    .banner-varient1 .redirections a:first-child {
+        padding: 12px 24px;
+        line-height: 28px;
+    }
+
+    .banner-varient1 .redirections a:nth-child(2) {
+        padding: 12px 24px;
+        line-height: 28px;
+    }
+}
+
+/* variant 2 */
