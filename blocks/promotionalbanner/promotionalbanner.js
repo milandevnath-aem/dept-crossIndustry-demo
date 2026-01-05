@@ -3,8 +3,15 @@ import { a, div, h2, img, p } from "../../scripts/dom-helpers.js";
 export default function decorate(block) {
     console.log(block);
     // bannerType1();
+    let getType = block.classList;
      block.textContent = '';
-  block.append(bannerType1());
+             block.append(bannerType1());
+
+    //  if(getType.contains("type-1")) {
+    //      block.append(bannerType1());
+    //  } else {
+    //     block.append(bannerType1());
+    //  }
 }
 
 
@@ -25,7 +32,7 @@ function bannerType1() {
             fetchpriority: "high",
             alt: "",
             src:
-              "./media_1c9306d7674c0b8ee54457c9ac52f817a0d3410ae.png?width=750&format=png&optimize=medium",
+              "",
             width: "750",
             height: "525",
           })
