@@ -16,6 +16,9 @@ export default function decorate(block) {
   } else if (getType.contains("type-2")) {
     block.closest(".promotionalbanner-container").classList.add("banner-varient2");
     block.append(bannerType1(block));
+  }else if (getType.contains("type-3")) {
+    block.closest(".promotionalbanner-container").classList.add("banner-varient3");
+    block.append(bannerType3(block));
   } else {
     block.append(bannerType1(block));
   }
@@ -41,8 +44,6 @@ function bannerType1(block) {
             fetchpriority: "high",
             alt: "",
             src: `${source}`,
-            width: "750",
-            height: "525",
           })
         )
       ),
@@ -50,7 +51,7 @@ function bannerType1(block) {
       div({
           class: "banner-conetent"
         },
-        div({},
+        div({ class:"grid-content"},
           h2({
               id: "upgrade-to-smarter-stronger-rewards"
             },
@@ -89,56 +90,59 @@ function bannerType1(block) {
   return promotionalBanner;
 }
 
-function bannerType2(block) {
-  const promotionalBanner =
+function bannerType3(block) {
+  let source = block.querySelector("img").src;
+ const promotionalBanner =
     div({
-        class: "promotionalbanner block",
+        class: "promotionalbanner promotionalbanner-content block type1",
         "data-block-name": "promotionalbanner",
         "data-block-status": "loaded",
       },
-
       // -------- Image Section --------
-      div({},
+      div({
+          class: "bannner-image desktop-img"
+        },
         div({},
-          picture({},
-            source({
-              type: "image/webp",
-              srcset: "./media_1c9306d7674c0b8ee54457c9ac52f817a0d3410ae.png?width=2000&format=webply&optimize=medium",
-              media: "(min-width: 600px)",
-            }),
-            source({
-              type: "image/webp",
-              srcset: "./media_1c9306d7674c0b8ee54457c9ac52f817a0d3410ae.png?width=750&format=webply&optimize=medium",
-            }),
-            source({
-              type: "image/png",
-              srcset: "./media_1c9306d7674c0b8ee54457c9ac52f817a0d3410ae.png?width=2000&format=png&optimize=medium",
-              media: "(min-width: 600px)",
-            }),
-            img({
-              loading: "eager",
-              fetchpriority: "high",
-              alt: "",
-              src: "./media_1c9306d7674c0b8ee54457c9ac52f817a0d3410ae.png?width=750&format=png&optimize=medium",
-              width: "750",
-              height: "525",
-            })
-          )
+          img({
+            loading: "eager",
+            fetchpriority: "high",
+            alt: "",
+            src: `${source}`,
+          })
         )
       ),
-
       // -------- Content Section --------
-      div({},
-        div({},
+      div({
+          class: "banner-conetent"
+        },
+        div({ class:"grid-content"},
+          div({},
           h2({
               id: "upgrade-to-smarter-stronger-rewards"
             },
             "Upgrade to smarter, stronger rewards."
           ),
+        ),
+              // -------- Image Section --------
+      div({
+          class: "bannner-image mob-img"
+        },
+        div({},
+          img({
+            loading: "eager",
+            fetchpriority: "high",
+            alt: "",
+            src: `${source}`,
+          })
+        )
+      ),
+        div({class:"bottom-content"},
           p({},
             "Earn accelerated points, premium benefits, and access exclusive partner offers, all from one powerful card."
           ),
-          p({},
+          p({
+              class: "redirections"
+            },
             a({
                 href: "/footer",
                 title: "Explore Benefits"
@@ -154,8 +158,13 @@ function bannerType2(block) {
             )
           )
         )
+                ),
       ),
 
+      // -------- Empty Config / Spacer --------
+      div({},
+        div({})
+      )
     );
 
   block.textContent = '';
