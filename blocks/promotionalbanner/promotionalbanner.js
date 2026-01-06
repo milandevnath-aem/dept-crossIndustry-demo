@@ -27,7 +27,9 @@ function bannerType1(block) {
 
   const promotionalBanner =
     div({
-        class: "promotionalbanner-content",
+        class: "promotionalbanner promotionalbanner-content block type1",
+        "data-block-name": "promotionalbanner",
+        "data-block-status": "loaded",
       },
       // -------- Image Section --------
       div({
