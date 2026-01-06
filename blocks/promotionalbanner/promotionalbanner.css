@@ -204,11 +204,12 @@
 
     /* variant 4 */
     .banner-varient4 .banner-conetent {
-            padding: 16px !important;
-    width: 91% !important;
-    margin: 32px !important;
+        padding: 16px !important;
+        width: 91% !important;
+        margin: 32px !important;
     }
-    .banner-varient4 {
+
+    .promotionalbanner-container.banner-varient4 {
         display: flex;
         justify-content: center;
         /* align-items: center; */
@@ -284,20 +285,27 @@
 }
 
 /* variant 4 */
+
+.banner-varient4 {
+    min-height: 490px !important;
+}
+
 .banner-varient4 .promotionalbanner-content {
     display: flex;
     justify-content: end;
     align-items: center;
     /* padding-bottom: 100px; */
 }
+
 .banner-varient4 .banner-conetent {
-        padding: 32px;
+    padding: 32px;
     border-radius: 12px;
     background: #FFF;
     margin-top: 55px;
     width: 41.3%;
     margin-right: 88px;
 }
+
 .banner-varient4 .redirections {
     margin-bottom: 0px;
 }
