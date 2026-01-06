@@ -56,7 +56,7 @@
         {
           "component": "reference",
           "valueType": "string",
-          "name": "image",
+          "name": "mobimage",
           "label": "Select Mobile Image",
           "multi": false
         },

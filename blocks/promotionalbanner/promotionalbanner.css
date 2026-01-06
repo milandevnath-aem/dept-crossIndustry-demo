@@ -201,6 +201,13 @@
     .promotionalbanner-container.banner-varient3 .grid-content h2 {
         padding: 24px;
     }
+
+    /* variant 4 */
+    .banner-varient4 .banner-conetent {
+            padding: 16px !important;
+    width: 91% !important;
+    margin: 32px !important;
+    }
 }
 
 /* variant 2 */
@@ -267,5 +274,24 @@
 }
 
 .promotionalbanner-container.banner-varient3 .grid-content .redirections {
+    margin-bottom: 0px;
+}
+
+/* variant 4 */
+.banner-varient4 .promotionalbanner-content {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-bottom: 100px;
+}
+.banner-varient4 .banner-conetent {
+        padding: 32px;
+    border-radius: 12px;
+    background: #FFF;
+    margin-top: 55px;
+    width: 41.3%;
+    margin-right: 88px;
+}
+.banner-varient4 .redirections {
     margin-bottom: 0px;
 }

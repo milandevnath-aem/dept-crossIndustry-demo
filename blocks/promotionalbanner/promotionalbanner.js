@@ -178,6 +178,7 @@ function bannerType4(block) {
   let source = block.querySelector("img").src;
   let heading = block.querySelector("h2").innerText.trim();
   let description = block.querySelector("p").innerText.trim();
+  block.closest(".promotionalbanner-container").style.background = `url(${source}) center / cover no-repeat`
   const promotionalBanner =
     div({
         class: "promotionalbanner promotionalbanner-content block type1",
