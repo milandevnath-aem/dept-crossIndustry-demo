@@ -193,9 +193,11 @@
     .bottom-content {
         padding: 24px;
     }
-.banner-varient3 .banner-conetent {
-    padding: 0px !important;
-}
+
+    .banner-varient3 .banner-conetent {
+        padding: 0px !important;
+    }
+
     .promotionalbanner-container.banner-varient3 .grid-content h2 {
         padding: 24px;
     }
