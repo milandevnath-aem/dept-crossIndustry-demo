@@ -5883,14 +5883,7 @@
         "valueType": "string",
         "name": "image",
         "label": "Select Desktop Image",
-        "multi": false
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Select Mobile Image",
-        "multi": false
+        "multi": true
       },
       {
         "component": "richtext",
