@@ -208,6 +208,11 @@
     width: 91% !important;
     margin: 32px !important;
     }
+    .banner-varient4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 /* variant 2 */
