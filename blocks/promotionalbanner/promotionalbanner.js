@@ -16,9 +16,12 @@ export default function decorate(block) {
   } else if (getType.contains("type-2")) {
     block.closest(".promotionalbanner-container").classList.add("banner-varient2");
     block.append(bannerType1(block));
-  }else if (getType.contains("type-3")) {
+  } else if (getType.contains("type-3")) {
     block.closest(".promotionalbanner-container").classList.add("banner-varient3");
     block.append(bannerType3(block));
+  } else if (getType.contains("type-4")) {
+    block.closest(".promotionalbanner-container").classList.add("banner-varient4");
+    block.append(bannerType4(block));
   } else {
     block.append(bannerType1(block));
   }
@@ -27,7 +30,8 @@ export default function decorate(block) {
 
 function bannerType1(block) {
   let source = block.querySelector("img").src;
-
+  let heading = block.querySelector("h2").innerText.trim();
+  let description = block.querySelector("p").innerText.trim();
   const promotionalBanner =
     div({
         class: "promotionalbanner promotionalbanner-content block type1",
@@ -51,14 +55,16 @@ function bannerType1(block) {
       div({
           class: "banner-conetent"
         },
-        div({ class:"grid-content"},
+        div({
+            class: "grid-content"
+          },
           h2({
               id: "upgrade-to-smarter-stronger-rewards"
             },
-            "Upgrade to smarter, stronger rewards."
+            heading
           ),
           p({},
-            "Earn accelerated points, premium benefits, and access exclusive partner offers, all from one powerful card."
+            description
           ),
           p({
               class: "redirections"
@@ -79,11 +85,6 @@ function bannerType1(block) {
           )
         )
       ),
-
-      // -------- Empty Config / Spacer --------
-      div({},
-        div({})
-      )
     );
   block.textContent = '';
 
@@ -92,7 +93,9 @@ function bannerType1(block) {
 
 function bannerType3(block) {
   let source = block.querySelector("img").src;
- const promotionalBanner =
+  let heading = block.querySelector("h2").innerText.trim();
+  let description = block.querySelector("p").innerText.trim();
+  const promotionalBanner =
     div({
         class: "promotionalbanner promotionalbanner-content block type1",
         "data-block-name": "promotionalbanner",
@@ -115,30 +118,86 @@ function bannerType3(block) {
       div({
           class: "banner-conetent"
         },
-        div({ class:"grid-content"},
+        div({
+            class: "grid-content"
+          },
           div({},
+            h2({
+                id: "upgrade-to-smarter-stronger-rewards"
+              },
+              heading
+            ),
+          ),
+          // -------- Image Section --------
+          div({
+              class: "bannner-image mob-img"
+            },
+            div({},
+              img({
+                loading: "eager",
+                fetchpriority: "high",
+                alt: "",
+                src: `${source}`,
+              })
+            )
+          ),
+          div({
+              class: "bottom-content"
+            },
+            p({},
+              description
+            ),
+            p({
+                class: "redirections"
+              },
+              a({
+                  href: "/footer",
+                  title: "Explore Benefits"
+                },
+                "Explore Benefits"
+              ),
+              " ",
+              a({
+                  href: "/us",
+                  title: "Know More"
+                },
+                "Know More"
+              )
+            )
+          )
+        ),
+      ),
+    );
+
+  block.textContent = '';
+
+  return promotionalBanner;
+}
+
+function bannerType4(block) {
+  let source = block.querySelector("img").src;
+  let heading = block.querySelector("h2").innerText.trim();
+  let description = block.querySelector("p").innerText.trim();
+  const promotionalBanner =
+    div({
+        class: "promotionalbanner promotionalbanner-content block type1",
+        "data-block-name": "promotionalbanner",
+        "data-block-status": "loaded",
+      },
+      // -------- Content Section --------
+      div({
+          class: "banner-conetent"
+        },
+        div({
+            class: "grid-content"
+          },
           h2({
               id: "upgrade-to-smarter-stronger-rewards"
             },
-            "Upgrade to smarter, stronger rewards."
+            heading
           ),
-        ),
-              // -------- Image Section --------
-      div({
-          class: "bannner-image mob-img"
-        },
-        div({},
-          img({
-            loading: "eager",
-            fetchpriority: "high",
-            alt: "",
-            src: `${source}`,
-          })
-        )
-      ),
-        div({class:"bottom-content"},
           p({},
-            "Earn accelerated points, premium benefits, and access exclusive partner offers, all from one powerful card."
+            description
           ),
           p({
               class: "redirections"
@@ -158,15 +217,8 @@ function bannerType3(block) {
             )
           )
         )
-                ),
       ),
-
-      // -------- Empty Config / Spacer --------
-      div({},
-        div({})
-      )
     );
-
   block.textContent = '';
 
   return promotionalBanner;
