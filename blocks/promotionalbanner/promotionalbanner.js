@@ -29,8 +29,8 @@ export default function decorate(block) {
 
 
 function bannerType1(block) {
-  let resolutiontype = window.innerWidth > 767 ? block.querySelectorAll("img")[0].src.trim() : block.querySelectorAll("img")[1].src.trim();
-  resolutiontype = block.querySelectorAll("img").length > 1 ? resolutiontype : block.querySelectorAll("img")[0];
+  let source = window.innerWidth > 767 ? block.querySelectorAll("img")[0].src.trim() : block.querySelectorAll("img")[1].src.trim();
+  source = block.querySelectorAll("img").length > 1 ? source : block.querySelectorAll("img")[0];
   let heading = block.querySelector("h2").innerText.trim();
   let description = block.querySelector("p").innerText.trim();
   const promotionalBanner =
@@ -93,8 +93,8 @@ function bannerType1(block) {
 }
 
 function bannerType3(block) {
-  let resolutiontype = window.innerWidth > 767 ? block.querySelectorAll("img")[0].src.trim() : block.querySelectorAll("img")[1].src.trim();
-  resolutiontype = block.querySelectorAll("img").length > 1 ? resolutiontype : block.querySelectorAll("img")[0];
+  let source = window.innerWidth > 767 ? block.querySelectorAll("img")[0].src.trim() : block.querySelectorAll("img")[1].src.trim();
+  source = block.querySelectorAll("img").length > 1 ? source : block.querySelectorAll("img")[0];
   let heading = block.querySelector("h2").innerText.trim();
   let description = block.querySelector("p").innerText.trim();
   const promotionalBanner =
@@ -177,11 +177,11 @@ function bannerType3(block) {
 }
 
 function bannerType4(block) {
-  let resolutiontype = window.innerWidth > 767 ? block.querySelectorAll("img")[0].src.trim() : block.querySelectorAll("img")[1].src.trim();
-  resolutiontype = block.querySelectorAll("img").length > 1 ? resolutiontype : block.querySelectorAll("img")[0];
+  let source = window.innerWidth > 767 ? block.querySelectorAll("img")[0].src.trim() : block.querySelectorAll("img")[1].src.trim();
+  source = block.querySelectorAll("img").length > 1 ? source : block.querySelectorAll("img")[0];
   let heading = block.querySelector("h2").innerText.trim();
   let description = block.querySelector("p").innerText.trim();
-  block.closest(".promotionalbanner-container").style.background = `url(${resolutiontype}) center / cover no-repeat`
+  block.closest(".promotionalbanner-container").style.background = `url(${source}) center / cover no-repeat`
   const promotionalBanner =
     div({
         class: "promotionalbanner promotionalbanner-content block type1",
