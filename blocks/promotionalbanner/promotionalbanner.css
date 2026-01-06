@@ -11,11 +11,11 @@
     max-width: none;
 }
 
-.banner-varient1 .promotionalbanner-wrapper {
+.promotionalbanner-container .promotionalbanner-wrapper {
     padding: 0px;
     max-width: none;
     margin: 0 auto;
-        max-width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -29,7 +29,7 @@
     display: flex;
 }
 
-.banner-varient1 h2 {
+.promotionalbanner-container h2 {
     color: #1B1B1E;
     font-family: "DM Sans";
     font-size: 48px;
@@ -40,7 +40,7 @@
     margin-bottom: 16px;
 }
 
-.banner-varient1 p {
+.promotionalbanner-container p {
     margin-top: 0;
     margin-bottom: 48px;
     color: #5E5E60;
@@ -56,21 +56,21 @@
     width: 40%;
 }
 
-.banner-varient1 .redirections {
+.promotionalbanner-container .redirections {
     display: flex;
     gap: 16px;
 }
 
-.banner-varient1 .redirections a::after {
+.promotionalbanner-container .redirections a::after {
     display: none;
 }
 
-.banner-varient1 .redirections a:hover,
-.banner-varient1 .redirections a:focus {
+.promotionalbanner-container .redirections a:hover,
+.promotionalbanner-container .redirections a:focus {
     text-decoration: none;
 }
 
-.banner-varient1 .redirections a:first-child {
+.promotionalbanner-container .redirections a:first-child {
     height: 52px;
     padding: 16px 48px;
     border-radius: 100px;
@@ -83,7 +83,7 @@
     line-height: 20px;
 }
 
-.banner-varient1 .redirections a:nth-child(2) {
+.promotionalbanner-container .redirections a:nth-child(2) {
     padding: 16px 48px;
     border-radius: 100px;
     border: 1px solid #1B1B1E;
@@ -108,12 +108,12 @@
         overflow: hidden;
     }
 
-    .banner-varient1 h2 {
+    .promotionalbanner-container h2 {
         line-height: 34px;
         font-size: 30px;
     }
 
-    .banner-varient1 p {
+    .promotionalbanner-container p {
         font-size: 14px;
         line-height: 20px;
         margin-bottom: 24px;
@@ -134,17 +134,17 @@
         max-width: 100%;
     }
 
-    .banner-varient1 .redirections {
+    .promotionalbanner-container .redirections {
         margin-bottom: 38px;
     }
 
-    .banner-varient1 .redirections a:first-child {
+    .promotionalbanner-container .redirections a:first-child {
         padding: 12px 24px;
         line-height: 28px;
         font-size: 14px;
     }
 
-    .banner-varient1 .redirections a:nth-child(2) {
+    .promotionalbanner-container .redirections a:nth-child(2) {
         padding: 12px 24px;
         line-height: 28px;
         font-size: 14px;

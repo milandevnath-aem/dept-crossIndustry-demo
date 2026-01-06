@@ -7,6 +7,7 @@ export default function decorate(block) {
             //  block.append(bannerType1());
 
      if(getType.contains("type-1")) {
+        block.closest(".promotionalbanner-container").classList.add("banner-varient2");
          block.append(bannerType1(block));
      }else if(getType.contains("type-2")) {
         block.append(bannerType2(block));
@@ -19,13 +20,6 @@ export default function decorate(block) {
 function bannerType1(block) {
     block.closest(".promotionalbanner-container").classList.add("banner-varient1");
     let source = block.querySelector("img").src;
-//     if(window.innerWidth > 767) {
-//     block.closest(".promotionalbanner-container").style.background =
-//   `url("${block.querySelector("img").src}") 0% 100% no-repeat #C8E5F5`;
-//     } else {
-// block.closest(".promotionalbanner-container").style.background =
-//   `url("${block.querySelector("img").src}") 0% 100% / contain no-repeat #C8E5F5`;
-//     }
 
     const promotionalBanner =
   div(
@@ -84,7 +78,6 @@ return promotionalBanner;
 }
 
 function bannerType2(block) {
-    block.closest(".promotionalbanner-container").classList.add("banner-varient2");
     const promotionalBanner =
   div(
     {
