@@ -65,6 +65,12 @@
                 "component":"richtext",
                 "name":"title",
                 "label":"Title"
+            },
+            {
+              "component": "richtext",
+              "name": "description",
+              "label": "Description",
+              "multi": true
             }
         ]
     },
