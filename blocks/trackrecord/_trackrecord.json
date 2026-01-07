@@ -1,0 +1,67 @@
+{
+  "definitions": [
+    {
+      "title": "Track Record",
+      "id": "trackrecord",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Track Record",
+              "model": "trackrecord"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "trackrecord-item",
+      "id": "trackrecord-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "trackrecord-item",
+              "model": "trackrecord-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+        "id":"trackrecord",
+        "fields":[
+            {
+                "component":"richtext",
+                "name":"title",
+                "label":"Title"
+            }
+        ]
+    },
+    {
+        "id":"trackrecord-item",
+        "fields":[
+            {
+                "component":"richtext",
+                "name":"number",
+                "label":"Number"
+            },
+            {
+                "component":"richtext",
+                "name":"description",
+                "label":"Description"
+            }
+        ]
+    }   
+  ],
+  "filters": [
+    {
+      "id": "trackrecord",
+      "components": ["trackrecord-item"]
+    }
+  ]
+}

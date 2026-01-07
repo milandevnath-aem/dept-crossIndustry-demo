@@ -6066,6 +6066,31 @@
     "fields": []
   },
   {
+    "id": "trackrecord",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "title",
+        "label": "Title"
+      }
+    ]
+  },
+  {
+    "id": "trackrecord-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "number",
+        "label": "Number"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description"
+      }
+    ]
+  },
+  {
     "id": "video",
     "fields": [
       {
