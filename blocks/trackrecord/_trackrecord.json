@@ -17,14 +17,14 @@
       }
     },
     {
-      "title": "trackrecord-item",
+      "title": "Trackrecord Item",
       "id": "trackrecord-item",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
-              "name": "trackrecord-item",
+              "name": "Trackrecord Item",
               "model": "trackrecord-item"
             }
           }
@@ -36,6 +36,31 @@
     {
         "id":"trackrecord",
         "fields":[
+            {
+              "component": "select",
+              "name": "classes",
+              "value": "",
+              "label": "select type",
+              "valueType": "string",
+              "options": [
+                {
+                  "name": "Type 1",
+                  "value": "Type 1"
+                },
+                {
+                  "name": "Type 2",
+                  "value": "Type 2"
+                },
+                {
+                  "name": "Type 3",
+                  "value": "Type 3"
+                },
+                {
+                  "name": "Type 4",
+                  "value": "Type 4"
+                }
+              ]
+            },
             {
                 "component":"richtext",
                 "name":"title",
