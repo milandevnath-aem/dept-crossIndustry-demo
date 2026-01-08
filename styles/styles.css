@@ -457,8 +457,9 @@ ol,
 ul,
 pre,
 blockquote {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  /* margin-top: 0.8em;
+  margin-bottom: 0.25em; */
+  margin: 0;
 }
 
 code,
@@ -663,6 +664,11 @@ main > .section:first-of-type {
 @media (width >= 900px) {
   main > .section > div {
     padding: 0 32px;
+  }
+}
+@media (max-width: 768px){
+  main > .section > div {
+    padding: 0 24px;
   }
 }
 
