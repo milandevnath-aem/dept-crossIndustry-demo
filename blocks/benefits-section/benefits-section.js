@@ -12,16 +12,16 @@ export default function decorate(block) {
 
   if (getType.contains("type-1")) {
     block.closest(".benefits-section-container").classList.add("benefits-section1");
-    block.append(bannerType1(block));
+    block.append(cardsBenefits(block));
   } else if (getType.contains("type-2")) {
     block.closest(".benefits-section-container").classList.add("benefits-section2");
-    block.append(bannerType1(block));
+    block.append(cardsBenefits(block));
   } else {
-    block.append(bannerType1(block));
+    block.append(cardsBenefits(block));
   }
 }
 
-function bannerType1(block) {
+function cardsBenefits(block) {
   let source = block.querySelector("img").src.trim();
   let heading = block.querySelector("h2").innerText.trim();
   let description = block.querySelector("p").innerText.trim();
