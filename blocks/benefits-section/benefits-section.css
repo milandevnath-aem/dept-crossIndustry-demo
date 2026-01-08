@@ -149,41 +149,47 @@
     /* varient 2 */
 
 
-    .benefits-section2 .benefits-icon{
+    .benefits-section2 .benefits-icon {
         position: absolute;
-    bottom: -74px !important;
+        bottom: -74px !important;
     }
+
     .benefits-section2 .benefits-icon img {
         transform: rotate(-32deg) translate(-13px, 27px) !important;
-    height: 336px !important;
-}
-.benefits-section2 .benefits-section-wrapper{
-    height: 445px !important;
-}
+        height: 336px !important;
+    }
+
+    .benefits-section2 .benefits-section-wrapper {
+        height: 445px !important;
+    }
 }
 
 .benefits-section-container.benefits-section2 {
-overflow: hidden;
+    overflow: hidden;
 }
+
 .benefits-section2 .benefits-card {
     flex-direction: column-reverse;
 }
 
-.benefits-section2 .cta{
+.benefits-section2 .cta {
     display: none;
 }
+
 .benefits-section2 .benefits-section-wrapper {
     overflow: hidden;
     height: 461px;
 }
+
 .benefits-section2 .benefits-card {
     gap: 0px;
 }
 
 .benefits-section2 .benefits-icon {
-        position: absolute;
+    position: absolute;
     bottom: -116px;
 }
+
 .benefits-section2 .benefits-icon img {
     transform: rotate(-32deg);
     height: 386px;

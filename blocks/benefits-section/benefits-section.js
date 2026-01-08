@@ -25,38 +25,45 @@ function cardsBenefits(block) {
   let source = block.querySelector("img").src.trim();
   let heading = block.querySelector("h2").innerText.trim();
   let description = block.querySelector("p").innerText.trim();
-const benefitsSection =
-  div(
-    {
-      class: "benefits-section block",
-    },
+  const benefitsSection =
+    div({
+        class: "benefits-section block",
+      },
 
-    // -------- Card 1 --------
-    div({ class: "benefits-card" },
-      div({ class: "benefits-icon" },
-        img({
-          loading: "eager",
-          fetchpriority: "high",
-          alt: "",
-          src: `${source}`,
-        })
-      ),
-      div({ class: "benefits-content" },
-        h2({}, heading),
-        p({},
-          description
+      // -------- Card 1 --------
+      div({
+          class: "benefits-card"
+        },
+        div({
+            class: "benefits-icon"
+          },
+          img({
+            loading: "eager",
+            fetchpriority: "high",
+            alt: "",
+            src: `${source}`,
+          })
         ),
-        p({ class: "cta" },
-          a({
-            href: "#",
-            title: "Know More",
-            class: "button"
-          }, "Know More")
+        div({
+            class: "benefits-content"
+          },
+          h2({}, heading),
+          p({},
+            description
+          ),
+          p({
+              class: "cta"
+            },
+            a({
+              href: "#",
+              title: "Know More",
+              class: "button"
+            }, "Know More")
+          )
         )
-      )
-    ),
-  );
- block.textContent = '';
+      ),
+    );
+  block.textContent = '';
 
   return benefitsSection;
 }
