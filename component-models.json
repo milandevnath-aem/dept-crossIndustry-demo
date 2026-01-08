@@ -6076,20 +6076,28 @@
         "valueType": "string",
         "options": [
           {
-            "name": "Type 1",
-            "value": "Type 1"
+            "name": "Trackrecord Type 1",
+            "value": "trackrecord-type-1"
           },
           {
-            "name": "Type 2",
-            "value": "Type 2"
+            "name": "Trackrecord Type 2",
+            "value": "trackrecord-type-2"
           },
           {
-            "name": "Type 3",
-            "value": "Type 3"
+            "name": "Trackrecord Type 3",
+            "value": "trackrecord-type-3"
           },
           {
-            "name": "Type 4",
-            "value": "Type 4"
+            "name": "Process Step Type 1",
+            "value": "process-step-type-1"
+          },
+          {
+            "name": "Process Step Type 2",
+            "value": "process-step-type-2"
+          },
+          {
+            "name": "Process Step Type 3",
+            "value": "process-step-type-3"
           }
         ]
       },
