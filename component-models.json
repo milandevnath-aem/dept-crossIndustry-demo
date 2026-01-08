@@ -6113,11 +6113,6 @@
     "fields": [
       {
         "component": "richtext",
-        "name": "number",
-        "label": "Number"
-      },
-      {
-        "component": "richtext",
         "name": "description",
         "label": "Description"
       }
