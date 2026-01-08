@@ -1,0 +1,26 @@
+.promotionalbanner-container,
+.cards-container,
+.carousel-container,
+.benefits-section-container {
+    display: none;
+}
+
+.track-record-container .track-record-wrapper {
+    display: flex;
+    justify-content: right;
+}
+
+.track-record-wrapper .block {
+    width: 80%;
+}
+
+.track-record-wrapper .block .track-record-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    >div {
+        border-left: 1px solid #D8D8D6;
+        /* width: 33.33%; */
+        padding: 0 80px 0 40px;
+    }
+}
