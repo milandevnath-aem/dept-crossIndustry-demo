@@ -22,12 +22,13 @@ export default function decorate(block) {
 }
 
 function bannerType1(block) {
+  let source = block.querySelector("img").src.trim();
+  let heading = block.querySelector("h2").innerText.trim();
+  let description = block.querySelector("p").innerText.trim();
 const benefitsSection =
   div(
     {
       class: "benefits-section block",
-      "data-block-name": "benefits",
-      "data-block-status": "loaded",
     },
 
     // -------- Card 1 --------
@@ -37,13 +38,13 @@ const benefitsSection =
           loading: "eager",
           fetchpriority: "high",
           alt: "",
-          src: "./icon-1.png",
+          src: `${source}`,
         })
       ),
       div({ class: "benefits-content" },
-        h2({}, "Get rewarded just for getting started"),
+        h2({}, heading),
         p({},
-          "Open your first account and receive a $100 cash bonus when you make an eligible first deposit or purchase."
+          description
         ),
         p({ class: "cta" },
           a({
