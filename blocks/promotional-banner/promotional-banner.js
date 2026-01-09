@@ -11,16 +11,16 @@ export default function decorate(block) {
   let getType = block.classList;
 
   if (getType.contains("type-1")) {
-    block.closest(".promotionalbanner-container").classList.add("banner-varient1");
+    block.closest(".promotional-banner-container").classList.add("banner-varient1");
     block.append(bannerType1(block));
   } else if (getType.contains("type-2")) {
-    block.closest(".promotionalbanner-container").classList.add("banner-varient2");
+    block.closest(".promotional-banner-container").classList.add("banner-varient2");
     block.append(bannerType1(block));
   } else if (getType.contains("type-3")) {
-    block.closest(".promotionalbanner-container").classList.add("banner-varient3");
+    block.closest(".promotional-banner-container").classList.add("banner-varient3");
     block.append(bannerType3(block));
   } else if (getType.contains("type-4")) {
-    block.closest(".promotionalbanner-container").classList.add("banner-varient4");
+    block.closest(".promotional-banner-container").classList.add("banner-varient4");
     block.append(bannerType4(block));
   } else {
     block.append(bannerType1(block));
@@ -181,7 +181,7 @@ function bannerType4(block) {
   source = block.querySelectorAll("img").length > 1 ? source : block.querySelectorAll("img")[0].src.trim();
   let heading = block.querySelector("h2").innerText.trim();
   let description = block.querySelector("p").innerText.trim();
-  block.closest(".promotionalbanner-container").style.background = `url(${source}) center / cover no-repeat`
+  block.closest(".promotional-banner-container").style.background = `url(${source}) center / cover no-repeat`
   const promotionalBanner =
     div({
         class: "promotionalbanner promotionalbanner-content block type1",

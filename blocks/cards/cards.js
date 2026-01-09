@@ -103,8 +103,7 @@ export default function decorate(block) {
 
 
     function swiperVariantForblogs1() {
-      // Initialize Swiper
-      // setTimeout(() => {
+      // Initialize Swiper with responsive breakpoints (mobile shows 2.5)
         Swiper(".swiper", {
           slidesPerView: 3,
           observer: true,
@@ -114,22 +113,36 @@ export default function decorate(block) {
             clickable: true,
             type: "bullets",
           },
+           breakpoints: {
+    0: {
+      slidesPerView: 1,     // fallback (below 375)
+    },
+    375: {
+      slidesPerView: 1.5,   // 👈 375–1023
+    },
+    767: {
+      slidesPerView: 2,   // 👈 375–1023
+    },
+    1024: {
+      slidesPerView: 3,     // 👈 1024+
+    },
+  },
         });
-      // }, 100);
     }
 
     function swiperVariantForblogs2() {
-      // Initialize Swiper
-      // setTimeout(() => {
+      // Initialize Swiper with responsive breakpoints (mobile shows 2.5)
         Swiper(".swiper", {
           slidesPerView: 2.5,
-          // observer: true,
-          // observeParents: true,
           pagination: {
             el: '.swiper-pagination',
             clickable: true,
             type: "bullets",
           },
+          breakpoints: {
+            768: {
+              slidesPerView: 3,
+            },
+          },
         });
-      // }, 100);
     }

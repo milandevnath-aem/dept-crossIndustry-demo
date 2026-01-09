@@ -11,7 +11,7 @@
     max-width: none;
 }
 
-.promotionalbanner-container .promotionalbanner-wrapper {
+.promotional-banner-container .promotionalbanner-wrapper {
     padding: 0px;
     max-width: none;
     margin: 0 auto;
@@ -29,7 +29,7 @@
     display: flex;
 }
 
-.promotionalbanner-container h2 {
+.promotional-banner-container h2 {
     color: #1B1B1E;
     font-family: "DM Sans";
     font-size: 48px;
@@ -40,7 +40,7 @@
     margin-bottom: 16px;
 }
 
-.promotionalbanner-container p {
+.promotional-banner-container p {
     margin-top: 0;
     margin-bottom: 48px;
     color: #5E5E60;
@@ -56,21 +56,21 @@
     width: 40%;
 }
 
-.promotionalbanner-container .redirections {
+.promotional-banner-container .redirections {
     display: flex;
     gap: 16px;
 }
 
-.promotionalbanner-container .redirections a::after {
+.promotional-banner-container .redirections a::after {
     display: none;
 }
 
-.promotionalbanner-container .redirections a:hover,
-.promotionalbanner-container .redirections a:focus {
+.promotional-banner-container .redirections a:hover,
+.promotional-banner-container .redirections a:focus {
     text-decoration: none;
 }
 
-.promotionalbanner-container .redirections a:first-child {
+.promotional-banner-container .redirections a:first-child {
     height: 52px;
     padding: 16px 48px;
     border-radius: 100px;
@@ -83,7 +83,7 @@
     line-height: 20px;
 }
 
-.promotionalbanner-container .redirections a:nth-child(2) {
+.promotional-banner-container .redirections a:nth-child(2) {
     padding: 16px 48px;
     border-radius: 100px;
     border: 1px solid #1B1B1E;
@@ -94,6 +94,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
+}
+.promotional-banner-container .promotional-banner-wrapper {
+padding: 0px;
+max-width: unset;
 }
 
 @media screen and (max-width: 1024px) {
@@ -108,12 +112,12 @@
         overflow: hidden;
     }
 
-    .promotionalbanner-container h2 {
+    .promotional-banner-container h2 {
         line-height: 34px;
         font-size: 30px;
     }
 
-    .promotionalbanner-container p {
+    .promotional-banner-container p {
         font-size: 14px;
         line-height: 20px;
         margin-bottom: 24px;
@@ -134,17 +138,17 @@
         max-width: 100%;
     }
 
-    .promotionalbanner-container .redirections {
+    .promotional-banner-container .redirections {
         margin-bottom: 38px;
     }
 
-    .promotionalbanner-container .redirections a:first-child {
+    .promotional-banner-container .redirections a:first-child {
         padding: 12px 24px;
         line-height: 28px;
         font-size: 14px;
     }
 
-    .promotionalbanner-container .redirections a:nth-child(2) {
+    .promotional-banner-container .redirections a:nth-child(2) {
         padding: 12px 24px;
         line-height: 28px;
         font-size: 14px;
@@ -168,11 +172,11 @@
         width: 100% !important;
     }
 
-    .banner-varient2.promotionalbanner-container h2 {
+    .banner-varient2.promotional-banner-container h2 {
         margin-bottom: 8px;
     }
 
-    .banner-varient2.promotionalbanner-container .redirections {
+    .banner-varient2.promotional-banner-container .redirections {
         margin-bottom: 0px;
     }
 
@@ -185,7 +189,7 @@
         display: block !important;
     }
 
-    .promotionalbanner-container.banner-varient3 .grid-content {
+    .promotional-banner-container.banner-varient3 .grid-content {
         flex-direction: column;
         align-items: initial !important;
     }
@@ -198,7 +202,7 @@
         padding: 0px !important;
     }
 
-    .promotionalbanner-container.banner-varient3 .grid-content h2 {
+    .promotional-banner-container.banner-varient3 .grid-content h2 {
         padding: 24px;
     }
 
@@ -209,7 +213,7 @@
         margin: 32px !important;
     }
 
-    .promotionalbanner-container.banner-varient4 {
+    .promotional-banner-container.banner-varient4 {
         display: flex;
         justify-content: center;
         /* align-items: center; */
@@ -222,10 +226,11 @@
     display: flex;
     padding: 60px 88px;
     align-items: center;
+    justify-content: space-between;
 }
 
 .banner-varient2 .bannner-image {
-    width: 43.7%;
+    width: 49.8%;
     margin-right: 105px;
 }
 
@@ -235,12 +240,12 @@
 }
 
 .banner-varient2 .banner-conetent {
-    width: 43.3%;
+    width: 43.6%;
 }
 
 
 /* variant 3 */
-.promotionalbanner-container.banner-varient3 .promotionalbanner-wrapper {
+.promotional-banner-container.banner-varient3 .promotionalbanner-wrapper {
     max-width: none;
 }
 
@@ -266,21 +271,21 @@
     width: 100%;
 }
 
-.promotionalbanner-container.banner-varient3 p {
+.promotional-banner-container.banner-varient3 p {
     margin-bottom: 25px;
 }
 
-.promotionalbanner-container.banner-varient3 .grid-content {
+.promotional-banner-container.banner-varient3 .grid-content {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.promotionalbanner-container.banner-varient3 .grid-content h2 {
+.promotional-banner-container.banner-varient3 .grid-content h2 {
     margin-bottom: 0px;
 }
 
-.promotionalbanner-container.banner-varient3 .grid-content .redirections {
+.promotional-banner-container.banner-varient3 .grid-content .redirections {
     margin-bottom: 0px;
 }
 
