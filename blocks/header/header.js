@@ -303,8 +303,7 @@ const closeSearchOnFocusOut = (e, navTools) => {
 };
 
 async function addLogoLink(langCode) {
-
-  //urn:aemconnection:/content/wknd-universal/language-masters/en/magazine/jcr:content
+  // urn:aemconnection:/content/wknd-universal/language-masters/en/magazine/jcr:content
   const currentLang = langCode || getLanguage();
   const aueResource = document.body.getAttribute('data-aue-resource')
     ?.replace(new RegExp(`^.*?(\\/content.*?\\/${currentLang}).*$`), '$1');
@@ -344,7 +343,7 @@ async function applyCFTheme(themeCFReference) {
   const CONFIG = {
     WRAPPER_SERVICE_URL: 'https://3635370-refdemoapigateway-stage.adobeioruntime.net/api/v1/web/ref-demo-api-gateway/fetch-cf',
     GRAPHQL_QUERY: '/graphql/execute.json/ref-demo-eds/BrandThemeByPath',
-    EXCLUDED_THEME_KEYS: new Set(['brandSite', 'brandLogo'])
+    EXCLUDED_THEME_KEYS: new Set(['brandSite', 'brandLogo']),
   };
 
   try {
@@ -440,7 +439,7 @@ export default async function decorate(block) {
   console.log("langCode :" + langCode);
 
   const isAuthor = isAuthorEnvironment();
-  let navPath = `/${langCode}/nav`;
+  let navPath = `/us/${langCode}/nav`;
 
   if (isAuthor) {
     navPath = navMeta ? new URL(navMeta, window.location).pathname : `/content/${siteName}${PATH_PREFIX}/${langCode}/nav`;
