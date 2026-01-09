@@ -1,4 +1,5 @@
 export default function decorate(block) {
+  console.log(block, "trackrecord.js");
   const children = [...block.children];
   // If there are less than 2 divs, nothing to wrap
   if (children.length < 2) return;
@@ -11,6 +12,28 @@ export default function decorate(block) {
   });
   // Append wrapper back into block
   block.appendChild(wrapper);
+  if (block.classList.contains("process-step-type-3")) {
+    const items = block.querySelectorAll(
+      ".track-record-wrapper-item > div > div"
+    );
+
+    items.forEach((contentDiv) => {
+      const directPs = contentDiv.querySelectorAll(":scope > p");
+
+      // If already wrapped, skip
+      if (directPs.length <= 1) return;
+
+      // Create wrapper for text
+      const textWrap = document.createElement("div");
+
+      // Move all <p> except the first (number)
+      [...directPs].slice(1).forEach((p) => textWrap.appendChild(p));
+
+      // Append wrapper
+      contentDiv.appendChild(textWrap);
+    });
+  }
+
   /*  Variant + banner logic */
   const container = block.closest(".track-record-container");
   const classes = block.classList;
