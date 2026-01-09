@@ -338,7 +338,6 @@ async function addLogoLink(langCode) {
   }
 }
 
-
 async function applyCFTheme(themeCFReference) {
   if (!themeCFReference) return;
 
@@ -431,11 +430,10 @@ async function applyCFTheme(themeCFReference) {
  */
 export default async function decorate(block) {
   // load nav as fragment
-  //const locale = getMetadata('nav');
+  // const locale = getMetadata('nav');
+
   const themeCFReference = getMetadata('theme_cf_reference');
   applyCFTheme(themeCFReference);
-
-
 
   const navMeta = getMetadata('nav');
   const langCode = getLanguage();
@@ -447,8 +445,6 @@ export default async function decorate(block) {
   if (isAuthor) {
     navPath = navMeta ? new URL(navMeta, window.location).pathname : `/content/${siteName}${PATH_PREFIX}/${langCode}/nav`;
   }
-
-
 
   //const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
 

@@ -11,66 +11,87 @@
         "component": "text",
         "valueType": "string",
         "name": "jcr:title",
-        "label": "Title",
-        "required": true
+        "label": "Title"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "jcr:pagetitle",
-        "label": "Page Title",
-        "required": true
+        "label": "Page Title"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "jcr:description",
-        "label": "Description",
-        "required": true
+        "label": "Description"
       },
       {
         "component": "aem-tag",
         "name": "cq:tags",
         "label": "Tags",
         "valueType": "string",
-        "rootPath": "/content/cq:tags/world-bank"
+        "rootPath": "/content/cq:tags"
       },
       {
-        "component": "select",
-        "name": "theme",
-        "label": "Theme",
-        "options": [
-          {
-            "name": "default",
-            "value": ""
-          },
-          {
-            "name": "Mango Haze",
-            "value": "mango-haze"
-          },
-          {
-            "name": "Lavender Chill",
-            "value": "lavender-chill"
-          },
-          {
-            "name": "Meadow Light",
-            "value": "meadow-light"
-          }
-        ]
+        "component": "text",
+        "valueType": "string",
+        "name": "hostname",
+        "label": "Hostname",
+        "description": "Provide the hostname of author instance (without the ending slash) e.g. https://author-pXXXXX-eXXXXXXX.adobeaemcloud.com"
+      },
+      {          
+        "component": "aem-content",
+        "name": "theme_cf_reference",
+        "label": "Brand Theme",
+        "description": "Select the CF with authored values for the brand theme. This will be applied on the pages",
+        "valueType": "string",
+        "validation": {
+            "rootPath": "/content/dam"
+        }
+      },
+      {
+          "component": "select",
+          "name": "theme",
+          "label": "Theme",
+          "options": [
+            {
+              "name": "default",
+              "value": ""
+            },
+            {
+              "name": "Mango Haze",
+              "value": "mango-haze"
+            },
+            {
+              "name": "Lavender Chill",
+              "value": "lavender-chill"
+            },
+             {
+              "name": "Meadow Light",
+              "value": "meadow-light"
+            }
+          ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "js-files",
+        "multi": true,
+        "value": "",
+        "label": "JS Library URL(s)",
+        "description": "List of js libraries to include under head section of the page"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "pageName",
-        "label": "Page Name",
-        "required": true
+        "label": "Page Name"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "pageCategory",
-        "label": "Page Category",
-        "required": true
+        "label": "Page Category"
       }
     ]
   },
