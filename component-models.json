@@ -444,28 +444,6 @@
     ]
   },
   {
-    "id": "cards",
-    "fields": [
-      {
-        "component": "select",
-        "name": "classes",
-        "value": "",
-        "label": "select type",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Type 1",
-            "value": "Type 1"
-          },
-          {
-            "name": "Type 2",
-            "value": "Type 2"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "carousel",
     "fields": [
       {
