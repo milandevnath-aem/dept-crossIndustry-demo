@@ -184,7 +184,7 @@
     row-gap: 80px;
 }
 
-.track-record-varient3 .track-record-wrapper .block .track-record-wrapper-item>div{
+.track-record-varient3 .track-record-wrapper .block .track-record-wrapper-item>div {
     width: 26.9%;
 }
 
@@ -243,3 +243,130 @@
         padding: 0 0 16px 0;
     }
 }
+
+/* Process-Step-Varient-1 */
+.process-step-varient1 {
+    /* padding: 60px 20px;
+    background: #ffffff;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif; */
+}
+
+.process-step-varient1 .track-record-wrapper .block>div>div>p {
+    font-family: var(--DM-Sans, sans-serif);
+    font-weight: var(--font-weight, 500);
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: var(--letter-spacing, 0);
+    color: #1B1B1E;
+    text-align: center;
+}
+
+.process-step-varient1 .block .track-record-wrapper-item {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    /* max-width: 1100px; */
+    /* margin: 0 auto; */
+    margin-top: 64px;
+}
+
+.process-step-varient1 .block .track-record-wrapper-item>div {
+    max-width: 244px;
+    position: relative;
+}
+
+.process-step-varient1 .block .track-record-wrapper-item>div>div {
+    text-align: center;
+}
+
+.process-step-varient1 .block .track-record-wrapper-item p:first-child {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    background: #D79F4B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--DM-Sans, sans-serif);
+    font-weight: var(--font-weight, 400);
+    font-size: 26px;
+    line-height: 62px;
+    letter-spacing: var(--letter-spacing, 0);
+    color: #FEFEFD;
+}
+
+.process-step-varient1 .block .track-record-wrapper-item p:nth-child(2) {
+    font-family: var(--DM-Sans, sans-serif);
+    font-weight: var(--font-weight, 500);
+    font-size: 20px;
+    line-height: 16px;
+    letter-spacing: var(--letter-spacing, 0);
+    color: #1B1B1E;
+    margin-bottom: 16px;
+}
+
+.process-step-varient1 .block .track-record-wrapper-item p:nth-child(3) {
+    font-family: var(--DM-Sans, sans-serif);
+    font-weight: var(--font-weight, 400);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: var(--letter-spacing, 0);
+    color: #5E5E60;
+}
+
+@media (min-width: 992px) {
+    .process-step-varient1 .block .track-record-wrapper-item>div:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 30px;
+        right: -143px;
+        width: 211px;
+        height: 1px;
+        background: #e5e7eb;
+    }
+}
+
+@media (max-width: 768px) {
+    .process-step-varient1 .block .track-record-wrapper>div>div>p {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .process-step-varient1 .block .track-record-wrapper-item {
+        margin-top: 32px;
+    }
+
+    .process-step-varient1 .block .track-record-wrapper-item>div>div {
+        margin-bottom: 16px;
+    }
+
+    .process-step-varient1 .block .track-record-wrapper-item p:first-child {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 20px;
+        font-size: 24px;
+    }
+
+    .process-step-varient1 .block .track-record-wrapper-item p:nth-child(2) {
+        font-weight: var(--font-weight, 400);
+        line-height: 16px;
+        margin-bottom: 8px;
+    }
+
+    .process-step-varient1 .block .track-record-wrapper-item>div:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 60px;
+        background-color: #e5e7eb;
+        rotate: 0deg;
+    }
+}
+
+/* Process-Step-Varient-2 */
+/* Process-Step-Varient-3 */
