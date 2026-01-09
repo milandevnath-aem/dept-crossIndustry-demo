@@ -81,24 +81,55 @@ export default function decorate(block) {
   });
   block.textContent = '';
   block.append(ul);
-  block.classList.add('swiper');
-  block.querySelector("ul").classList.add("swiper-wrapper");
-  Array.from(block.children[0].children).forEach((element) => {
-        element.classList.add('swiper-slide');
-        element.classList.add('blogs-card');
-        // swiperWrapper.appendChild(element);
+  let classlistExists = block.closest(".cards-container").classList;
+  if (classlistExists.contains("blog-cards") || classlistExists.contains("blog-cards2")) {
+    block.classList.add('swiper');
+    block.querySelector("ul").classList.add("swiper-wrapper");
+    Array.from(block.children[0].children).forEach((element) => {
+      element.classList.add('swiper-slide');
+      element.classList.add('blogs-card');
+      // swiperWrapper.appendChild(element);
     });
-const paginationEl = document.createElement('div');
+    const paginationEl = document.createElement('div');
     paginationEl.classList.add('swiper-pagination');
     block.appendChild(paginationEl);
-        // Initialize Swiper
-    setTimeout(() => {
-      Swiper(".swiper", {
-slidesPerView: 3,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
-        },
-      });
-    }, 100);
+    if(classlistExists.contains("blog-cards")) {
+      swiperVariantForblogs1()
+    } else {
+      swiperVariantForblogs2()
+    }
+  }
+    }
+
+
+    function swiperVariantForblogs1() {
+      // Initialize Swiper
+      // setTimeout(() => {
+        Swiper(".swiper", {
+          slidesPerView: 3,
+          observer: true,
+          observeParents: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            type: "bullets",
+          },
+        });
+      // }, 100);
+    }
+
+    function swiperVariantForblogs2() {
+      // Initialize Swiper
+      // setTimeout(() => {
+        Swiper(".swiper", {
+          slidesPerView: 2.5,
+          // observer: true,
+          // observeParents: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            type: "bullets",
+          },
+        });
+      // }, 100);
     }
