@@ -140,9 +140,18 @@ export default function decorate(block) {
             type: "bullets",
           },
           breakpoints: {
-            768: {
-              slidesPerView: 3,
-            },
-          },
+    0: {
+      slidesPerView: 1,
+    },
+    375: {
+      slidesPerView: 1.5,
+    },
+    767: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 2.5,
+    },
+  },
         });
     }
