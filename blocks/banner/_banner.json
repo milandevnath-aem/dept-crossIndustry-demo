@@ -1,0 +1,74 @@
+{
+  "definitions": [
+    {
+      "title": "Banner",
+      "id": "banner",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Banner",
+              "model": "banner",
+              "filter": "banner"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "banner",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes",
+          "value": "",
+          "label": "select type",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Notification Banner Type 1",
+              "value": "notification-banner-type-1"
+            },
+            {
+              "name": "Notification Banner Type 2",
+              "value": "notification-banner-type-2"
+            },
+            {
+              "name": "Notification Banner Type 3",
+              "value": "notification-banner-type-3"
+            },
+            {
+              "name": "Simple Banners Type 1",
+              "value": "simple-banner-type-1"
+            },
+            {
+              "name": "Simple Banners Type 2",
+              "value": "simple-banner-type-2"
+            },
+            {
+              "name": "Simple Banners Type 3",
+              "value": "simple-banner-type-3"
+            },
+            {
+              "name": "Simple Banners Type 4",
+              "value": "simple-banner-type-4"
+            }
+          ]
+        },
+        {
+          "component": "reference",
+          "name": "image",
+          "label": "Image"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
