@@ -40,6 +40,17 @@
     ]
   },
   {
+    "id": "containercomponent",
+    "components": [
+     "blogs",
+      "promotionalbanner",
+      "benefitssection",
+      "containercomponent",
+      "cards",
+      "card"
+    ]
+  },
+  {
     "id": "columns",
     "components": [
       "column"
