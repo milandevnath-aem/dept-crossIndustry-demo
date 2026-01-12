@@ -111,7 +111,7 @@ export default function decorate(block) {
 
     function swiperVariantForblogs1() {
       // Initialize Swiper with responsive breakpoints (mobile shows 2.5)
-        Swiper(".swiper", {
+        Swiper(".blog-cards .swiper", {
           slidesPerView: 3,
           observer: true,
           observeParents: true,
@@ -139,7 +139,7 @@ export default function decorate(block) {
 
     function swiperVariantForblogs2() {
       // Initialize Swiper with responsive breakpoints (mobile shows 2.5)
-        Swiper(".swiper", {
+        Swiper(".blog-cards2 .swiper", {
           slidesPerView: 2.5,
           pagination: {
             el: '.swiper-pagination',
