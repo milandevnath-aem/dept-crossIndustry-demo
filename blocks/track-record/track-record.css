@@ -1,13 +1,3 @@
-.promotionalbanner-container,
-.cards-container,
-.carousel-container,
-.benefits-section-container,
-.nav-wrapper,
-.header-wrapper,
-.track-record-varient1 {
-    display: none;
-}
-
 :root {
     --Silver: #D8D8D6;
     --Charcoal: #1B1B1E;
