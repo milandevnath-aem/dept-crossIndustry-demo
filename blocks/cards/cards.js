@@ -93,9 +93,16 @@ export default function decorate(block) {
     const paginationEl = document.createElement('div');
     paginationEl.classList.add('swiper-pagination');
     block.appendChild(paginationEl);
-    if(classlistExists.contains("blog-cards")) {
+    // if(classlistExists.contains("blog-cards")) {
+    //   swiperVariantForblogs1()
+    // } else {
+    //   swiperVariantForblogs2()
+    // }
+
+      if(classlistExists.contains("blog-cards")) {
       swiperVariantForblogs1()
-    } else {
+    } 
+    if (classlistExists.contains("blog-cards2")){
       swiperVariantForblogs2()
     }
   }
