@@ -412,6 +412,42 @@
     ]
   },
   {
+      "id": "productssection",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes",
+          "value": "",
+          "label": "select type",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Type 1",
+              "value": "Type 1"
+            },
+            {
+              "name": "Type 2",
+              "value": "Type 2"
+            }
+          ]
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Select Image",
+          "multi": false
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    },
+  {
     "id": "card",
     "fields": [
       {
