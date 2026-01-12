@@ -41,6 +41,13 @@
     ]
   },
   {
+    "id": "productssection",
+    "components": [
+      "cards",
+      "card"
+    ]
+  },
+  {
     "id": "columns",
     "components": [
       "column"
