@@ -179,7 +179,8 @@
         "embed-adaptive-form",
         "blogs",
         "promotionalbanner",
-        "benefitssection"
+        "benefitssection",
+        "containercomponent"
       ]
     }
   ]
