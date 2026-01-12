@@ -61,7 +61,8 @@
         {
           "component": "reference",
           "name": "image",
-          "label": "Image"
+          "label": "Image",
+          "multi": false
         },
         {
           "component": "richtext",
