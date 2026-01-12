@@ -8,10 +8,11 @@ import { div, p, h2, button } from '../../scripts/dom-helpers.js';
  */
 export default async function decorate(block) {
   try {
+    debugger;
     // 1. CONFIGURATION EXTRACTION
     const config = {};
     const rows = [...block.children];
-    
+
     rows.forEach((row) => {
       if (row.children.length >= 2) {
         const key = row.children[0].textContent.trim().toLowerCase().replace(/\s+/g, '-');
@@ -32,7 +33,7 @@ export default async function decorate(block) {
 
     // 2. CREATE SEMANTIC HTML STRUCTURE
     const container = div({ class: 'cta-banner-container' });
-    
+
     // Background image layer
     if (backgroundImage) {
       const bgLayer = div({ class: 'cta-banner-background' });
