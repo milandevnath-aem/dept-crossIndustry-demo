@@ -1,16 +1,16 @@
 {
   "definitions": [
     {
-      "title": "Benefits Section",
-      "id": "benefitssection",
+      "title": "Products Section",
+      "id": "productssection",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {   
-              "name": "Benefits Section",
-              "filter": "benefitssection",
-              "model": "benefitssection"
+              "name": "Products-Section",
+              "filter": "productssection",
+              "model": "productssection"
             }
           }
         }
@@ -19,7 +19,7 @@
   ],
   "models": [
     {
-      "id": "benefitssection",
+      "id": "productssection",
       "fields": [
         {
           "component": "select",
