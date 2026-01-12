@@ -11,87 +11,66 @@
         "component": "text",
         "valueType": "string",
         "name": "jcr:title",
-        "label": "Title"
+        "label": "Title",
+        "required": true
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "jcr:pagetitle",
-        "label": "Page Title"
+        "label": "Page Title",
+        "required": true
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "jcr:description",
-        "label": "Description"
+        "label": "Description",
+        "required": true
       },
       {
         "component": "aem-tag",
         "name": "cq:tags",
         "label": "Tags",
         "valueType": "string",
-        "rootPath": "/content/cq:tags"
+        "rootPath": "/content/cq:tags/world-bank"
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "hostname",
-        "label": "Hostname",
-        "description": "Provide the hostname of author instance (without the ending slash) e.g. https://author-pXXXXX-eXXXXXXX.adobeaemcloud.com"
-      },
-      {          
-        "component": "aem-content",
-        "name": "theme_cf_reference",
-        "label": "Brand Theme",
-        "description": "Select the CF with authored values for the brand theme. This will be applied on the pages",
-        "valueType": "string",
-        "validation": {
-            "rootPath": "/content/dam"
-        }
-      },
-      {
-          "component": "select",
-          "name": "theme",
-          "label": "Theme",
-          "options": [
-            {
-              "name": "default",
-              "value": ""
-            },
-            {
-              "name": "Mango Haze",
-              "value": "mango-haze"
-            },
-            {
-              "name": "Lavender Chill",
-              "value": "lavender-chill"
-            },
-             {
-              "name": "Meadow Light",
-              "value": "meadow-light"
-            }
-          ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "js-files",
-        "multi": true,
-        "value": "",
-        "label": "JS Library URL(s)",
-        "description": "List of js libraries to include under head section of the page"
+        "component": "select",
+        "name": "theme",
+        "label": "Theme",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "Mango Haze",
+            "value": "mango-haze"
+          },
+          {
+            "name": "Lavender Chill",
+            "value": "lavender-chill"
+          },
+          {
+            "name": "Meadow Light",
+            "value": "meadow-light"
+          }
+        ]
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "pageName",
-        "label": "Page Name"
+        "label": "Page Name",
+        "required": true
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "pageCategory",
-        "label": "Page Category"
+        "label": "Page Category",
+        "required": true
       }
     ]
   },
@@ -469,6 +448,42 @@
         "description": "Enter the CSS value (e.g., #007bff, Arial, 1.5rem)",
         "valueType": "string",
         "required": true
+      }
+    ]
+  },
+  {
+    "id": "cta-banner",
+    "fields": [
+      {
+        "component": "text",
+        "name": "heading",
+        "label": "Heading",
+        "description": "Main heading text for the CTA banner",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text-area",
+        "name": "description",
+        "label": "Description",
+        "description": "Supporting description text",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "aem-content",
+        "name": "cta",
+        "label": "CTA Button",
+        "description": "Call-to-action button with link",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "reference",
+        "name": "background-image",
+        "label": "Background Image",
+        "description": "Decorative background image",
+        "valueType": "string"
       }
     ]
   },

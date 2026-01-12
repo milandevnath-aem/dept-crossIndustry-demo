@@ -1,0 +1,279 @@
+/* ========================================
+   CTA BANNER BLOCK
+   A full-width call-to-action banner with dark theme
+   ======================================== */
+
+/* Base Container */
+.cta-banner {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1264px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Main Container with Background */
+.cta-banner-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 346px;
+  background-color: #1B1B1E;
+  border-radius: 24px;
+  padding: 70px 80px;
+  overflow: hidden;
+}
+
+/* Background Image Layer */
+.cta-banner-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.cta-banner-background picture {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cta-banner-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  opacity: 0.8;
+}
+
+/* Content Wrapper */
+.cta-banner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 680px;
+}
+
+/* Text Content Area */
+.cta-banner-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Heading */
+.cta-banner-heading {
+  font-family: 'DM Sans', var(--heading-font-family, sans-serif);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.722;
+  color: #FEFEFD;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* Description */
+.cta-banner-description {
+  font-family: var(--body-font-family, Inter, system-ui, sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #FEFEFD;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* CTA Button Container */
+.cta-banner-cta {
+  display: flex;
+  align-items: center;
+}
+
+/* Button Styles */
+.cta-banner-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  min-width: 160px;
+  height: 52px;
+  background-color: #FFFFFF;
+  color: #1B1B1E;
+  font-family: var(--body-font-family, Inter, system-ui, sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 44px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.cta-banner-button:hover {
+  background-color: #F5F5F5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cta-banner-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cta-banner-button:focus {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
+.cta-banner-button:focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
+/* Error State */
+.cta-banner-error {
+  padding: 2rem;
+  color: #FEFEFD;
+  text-align: center;
+  font-family: var(--body-font-family, Inter, system-ui, sans-serif);
+}
+
+/* Responsive Design - Tablet (768px-1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .cta-banner-container {
+    padding: 60px;
+    min-height: 300px;
+  }
+
+  .cta-banner-content {
+    max-width: 600px;
+  }
+
+  .cta-banner-heading {
+    font-size: 32px;
+  }
+
+  .cta-banner-background {
+    width: 55%;
+  }
+}
+
+/* Responsive Design - Mobile (0-767px) */
+@media (max-width: 767px) {
+  .cta-banner-container {
+    padding: 40px 24px;
+    min-height: auto;
+    border-radius: 16px;
+  }
+
+  .cta-banner-content {
+    max-width: 100%;
+    gap: 24px;
+  }
+
+  .cta-banner-text {
+    gap: 16px;
+  }
+
+  .cta-banner-heading {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+
+  .cta-banner-description {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .cta-banner-background {
+    width: 100%;
+    opacity: 0.3;
+  }
+
+  .cta-banner-background img {
+    object-position: center;
+  }
+
+  .cta-banner-button {
+    width: 100%;
+    min-width: auto;
+    padding: 14px 24px;
+    height: 48px;
+    font-size: 15px;
+  }
+}
+
+/* Accessibility - Focus Visible */
+@supports selector(:focus-visible) {
+  .cta-banner *:focus {
+    outline: none;
+  }
+
+  .cta-banner *:focus-visible {
+    outline: 2px solid #FFFFFF;
+    outline-offset: 2px;
+  }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .cta-banner * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Performance - Image Loading */
+.cta-banner img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Universal Editor Support */
+.cta-banner.author-mode .cta-banner-container {
+  min-height: 200px;
+  border: 1px dashed rgba(254, 254, 253, 0.3);
+}
+
+.cta-banner.author-mode .cta-banner-background::after {
+  content: 'Background Image Area';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(254, 254, 253, 0.5);
+  font-size: 12px;
+  pointer-events: none;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .cta-banner-button {
+    border: 2px solid #1B1B1E;
+  }
+
+  .cta-banner-button:focus {
+    outline-width: 3px;
+  }
+}
+
+/* Dark Mode Override (if needed) */
+@media (prefers-color-scheme: dark) {
+  .cta-banner-container {
+    background-color: #1B1B1E;
+  }
+}
