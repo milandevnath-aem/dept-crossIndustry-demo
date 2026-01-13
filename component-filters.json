@@ -43,7 +43,7 @@
   {
     "id": "productssection",
     "components": [
-      "card"
+      "cards"
     ]
   },
   {
