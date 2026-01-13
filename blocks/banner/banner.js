@@ -1,4 +1,29 @@
 export default function decorate(block) {
+  if (block.classList.contains("simple-banner-type-3")) {
+    const contentInner = block.querySelector(":scope > div:nth-child(2) > div");
+    if (!contentInner) return;
+    const uls = [...contentInner.querySelectorAll("ul")];
+    const button = contentInner.querySelector("p.button-container");
+    if (!uls.length && !button) return;
+    // Reference BEFORE DOM changes
+    const referenceNode = uls[0] || button;
+    // Create ONE common wrapper
+    const commonWrapper = document.createElement("div");
+    // Insert wrapper FIRST
+    contentInner.insertBefore(commonWrapper, referenceNode);
+    // ---- Wrap all ULs ----
+    if (uls.length) {
+      const ulWrapper = document.createElement("div");
+      uls.forEach((ul) => ulWrapper.appendChild(ul));
+      commonWrapper.appendChild(ulWrapper);
+    }
+    // ---- Wrap button ----
+    if (button) {
+      const buttonWrapper = document.createElement("div");
+      buttonWrapper.appendChild(button);
+      commonWrapper.appendChild(buttonWrapper);
+    }
+  }
   /*  Variant + banner logic */
   const container = block.closest(".banner-container");
   const classes = block.classList;

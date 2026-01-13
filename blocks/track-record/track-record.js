@@ -1,5 +1,4 @@
 export default function decorate(block) {
-  console.log(block, "trackrecord.js");
   const children = [...block.children];
   // If there are less than 2 divs, nothing to wrap
   if (children.length < 2) return;
