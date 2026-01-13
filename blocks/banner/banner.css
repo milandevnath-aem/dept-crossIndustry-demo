@@ -1,6 +1,224 @@
 /* notification-banner-varient1 */
+.notification-banner-varient1 .banner-wrapper .block>div:nth-of-type(1) {
+    display: none;
+}
+
+.notification-banner-varient1 .banner-wrapper .block {
+    background: var(--Charcoal);
+    min-height: 96px;
+    border-radius: 12px;
+    padding: 28px 40px;
+}
+
+.notification-banner-varient1 .banner-wrapper .block>div:nth-of-type(2)>div>p:nth-of-type(2) {
+    display: none;
+}
+
+.notification-banner-varient1 .banner-wrapper .block>div:nth-of-type(2)>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.notification-banner-varient1 .banner-wrapper .block>div:nth-of-type(2)>div>p:nth-of-type(1) {
+    font-family: var(--DM-Sans, sans-serif);
+    font-weight: var(--font-weight-400, 400);
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: var(--letter-spacing, 0);
+    color: var(--Warm-White);
+    display: block;
+    text-align: center;
+}
+
+.notification-banner-varient1 .banner-wrapper .block>div>div>.button-container a {
+    font-family: var(--DM-Sans, sans-serif);
+    font-weight: var(--font-weight-400, 400);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: var(--letter-spacing, 0);
+    color: var(--Charcoal);
+    text-align: center;
+    max-width: 150px;
+    padding: 10px 24px;
+    background-color: var(--Warm-White);
+    border-radius: 100px;
+}
+
+@media (max-width: 768px) {
+    .notification-banner-varient1 .banner-wrapper .block {
+        padding: 32px 24px;
+    }
+
+    .notification-banner-varient1 .banner-wrapper .block>div:nth-of-type(2)>div {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .notification-banner-varient1 .banner-wrapper .block>div:nth-of-type(2)>div>p:nth-of-type(1) {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
 /* notification-banner-varient2 */
+.notification-banner-varient2 .banner-wrapper .block>div:nth-of-type(1) {
+    display: none;
+}
+
+.notification-banner-varient2 .banner-wrapper .block {
+    background: var(--Deep-Blue);
+    min-height: 96px;
+    border-radius: 12px;
+    padding: 28px 40px;
+}
+
+.notification-banner-varient2 .banner-wrapper .block>div:nth-of-type(2)>div>p:nth-of-type(2) {
+    display: none;
+}
+
+.notification-banner-varient2 .banner-wrapper .block>div:nth-of-type(2)>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notification-banner-varient2 .banner-wrapper .block>div:nth-of-type(2)>div>p:nth-of-type(1) {
+    font-family: var(--DM-Sans, sans-serif);
+    font-weight: var(--font-weight-400, 400);
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: var(--letter-spacing, 0);
+    color: var(--Warm-White);
+    display: block;
+    text-align: center;
+}
+
+.notification-banner-varient2 .banner-wrapper .block>div>div>.button-container a {
+    font-family: var(--DM-Sans, sans-serif);
+    font-weight: var(--font-weight-400, 400);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: var(--letter-spacing, 0);
+    color: var(--Warm-White);
+    text-align: center;
+    max-width: 150px;
+    padding: 14px 32px;
+    background-color: var(--Charcoal);
+    border-radius: 100px;
+}
+
+
+@media (max-width: 768px) {
+    .notification-banner-varient2 .banner-wrapper .block {
+        padding: 32px 24px;
+    }
+
+    .notification-banner-varient2 .banner-wrapper .block>div:nth-of-type(2)>div {
+        flex-direction: column;
+    }
+
+    .notification-banner-varient2 .banner-wrapper .block>div:nth-of-type(2)>div>p:nth-of-type(1) {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 24px;
+    }
+
+    .notification-banner-varient2 .banner-wrapper .block>div>div>.button-container,
+    .notification-banner-varient2 .banner-wrapper .block>div>div>.button-container a {
+        width: 100%;
+        max-width: unset;
+    }
+}
+
+
 /* notification-banner-varient3 */
+.notification-banner-varient3 .banner-wrapper .block {
+    padding: 24px;
+}
+
+.notification-banner-varient3 .banner-wrapper .block {
+    background: linear-gradient(91.27deg, var(--Warm-White) 0.37%, #F5E9D5 0.37%, #D79F4B 98.59%);
+    min-height: 76px;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-banner-varient3 .banner-wrapper .block>div:first-child {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.notification-banner-varient3 .banner-wrapper .block>div:first-child picture,
+.notification-banner-varient3 .banner-wrapper .block>div:first-child picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    bottom: -15px;
+    left: 1.5px;
+}
+
+.notification-banner-varient3 .banner-wrapper .block>div:last-child>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    gap: 32px;
+    inset: 0;
+    z-index: 1;
+    padding: 0 24px;
+}
+
+.notification-banner-varient3 .banner-wrapper .block>div>div>p:first-child {
+    font-family: var(--DM-Sans, sans-serif);
+    font-weight: var(--font-weight-400, 400);
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: var(--letter-spacing, 0);
+    color: var(--Charcoal);
+    text-align: center;
+}
+
+.notification-banner-varient3 .banner-wrapper .block>div>div>p:nth-of-type(2) {
+    display: none;
+}
+
+.notification-banner-varient3 .banner-wrapper .block>div>div>.button-container a {
+    font-family: var(--DM-Sans, sans-serif);
+    font-weight: var(--font-weight-400, 400);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: var(--letter-spacing, 0);
+    color: var(--Warm-White);
+    text-align: center;
+    max-width: 153px;
+    padding: 10px 24px;
+    background-color: var(--Charcoal);
+    border-radius: 44px;
+}
+
+@media (max-width: 768px) {
+    .notification-banner-varient3 .banner-wrapper .block {
+        min-height: 144px;
+    }
+
+    .notification-banner-varient3 .banner-wrapper .block>div:last-child>div {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .notification-banner-varient3 .banner-wrapper .block>div>div>p:first-child {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
 
 /* simple-banner-varient1 */
 /* Banner shell */
@@ -8,7 +226,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    background: var(--Charcoal, #1B1B1E);
+    background: var(--Charcoal, var(--Charcoal));
     border-radius: 24px;
     overflow: hidden;
     min-height: 360px;
@@ -71,23 +289,6 @@
     font-size: 16px;
     line-height: 20px;
     letter-spacing: var(--letter-spacing, 0);
-}
-
-.simple-banner-varient1 .banner-wrapper .block>div>div>.button-container a::after {
-    display: unset;
-    content: none;
-}
-
-.simple-banner-varient1 .banner-wrapper .block>div>div.button-container a:hover {
-    text-decoration: none;
-    underline: none;
-}
-
-a:hover,
-a:focus,
-a.button:hover,
-a.button:focus{
-    text-decoration: none;
 }
 
 /* Responsive */
@@ -155,7 +356,7 @@ a.button:focus{
     font-size: 48px;
     line-height: 62px;
     letter-spacing: var(--letter-spacing, 0);
-    color: #FEFEFD;
+    color: var(--Warm-White);
     display: block;
     text-align: center;
     margin-bottom: 32px;
@@ -187,7 +388,7 @@ a.button:focus{
 }
 
 .simple-banner-varient4 .banner-wrapper .block {
-    background: linear-gradient(91.27deg, #FEFEFD 0.37%, #F5E9D5 0.37%, #D79F4B 98.59%);
+    background: linear-gradient(91.27deg, var(--Warm-White) 0.37%, #F5E9D5 0.37%, #D79F4B 98.59%);
     min-height: 282px;
     border-radius: 24px;
     position: relative;
@@ -250,22 +451,13 @@ a.button:focus{
     font-size: 16px;
     line-height: 20px;
     letter-spacing: var(--letter-spacing, 0);
-    color: #FEFEFD;
+    color: var(--Warm-White);
     text-align: center;
     margin-top: 40px;
     max-width: 153px;
     padding: 16px 32px;
-    background-color: #1B1B1E;
+    background-color: var(--Charcoal);
     border-radius: 44px;
-}
-
-.simple-banner-varient4 .banner-wrapper .block>div>div>.button-container a::after {
-    display: unset;
-    content: none;
-}
-
-.simple-banner-varient4 .banner-wrapper .block>div>div.button-container a:hover {
-    text-decoration: none;
 }
 
 @media (max-width: 768px) {
@@ -300,4 +492,26 @@ a.button:focus{
         max-width: unset;
         width: 100%;
     }
+}
+
+
+.banner-wrapper .block>div>div>.button-container {
+    line-height: 0;
+}
+
+.banner-wrapper .block>div>div>.button-container a::after {
+    display: unset;
+    content: none;
+}
+
+.banner-wrapper .block>div>div.button-container a:hover {
+    text-decoration: none;
+    underline: none;
+}
+
+a:hover,
+a:focus,
+a.button:hover,
+a.button:focus {
+    text-decoration: none;
 }
