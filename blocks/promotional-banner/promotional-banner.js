@@ -33,6 +33,14 @@ function bannerType1(block) {
   source = block.querySelectorAll("img").length > 1 ? source : block.querySelectorAll("img")[0].src.trim();
   let heading = block.querySelector("h2").innerText.trim();
   let description = block.querySelector("p").innerText.trim();
+  let buttons = block.querySelectorAll("a");
+  let fisrtAnchorText = buttons[0]?.innerText.trim() || "";
+  let fisrtAnchorHref = buttons[0]?.href.trim() || "";
+  let fisrtAnchorTitle = buttons[0]?.title.trim() || "";
+  let secondAnchorText = buttons[1]?.innerText?.trim() || "";
+  let secondAnchorHref = buttons[1]?.href.trim() || "";
+  let secondAnchorTitle = buttons[1]?.title.trim() || "";
+
   const promotionalBanner =
     div({
         class: "promotionalbanner promotionalbanner-content block type1",
@@ -71,17 +79,17 @@ function bannerType1(block) {
               class: "redirections"
             },
             a({
-                href: "/footer",
-                title: "Explore Benefits"
+                href: `${fisrtAnchorHref}`,
+                title: `${fisrtAnchorTitle}`
               },
-              "Explore Benefits"
+              fisrtAnchorText
             ),
             " ",
             a({
-                href: "/us",
-                title: "Know More"
+                href: `${secondAnchorHref}`,
+                title: `${secondAnchorTitle}`
               },
-              "Know More"
+              secondAnchorText
             )
           )
         )
@@ -97,6 +105,13 @@ function bannerType3(block) {
   source = block.querySelectorAll("img").length > 1 ? source : block.querySelectorAll("img")[0].src.trim();
   let heading = block.querySelector("h2").innerText.trim();
   let description = block.querySelector("p").innerText.trim();
+    let buttons = block.querySelectorAll("a");
+  let fisrtAnchorText = buttons[0]?.innerText.trim() || "";
+  let fisrtAnchorHref = buttons[0]?.href.trim() || "";
+  let fisrtAnchorTitle = buttons[0]?.title.trim() || "";
+  let secondAnchorText = buttons[1]?.innerText?.trim() || "";
+  let secondAnchorHref = buttons[1]?.href.trim() || "";
+  let secondAnchorTitle = buttons[1]?.title.trim() || "";
   const promotionalBanner =
     div({
         class: "promotionalbanner promotionalbanner-content block type1",
@@ -153,17 +168,16 @@ function bannerType3(block) {
                 class: "redirections"
               },
               a({
-                  href: "/footer",
-                  title: "Explore Benefits"
+                  href: `${fisrtAnchorHref}`,
+                  title: `${fisrtAnchorTitle}`
                 },
-                "Explore Benefits"
+                fisrtAnchorText
               ),
-              " ",
               a({
-                  href: "/us",
-                  title: "Know More"
+                  href: `${secondAnchorHref}`,
+                  title: `${secondAnchorTitle}`
                 },
-                "Know More"
+                secondAnchorText
               )
             )
           )
@@ -181,7 +195,16 @@ function bannerType4(block) {
   source = block.querySelectorAll("img").length > 1 ? source : block.querySelectorAll("img")[0].src.trim();
   let heading = block.querySelector("h2").innerText.trim();
   let description = block.querySelector("p").innerText.trim();
-  block.closest(".promotional-banner-container").style.background = `url(${source}) center / cover no-repeat`
+  block.closest(".promotional-banner-container").style.background = `url(${source}) center / cover no-repeat`;
+
+    let buttons = block.querySelectorAll("a");
+  let fisrtAnchorText = buttons[0]?.innerText.trim() || "";
+  let fisrtAnchorHref = buttons[0]?.href.trim() || "";
+  let fisrtAnchorTitle = buttons[0]?.title.trim() || "";
+  let secondAnchorText = buttons[1]?.innerText?.trim() || "";
+  let secondAnchorHref = buttons[1]?.href.trim() || "";
+  let secondAnchorTitle = buttons[1]?.title.trim() || "";
+
   const promotionalBanner =
     div({
         class: "promotionalbanner promotionalbanner-content block type1",
@@ -207,17 +230,17 @@ function bannerType4(block) {
               class: "redirections"
             },
             a({
-                href: "/footer",
-                title: "Explore Benefits"
+                href: `${fisrtAnchorHref}`,
+                title: `${fisrtAnchorTitle}`
               },
-              "Explore Benefits"
+              fisrtAnchorText
             ),
             " ",
             a({
-                href: "/us",
-                title: "Know More"
+                href: `${secondAnchorHref}`,
+                title: `${secondAnchorTitle}`
               },
-              "Know More"
+              secondAnchorText
             )
           )
         )

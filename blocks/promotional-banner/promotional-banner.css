@@ -9,6 +9,7 @@
 .banner-varient1 img {
     margin-bottom: -8px;
     max-width: none;
+    width: -webkit-fill-available;
 }
 
 .promotional-banner-container .promotionalbanner-wrapper {
@@ -21,7 +22,8 @@
 
 .banner-varient1 .bannner-image {
     padding-top: 61px;
-    width: 56%;
+    /* width: 56%; */
+        width: 61.7%;
 }
 
 .banner-varient1 .promotionalbanner {
@@ -54,6 +56,7 @@
 .banner-varient1 .banner-conetent {
     max-width: 462px;
     width: 40%;
+    margin-left: -70px;
 }
 
 .promotional-banner-container .redirections {
@@ -136,6 +139,7 @@ max-width: unset;
         padding: 56px 24px 0px;
         width: 100%;
         max-width: 100%;
+        margin-left: unset;
     }
 
     .promotional-banner-container .redirections {
@@ -218,6 +222,9 @@ max-width: unset;
         justify-content: center;
         /* align-items: center; */
         min-height: 100vh !important;
+    }
+    .promotional-banner-container.banner-varient4 .promotional-banner-wrapper {
+      margin: unset;
     }
 }
 

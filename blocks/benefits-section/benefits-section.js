@@ -12,19 +12,25 @@ export default function decorate(block) {
 
   if (getType.contains("type-1")) {
     block.closest(".benefits-section-container").classList.add("benefits-section1");
-    block.append(cardsBenefits(block));
+    // block.append(cardsBenefits(block));
   } else if (getType.contains("type-2")) {
     block.closest(".benefits-section-container").classList.add("benefits-section2");
-    block.append(cardsBenefits(block));
+    // block.append(cardsBenefits(block));
   } else {
-    block.append(cardsBenefits(block));
   }
+  block.append(cardsBenefits(block));
 }
 
 function cardsBenefits(block) {
   let source = block.querySelector("img").src.trim();
   let heading = block.querySelector("h2").innerText.trim();
   let description = block.querySelector("p").innerText.trim();
+
+   let buttons = block.querySelectorAll("a");
+  let fisrtAnchorText = buttons[0]?.innerText.trim() || "";
+  let fisrtAnchorHref = buttons[0]?.href.trim() || "";
+  let fisrtAnchorTitle = buttons[0]?.title.trim() || "";
+
   const benefitsSection =
     div({
         class: "benefits-section block",
@@ -55,10 +61,10 @@ function cardsBenefits(block) {
               class: "cta"
             },
             a({
-              href: "#",
-              title: "Know More",
+              href: `${fisrtAnchorText}`,
+              title: `${fisrtAnchorText}`,
               class: "button"
-            }, "Know More")
+            }, fisrtAnchorText)
           )
         )
       ),
