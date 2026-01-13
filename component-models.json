@@ -197,6 +197,10 @@
             "value": "blog-cards2"
           },
           {
+            "name": "Products Default Class",
+            "value": "product-variant"
+          },
+          {
             "name": "Products v1",
             "value": "product-variant1"
           },

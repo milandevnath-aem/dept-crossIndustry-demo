@@ -1112,3 +1112,22 @@ gap: 16px;
 .blog-cards2 .default-content-wrapper .button-container a:focus {
   text-decoration: none;
 }
+
+
+
+
+
+
+/* product variant1 */
+.product-variant1.cards-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-variant1.cards-container h2 {
+  color: #1B1B1E;
+font-family: "DM Sans";
+font-size: 30px;
+font-weight: 500;
+line-height: 40px;
+}
