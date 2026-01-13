@@ -102,6 +102,19 @@ p{
   --nav-height: 64px;
 }
 
+/* Custom CSS */
+:root {
+  --Silver: #D8D8D6;
+  --Charcoal: #1B1B1E;
+  --Gold: #D79F4B;
+  --Warm-White: #FEFEFD;
+  --Deep-Blue: #1F4DA8;
+  --DM-Sans: 'DM Sans', sans-serif;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --letter-spacing: 0;
+}
+
 /* fallback fonts */
 @font-face {
   font-family: roboto-condensed-fallback;
