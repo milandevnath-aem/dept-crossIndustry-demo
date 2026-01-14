@@ -82,12 +82,12 @@ export default function decorate(block) {
   block.textContent = '';
   block.append(ul);
   let classlistExists = block.closest(".cards-container").classList;
-  if (classlistExists.contains("blog-cards") || classlistExists.contains("blog-cards2")) {
+  if (classlistExists.contains("blog-cards") || classlistExists.contains("blog-cards2") || classlistExists.contains("product-variant1")) {
     block.classList.add('swiper');
     block.querySelector("ul").classList.add("swiper-wrapper");
     Array.from(block.children[0].children).forEach((element) => {
       element.classList.add('swiper-slide');
-      element.classList.add('blogs-card');
+      // element.classList.add('blogs-card');
       // swiperWrapper.appendChild(element);
     });
     const paginationEl = document.createElement('div');
@@ -104,6 +104,9 @@ export default function decorate(block) {
     } 
     if (classlistExists.contains("blog-cards2")){
       swiperVariantForblogs2()
+    }
+    if(classlistExists.contains("product-variant1")) {
+     ProductSwiperVariant1()
     }
   }
     }
@@ -160,5 +163,18 @@ export default function decorate(block) {
       slidesPerView: 2.5,
     },
   },
+        });
+    }
+
+
+        function ProductSwiperVariant1() {
+      // Initialize Swiper with responsive breakpoints (mobile shows 2.5)
+        Swiper(".product-variant1 .swiper", {
+          slidesPerView: 1,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            type: "bullets",
+          }
         });
     }

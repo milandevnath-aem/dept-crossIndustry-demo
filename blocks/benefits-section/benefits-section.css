@@ -18,6 +18,12 @@
     line-height: 40px;
 }
 
+@media screen and (min-width: 450px) and (max-width: 1024px) {
+    .benefits-section-container .default-content-wrapper:first-child {
+                left: 39px !important;
+        top: 70px !important;
+    }
+}
 .benefits-section-container {
     max-width: 1440px;
     margin: 0 auto !important;
