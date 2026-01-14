@@ -63,3 +63,14 @@
   border-top: 1px solid #dadada;
   background-color: var(--background-color);
 }
+.promotional-banner-container,
+.cards-container,
+.carousel-container,
+.benefits-section-container,
+.nav-wrapper,
+.header-wrapper,
+.track-record-varient1,
+.process-step-varient1,
+.simple-banner-varient3 {
+  display: none;
+}

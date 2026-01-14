@@ -33,7 +33,7 @@ export default function decorate(block) {
     });
   }
 
-  /*  Variant + banner logic */
+  /*  Variant logic */
   const container = block.closest(".track-record-container");
   const classes = block.classList;
   const TYPE_MAP = {
