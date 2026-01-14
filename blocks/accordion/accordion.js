@@ -23,18 +23,4 @@ export default function decorate(block) {
     details.append(summary, body);
     row.replaceWith(details);
   });
-  const container = block.closest(".accordion-container");
-  const classes = block.classList;
-  const TYPE_MAP = {
-    "accordion-type-1": { variant: "accordion-varient1" },
-    "accordion-type-2": { variant: "accordion-varient2" },
-    "accordion-type-3": { variant: "accordion-varient3" },
-    "accordion-type-4": { variant: "accordion-varient4" },
-  };
-  // Find matching type
-  const matchKey = Object.keys(TYPE_MAP).find((key) => classes.contains(key));
-  // Fallback to type-1
-  const { variant } = TYPE_MAP[matchKey] || TYPE_MAP["type-1"];
-  // Apply variant class
-  container?.classList.add(variant);
 }

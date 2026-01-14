@@ -38,31 +38,6 @@
       "id": "accordion-item",
       "fields": [
         {
-          "component": "select",
-          "name": "classes",
-          "value": "",
-          "label": "select type",
-          "valueType": "string",
-          "options": [
-            {
-              "name": "Accordion Type 1",
-              "value": "accordion-type-1"
-            },
-            {
-              "name": "Accordion Type 2",
-              "value": "accordion-type-2"
-            },
-            {
-              "name": "Accordion Type 3",
-              "value": "accordion-type-3"
-            },
-            {
-              "name": "Accordion Type 4",
-              "value": "accordion-type-4"
-            }
-          ]
-        },
-        {
           "component": "text",
           "valueType": "string",
           "name": "summary",
