@@ -185,6 +185,103 @@
         "label": "Style",
         "options": [
           {
+            "name": "Varient1",
+            "value": "varient1"
+          },
+          {
+            "name": "Varient2",
+            "value": "varient2"
+          },
+          {
+            "name": "Varient3",
+            "value": "varient3"
+          },
+          {
+            "name": "Emphasis",
+            "value": "emphasis"
+          },
+          {
+            "name": "Border",
+            "value": "border"
+          },
+          {
+            "name": "Highlight",
+            "value": "highlight"
+          },
+          {
+            "name": "No Padding",
+            "value": "no-padding"
+          },
+          {
+            "name": "No Margin",
+            "value": "no-margin"
+          },
+          {
+            "name": "Full Width",
+            "value": "full-width"
+          },
+          {
+            "name": "Narrow Width",
+            "value": "narrow-width"
+          },
+          {
+            "name": "Contained",
+            "value": "contained"
+          },
+          {
+            "name": "Background Color",
+            "value": "background-color"
+          },
+          {
+            "name": "Dark Background",
+            "value": "dark-background"
+          },
+          {
+            "name": "Light Background",
+            "value": "light-background"
+          },
+          {
+            "name": "Overlay Background",
+            "value": "overlay-background"
+          },
+          {
+            "name": "Shadow",
+            "value": "shadow"
+          },
+          {
+            "name": "Inset Shadow",
+            "value": "inset-shadow"
+          },
+          {
+            "name": "Lifted Shadow",
+            "value": "lifted-shadow"
+          },
+          {
+            "name": "Divider",
+            "value": "divider"
+          },
+          {
+            "name": "Uppercase",
+            "value": "uppercase"
+          },
+          {
+            "name": "Lowercase",
+            "value": "lowercase"
+          },
+          {
+            "name": "Capitalize",
+            "value": "capitalize"
+          },
+          {
+            "name": "Center Text",
+            "value": "center-text"
+          },
+          {
+            "name": "Right Align Text",
+            "value": "right-align-text"
+          },
+          
+          {
             "name": "Highlight",
             "value": "highlight"
           }
