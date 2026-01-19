@@ -26,13 +26,24 @@
       "theme-configurator",
       "theme-preview",
       "title",
-      "video"
+      "video",
+      "blogs",
+      "promotionalbanner",
+      "benefitssection",
+      "containercomponent",
+      "productssection"
     ]
   },
   {
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "productssection",
+    "components": [
+      "cards"
     ]
   },
   {

@@ -26,7 +26,11 @@
       "theme-configurator",
       "theme-preview",
       "title",
-      "video"
+      "video",
+      "blogs",
+      "promotionalbanner",
+      "benefitssection",
+      "containercomponent"
     ]
   },
   {

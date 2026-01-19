@@ -13,7 +13,7 @@ export default function decorate(block) {
   const slider = document.createElement('ul');
   const leftContent = document.createElement('div');
   [...block.children].forEach((row) => {
-    if (i > 3) {
+    if (i > 0) {
       const li = document.createElement('li');
       
       // Read card style from the third div (index 2)
@@ -106,3 +106,4 @@ export default function decorate(block) {
   block.append(slider);
   createSlider(block);
 }
+

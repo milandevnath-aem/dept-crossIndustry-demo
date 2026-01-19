@@ -463,7 +463,9 @@
 
 }
 
-
+.carousel-container .carousel-wrapper .carousel {
+  padding: unset !important;
+}
 
 
 

@@ -6,10 +6,11 @@ export default async function decorate(block) {
 }
 */
 
-import { createOptimizedPicture } from '../../scripts/aem.js';
+import { createOptimizedPicture, loadCSS } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
-
+import Swiper from './swiper.min.js';
 export default function decorate(block) {
+  loadCSS(`${window.hlx.codeBasePath}/blocks/cards/swiper.min.css`);
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
@@ -78,7 +79,102 @@ export default function decorate(block) {
     moveInstrumentation(img, optimizedPic.querySelector('img'));
     img.closest('picture').replaceWith(optimizedPic);
   });
- 
   block.textContent = '';
   block.append(ul);
-}
+  let classlistExists = block.closest(".cards-container").classList;
+  if (classlistExists.contains("blog-cards") || classlistExists.contains("blog-cards2") || classlistExists.contains("product-variant1")) {
+    block.classList.add('swiper');
+    block.querySelector("ul").classList.add("swiper-wrapper");
+    Array.from(block.children[0].children).forEach((element) => {
+      element.classList.add('swiper-slide');
+      // element.classList.add('blogs-card');
+      // swiperWrapper.appendChild(element);
+    });
+    const paginationEl = document.createElement('div');
+    paginationEl.classList.add('swiper-pagination');
+    block.appendChild(paginationEl);
+    // if(classlistExists.contains("blog-cards")) {
+    //   swiperVariantForblogs1()
+    // } else {
+    //   swiperVariantForblogs2()
+    // }
+
+      if(classlistExists.contains("blog-cards")) {
+      swiperVariantForblogs1()
+    } 
+    if (classlistExists.contains("blog-cards2")){
+      swiperVariantForblogs2()
+    }
+    if(classlistExists.contains("product-variant1")) {
+     ProductSwiperVariant1()
+    }
+  }
+    }
+
+
+    function swiperVariantForblogs1() {
+      // Initialize Swiper with responsive breakpoints (mobile shows 2.5)
+        Swiper(".blog-cards .swiper", {
+          slidesPerView: 3,
+          observer: true,
+          observeParents: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            type: "bullets",
+          },
+           breakpoints: {
+    0: {
+      slidesPerView: 1,     // fallback (below 375)
+    },
+    375: {
+      slidesPerView: 1.5,   // 👈 375–1023
+    },
+    767: {
+      slidesPerView: 2,   // 👈 375–1023
+    },
+    1024: {
+      slidesPerView: 3,     // 👈 1024+
+    },
+  },
+        });
+    }
+
+    function swiperVariantForblogs2() {
+      // Initialize Swiper with responsive breakpoints (mobile shows 2.5)
+        Swiper(".blog-cards2 .swiper", {
+          slidesPerView: 2.5,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            type: "bullets",
+          },
+          breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    375: {
+      slidesPerView: 1.5,
+    },
+    767: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 2.5,
+    },
+  },
+        });
+    }
+
+
+        function ProductSwiperVariant1() {
+      // Initialize Swiper with responsive breakpoints (mobile shows 2.5)
+        Swiper(".product-variant1 .swiper", {
+          slidesPerView: 1,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            type: "bullets",
+          }
+        });
+    }

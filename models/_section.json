@@ -176,7 +176,11 @@
       	"title",
       	"video",
         "form",
-        "embed-adaptive-form"
+        "embed-adaptive-form",
+        "blogs",
+        "promotionalbanner",
+        "benefitssection",
+        "containercomponent"
       ]
     }
   ]
