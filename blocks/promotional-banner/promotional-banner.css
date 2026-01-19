@@ -1,0 +1,323 @@
+/* variant 1 */
+.banner-varient1 {
+    padding-top: 60px;
+    background-color: #C8E5F5;
+    padding-top: 82px;
+    margin-top: 44px !important;
+}
+
+.banner-varient1 img {
+    margin-bottom: -8px;
+    max-width: none;
+    width: -webkit-fill-available;
+}
+
+.promotional-banner-container .promotionalbanner-wrapper {
+    padding: 0px;
+    max-width: none;
+    margin: 0 auto;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.banner-varient1 .bannner-image {
+    padding-top: 61px;
+    /* width: 56%; */
+        width: 61.7%;
+}
+
+.banner-varient1 .promotionalbanner {
+    position: relative;
+    display: flex;
+}
+
+.promotional-banner-container h2 {
+    color: #1B1B1E;
+    font-family: "DM Sans";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 54px;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.promotional-banner-container p {
+    margin-top: 0;
+    margin-bottom: 48px;
+    color: #5E5E60;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.banner-varient1 .banner-conetent {
+    max-width: 462px;
+    width: 40%;
+    margin-left: -70px;
+}
+
+.promotional-banner-container .redirections {
+    display: flex;
+    gap: 16px;
+}
+
+.promotional-banner-container .redirections a::after {
+    display: none;
+}
+
+.promotional-banner-container .redirections a:hover,
+.promotional-banner-container .redirections a:focus {
+    text-decoration: none;
+}
+
+.promotional-banner-container .redirections a:first-child {
+    height: 52px;
+    padding: 16px 48px;
+    border-radius: 100px;
+    background: #1B1B1E;
+    color: #FFF;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.promotional-banner-container .redirections a:nth-child(2) {
+    padding: 16px 48px;
+    border-radius: 100px;
+    border: 1px solid #1B1B1E;
+    color: #1B1B1E;
+
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+.promotional-banner-container .promotional-banner-wrapper {
+padding: 0px;
+max-width: unset;
+}
+
+@media screen and (max-width: 1024px) {
+    .banner-varient1 {
+        margin-top: 90px !important;
+        background-size: contain;
+    }
+
+    .banner-varient1 .promotionalbanner {
+        display: flex;
+        flex-direction: column-reverse;
+        overflow: hidden;
+    }
+
+    .promotional-banner-container h2 {
+        line-height: 34px;
+        font-size: 30px;
+    }
+
+    .promotional-banner-container p {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 24px;
+    }
+
+    .banner-varient1 .bannner-image {
+        width: 100%;
+        padding-top: 0px;
+    }
+
+    .banner-varient1 img {
+        width: 100%;
+    }
+
+    .banner-varient1 .banner-conetent {
+        padding: 56px 24px 0px;
+        width: 100%;
+        max-width: 100%;
+        margin-left: unset;
+    }
+
+    .promotional-banner-container .redirections {
+        margin-bottom: 38px;
+    }
+
+    .promotional-banner-container .redirections a:first-child {
+        padding: 12px 24px;
+        line-height: 28px;
+        font-size: 14px;
+    }
+
+    .promotional-banner-container .redirections a:nth-child(2) {
+        padding: 12px 24px;
+        line-height: 28px;
+        font-size: 14px;
+    }
+
+
+    /* variant 2 */
+    .banner-varient2 .promotionalbanner-content {
+        flex-direction: column;
+        padding: 24px !important;
+    }
+
+    .banner-varient2 .bannner-image {
+        width: 100% !important;
+        margin-right: 0px !important;
+        margin-bottom: 16px;
+
+    }
+
+    .banner-varient2 .banner-conetent {
+        width: 100% !important;
+    }
+
+    .banner-varient2.promotional-banner-container h2 {
+        margin-bottom: 8px;
+    }
+
+    .banner-varient2.promotional-banner-container .redirections {
+        margin-bottom: 0px;
+    }
+
+    /* varient 3 */
+    .desktop-img {
+        display: none;
+    }
+
+    .mob-img {
+        display: block !important;
+    }
+
+    .promotional-banner-container.banner-varient3 .grid-content {
+        flex-direction: column;
+        align-items: initial !important;
+    }
+
+    .bottom-content {
+        padding: 24px;
+    }
+
+    .banner-varient3 .banner-conetent {
+        padding: 0px !important;
+    }
+
+    .promotional-banner-container.banner-varient3 .grid-content h2 {
+        padding: 24px;
+    }
+
+    /* variant 4 */
+    .banner-varient4 .banner-conetent {
+        padding: 16px !important;
+        width: 91% !important;
+        margin: 32px !important;
+    }
+
+    .promotional-banner-container.banner-varient4 {
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        min-height: 100vh !important;
+    }
+    .promotional-banner-container.banner-varient4 .promotional-banner-wrapper {
+      margin: unset;
+    }
+}
+
+/* variant 2 */
+.banner-varient2 .promotionalbanner-content {
+    display: flex;
+    padding: 60px 88px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.banner-varient2 .bannner-image {
+    width: 49.8%;
+    margin-right: 105px;
+}
+
+.banner-varient2 img {
+    border-radius: 20px;
+    width: 100%;
+}
+
+.banner-varient2 .banner-conetent {
+    width: 43.6%;
+}
+
+
+/* variant 3 */
+.promotional-banner-container.banner-varient3 .promotionalbanner-wrapper {
+    max-width: none;
+}
+
+.banner-varient3 .banner-conetent {
+    padding: 60px 88px;
+}
+
+.banner-varient3 .bannner-image {
+    width: 100%;
+}
+
+.mob-img {
+    display: none;
+}
+
+.banner-varient3 img {
+    width: 100%;
+}
+
+.banner-varient3 .promotionalbanner-content {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+}
+
+.promotional-banner-container.banner-varient3 p {
+    margin-bottom: 25px;
+}
+
+.promotional-banner-container.banner-varient3 .grid-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.promotional-banner-container.banner-varient3 .grid-content h2 {
+    margin-bottom: 0px;
+}
+
+.promotional-banner-container.banner-varient3 .grid-content .redirections {
+    margin-bottom: 0px;
+}
+
+/* variant 4 */
+
+.banner-varient4 {
+    min-height: 490px !important;
+}
+
+.banner-varient4 .promotionalbanner-content {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    /* padding-bottom: 100px; */
+}
+
+.banner-varient4 .banner-conetent {
+    padding: 32px;
+    border-radius: 12px;
+    background: #FFF;
+    margin-top: 55px;
+    width: 41.3%;
+    margin-right: 88px;
+}
+
+.banner-varient4 .redirections {
+    margin-bottom: 0px;
+}
