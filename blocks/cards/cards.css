@@ -1252,6 +1252,19 @@ background: #D79F4B;
     position: absolute;
     left: 0;
 }
+
+.products .cards .cards-card-body li::after {
+    content: "";
+    height: 5px;
+    width: 9px;
+    position: absolute;
+    left: 3px;
+    top: 5px;
+    border: 0.3px solid #1B1B1E;
+    border-width: 2px 2px 0px 0px;
+    transform: rotate(124deg);
+}
+
 .products .cards > ul > li .cards-card-body p:last-child {
 display: flex;
 /* justify-content: center; */
@@ -1304,7 +1317,7 @@ display: none;
     top: -62px;
     transform: rotate(3deg);
 } */
- .products .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-horizontal.swiper-pagination-bullets {
+ .products .swiper-horizontal>.swiper-pagination-bullets {
   text-align: center;
  }
 
