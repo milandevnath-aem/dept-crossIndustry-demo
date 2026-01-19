@@ -176,6 +176,7 @@
 
     .benefits-section2 .benefits-section-wrapper {
         height: 445px !important;
+        width: 100% !important;
     }
 }
 
