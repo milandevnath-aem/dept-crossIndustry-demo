@@ -187,7 +187,16 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Footer Main",
+            "value": "footer-main"
+          },
+          {
+            "name": "Footer Bottom",
+            "value": "footer-bottom"
           }
+
         ]
       }
     ]

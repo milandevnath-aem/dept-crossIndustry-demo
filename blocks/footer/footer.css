@@ -39,3 +39,49 @@ footer .footer a:hover {
     padding: 50px 32px;
   }
 }
+
+
+
+
+.accordion-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: 0 auto !important;
+    background: #E2F1FB;
+    padding: 100px 88px 30px;
+}
+
+.accordion-container .default-content-wrapper {
+  display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+    gap: 24px;
+    width: 31.1%;
+}
+.accordion-container .default-content-wrapper p {
+  margin: 0px;
+}
+.accordion-container .default-content-wrapper p:first-child {
+  display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.accordion-container .default-content-wrapper ul{
+    display: flex;
+    align-items: center ;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    gap: 12px
+    ;
+}
+.accordion-container .default-content-wrapper ul li a::after {
+  display: none;
+}
+.accordion-container .accordion-wrapper {
+    margin: 0px;
+    padding: 0px;
+    width: 52.45%;
+}
