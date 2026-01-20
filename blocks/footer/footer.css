@@ -43,7 +43,7 @@ footer .footer a:hover {
 
 
 
-.accordion-container {
+.footer-main {
     display: flex;
     justify-content: space-between;
     max-width: 1440px;
@@ -52,7 +52,7 @@ footer .footer a:hover {
     padding: 100px 88px 30px;
 }
 
-.accordion-container .default-content-wrapper {
+.footer-main .default-content-wrapper {
   display: flex;
     flex-direction: column;
     padding: 0px;
@@ -60,15 +60,15 @@ footer .footer a:hover {
     gap: 24px;
     width: 31.1%;
 }
-.accordion-container .default-content-wrapper p {
+.footer-main .default-content-wrapper p {
   margin: 0px;
 }
-.accordion-container .default-content-wrapper p:first-child {
+.footer-main .default-content-wrapper p:first-child {
   display: flex;
     gap: 8px;
     align-items: center;
 }
-.accordion-container .default-content-wrapper ul{
+.footer-main .default-content-wrapper ul{
     display: flex;
     align-items: center ;
     list-style: none;
@@ -77,10 +77,10 @@ footer .footer a:hover {
     gap: 12px
     ;
 }
-.accordion-container .default-content-wrapper ul li a::after {
+.footer-main .default-content-wrapper ul li a::after {
   display: none;
 }
-.accordion-container .accordion-wrapper {
+.footer-main .accordion-wrapper {
     margin: 0px;
     padding: 0px;
     width: 52.45%;

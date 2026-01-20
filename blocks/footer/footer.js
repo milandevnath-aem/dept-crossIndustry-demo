@@ -34,7 +34,7 @@ export default async function decorate(block) {
   const footerPath = parentPath=='/' ? footerMeta ? new URL(footerMeta, window.location).pathname : '/footer' : footerMeta ? new URL(footerMeta, window.location).pathname : parentPath+'/footer';
   //console.log("footerPath footer: ", footerPath);
   */
-  
+  footerPath = "/footer"
   const fragment = await loadFragment(footerPath);
 
   // decorate footer DOM
