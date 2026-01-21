@@ -302,10 +302,6 @@
     margin-bottom: 24px;
   }
 
-  .varient1.accordion-container .combined-wrapper {
-    margin-top: 0;
-  }
-
   .varient1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary,
   .varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary {
     padding: 24px 0;
