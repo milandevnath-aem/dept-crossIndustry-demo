@@ -1,4 +1,7 @@
 /* notification-banner-varient1 */
+.notification-banner-varient1{
+    background: var(--Charcoal);
+}
 .notification-banner-varient1 .banner-wrapper .block>div:nth-of-type(1) {
     display: none;
 }
