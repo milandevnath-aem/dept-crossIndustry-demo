@@ -189,6 +189,7 @@
 .varient1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body ul {
   list-style: none;
   padding: 0;
+  width: 100%;
 }
 
 /* .varient 2 */
@@ -279,17 +280,32 @@
     padding-bottom: 24px;
   }
 
+  .varient1.accordion-container {
+    padding: 0 24px;
+  }
+
+  .varient1.accordion-container .combined-wrapper {
+    flex-direction: column;
+  }
+
+  .varient1.accordion-container .combined-wrapper .accordion-item-wrapper {
+    width: 100%;
+  }
+
+  .varient1 .default-content-wrapper>p,
   .varient2 .default-content-wrapper>p {
     font-size: 24px;
     margin-bottom: 0;
   }
 
+  .varient1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary,
   .varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary {
     padding: 24px 0;
     font-size: 14px;
     line-height: 20px;
   }
 
+  .varient1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion .accordion-item-body p,
   .varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion .accordion-item-body p {
     font-size: 14px;
     line-height: 20px;
@@ -299,6 +315,7 @@
     padding-bottom: 8px;
   }
 
+  .varient1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart,
   .varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart {
     width: 100%;
   }
