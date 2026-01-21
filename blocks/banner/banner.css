@@ -377,6 +377,10 @@
     margin-bottom: 32px;
 }
 
+.simple-banner-varient2 .banner-wrapper .block>div ul {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .simple-banner-varient2 .banner-wrapper .block {
         padding: 32px 24px;
