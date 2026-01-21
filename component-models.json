@@ -185,6 +185,18 @@
         "label": "Style",
         "options": [
           {
+            "name": "Varient1",
+            "value": "varient1"
+          },
+          {
+            "name": "Varient2",
+            "value": "varient2"
+          },
+          {
+            "name": "Varient3",
+            "value": "varient3"
+          },
+          {
             "name": "Highlight",
             "value": "highlight"
           }
