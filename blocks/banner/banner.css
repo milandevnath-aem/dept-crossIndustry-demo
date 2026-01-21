@@ -14,6 +14,10 @@
     display: none;
 }
 
+.notification-banner-varient1 .banner-wrapper .block>div ul {
+    display: none;
+}
+
 .notification-banner-varient1 .banner-wrapper .block>div:nth-of-type(2)>div {
     display: flex;
     align-items: center;
@@ -75,6 +79,10 @@
 }
 
 .notification-banner-varient2 .banner-wrapper .block>div:nth-of-type(2)>div>p:nth-of-type(2) {
+    display: none;
+}
+
+.notification-banner-varient2 .banner-wrapper .block>div ul {
     display: none;
 }
 
@@ -187,6 +195,10 @@
 }
 
 .notification-banner-varient3 .banner-wrapper .block>div>div>p:nth-of-type(2) {
+    display: none;
+}
+
+.notification-banner-varient3 .banner-wrapper .block>div ul {
     display: none;
 }
 
@@ -653,4 +665,10 @@ a:focus,
 a.button:hover,
 a.button:focus {
     text-decoration: none;
+}
+
+.banner.simple-banner-type-1>div:last-child>div ul,
+.banner.simple-banner-type-2>div:last-child>div ul
+.banner.simple-banner-type-3>div:last-child>div ul {
+    display: none;
 }
