@@ -42,16 +42,27 @@ footer .footer a:hover {
 
 
 
-
+.footer-wrapper {
+  background: #E2F1FB !important;
+  color: #1B1B1E !important;
+}
 .footer-main {
     display: flex;
     justify-content: space-between;
-    max-width: 1440px;
-    margin: 0 auto !important;
+    /* max-width: 1440px;
+    margin: 0 auto !important; */
     background: #E2F1FB;
-    padding: 100px 88px 30px;
+    /* padding: 100px 88px 30px; */
+    gap: 110px;
 }
-
+.footer-wrapper .footer  > div{
+  max-width: 1440px;
+  margin: 0 auto;
+ padding: 100px 88px 30px;
+ display: flex;
+     flex-direction: column;
+    gap: 100px;
+}
 .footer-main .default-content-wrapper {
   display: flex;
     flex-direction: column;
@@ -62,11 +73,21 @@ footer .footer a:hover {
 }
 .footer-main .default-content-wrapper p {
   margin: 0px;
+  color: #1B1B1E;
+font-family: Inter;
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
 }
 .footer-main .default-content-wrapper p:first-child {
   display: flex;
     gap: 8px;
     align-items: center;
+    color: #1B1B1E;
+font-family: "DM Sans";
+font-size: 24px;
+font-weight: 500;
+line-height: 34px;
 }
 .footer-main .default-content-wrapper ul{
     display: flex;
@@ -74,8 +95,7 @@ footer .footer a:hover {
     list-style: none;
     margin: 0px;
     padding: 0px;
-    gap: 12px
-    ;
+    gap: 12px;
 }
 .footer-main .default-content-wrapper ul li a::after {
   display: none;
@@ -83,5 +103,153 @@ footer .footer a:hover {
 .footer-main .accordion-wrapper {
     margin: 0px;
     padding: 0px;
-    width: 52.45%;
+    /* width: 52.45%; */
+    width: 69.45%;
+}
+.footer-main .accordion-wrapper .accordion{
+  display: flex;
+  justify-content: space-between;
+  gap: 64px;
+}
+.accordion-wrapper .accordion details {
+  border: none;
+  margin-top: 0px;
+}
+.accordion-wrapper .accordion details summary {
+padding: 0px;
+margin-bottom: 16px;
+pointer-events: none;
+}
+.accordion-wrapper .accordion details summary p{
+color: #1B1B1E;
+font-family: Inter;
+font-size: 14px;
+font-weight: 600;
+line-height: 20px;
+opacity: 0.7;
+}
+.accordion details summary::after {
+  display: none;
+}
+.accordion details summary:focus,
+.accordion details summary:hover {
+  background: transparent;
+}
+.accordion details[open] summary {
+  background: transparent;
+}
+.accordion details[open] .accordion-item-body {
+      border-top: none;
+    background-color: transparent;
+    padding: 0px;
+}
+.accordion details .accordion-item-body ul{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+      display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.footer-main .accordion-wrapper .accordion a{
+  opacity: 0.7;
+}
+.footer ul li a{
+  text-decoration: none;
+  color: #1B1B1E;
+font-family: Inter;
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+}
+.footer ul li a:hover {
+  color: #1B1B1E;
+}
+.footer ul li a::after {
+display: none;
+}
+
+.footer .footer-bottom {
+    border-top: 0.5px solid #B2B3B5;
+    padding-top: 30px;
+}
+.footer-bottom .default-content-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-bottom .default-content-wrapper p {
+
+}
+.footer-bottom .default-content-wrapper ul{
+    display: flex;
+    align-items: center;
+    gap: 21px;
+    list-style: none;
+}
+.footer-bottom .default-content-wrapper p {
+color: #1B1B1E;
+font-family: Inter;
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+opacity: 0.7;
+}
+.footer-bottom a {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 992px) {
+  .footer-main {
+    gap: 40px;
+  }
+  .footer-wrapper .footer > div  {
+    padding: 40px 24px 44px;
+    gap: 40px;
+  }
+  .footer-main {
+    flex-direction: column;
+  }
+  .footer-main .default-content-wrapper {
+    width: 100%;
+  }
+  .footer-main .accordion-wrapper {
+    width: 100%;
+  }
+  .accordion-wrapper .accordion details {
+    border-bottom: 0.5px solid #B2B3B5;
+            /* padding-bottom: 24px; */
+  }
+  .accordion-wrapper .accordion details summary {
+    pointer-events: auto;
+            padding: 24px 0px;
+        margin-bottom: 0px;
+  }
+  .accordion details[open] .accordion-item-body {
+    padding-bottom: 24px;
+  }
+  .accordion details summary::after {
+    right: 4px;
+  }
+  .accordion details summary::after {
+  display: block;
+} 
+  .footer-main .accordion-wrapper .accordion {
+    gap: 0px;
+  }
+  .footer-main .accordion-wrapper .accordion {
+    flex-direction: column;
+  }
+  .footer .footer-bottom {
+    border: none;
+  }
+.footer-bottom .default-content-wrapper {
+  flex-direction: column;
+  gap: 8px;
+  align-items: start;
+}
+.footer-bottom .default-content-wrapper ul {
+  margin: 0;
+  padding: 0px;
+}
 }

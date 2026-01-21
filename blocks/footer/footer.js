@@ -41,5 +41,14 @@ export default async function decorate(block) {
   block.textContent = '';
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
-console.log("ffoter");
+  block.append(footer);
+console.log(block);
+if(window.innerWidth > 992) {
+  block.querySelectorAll(".accordion-item").forEach(function(ele){
+    ele.open = true;
+})
+block.querySelectorAll(".accordion-wrapper .accordion details").forEach(function(ele){
+    ele.removeEventListener("click");
+})
+}
 }
