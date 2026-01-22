@@ -179,7 +179,8 @@
         "embed-adaptive-form",
         "trackrecord",
         "banner",
-        "accordion"
+        "accordion",
+        "tabs"
       ]
     }
   ]
