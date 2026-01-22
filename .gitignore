@@ -8,3 +8,6 @@ helix-importer-ui
 .DS_Store
 *.bak
 .idea
+
+# Sidekick library JSON (generated from SharePoint/GDrive)
+tools/sidekick/library.json
