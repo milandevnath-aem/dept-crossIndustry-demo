@@ -195,8 +195,15 @@
           {
             "name": "Footer Bottom",
             "value": "footer-bottom"
+          },
+          {
+            "name": "Footer Variant 2",
+            "value": "footer-variant3"
+          },
+          {
+            "name": "Footer Variant 3",
+            "value": "footer-variant2"
           }
-
         ]
       }
     ]
