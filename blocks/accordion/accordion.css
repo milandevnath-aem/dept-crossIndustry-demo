@@ -144,6 +144,8 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0 88px;
+  width: max-content;
+  margin: 0 auto;
 }
 
 .varient1.accordion-container>div:first-child>p:last-child {
