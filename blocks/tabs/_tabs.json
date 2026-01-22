@@ -110,6 +110,14 @@
           "value": "",
           "label": "Content",
           "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "name": "content_blocks",
+          "label": "Accordion Content",
+          "valueType": "string",
+          "multi": true,
+          "filter": "accordion"
         }
       ]
     }
