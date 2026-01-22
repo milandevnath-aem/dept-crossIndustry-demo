@@ -185,6 +185,30 @@
         "label": "Style",
         "options": [
           {
+            "name": "Varient1",
+            "value": "varient1"
+          },
+          {
+            "name": "Varient2",
+            "value": "varient2"
+          },
+          {
+            "name": "Varient3",
+            "value": "varient3"
+          },
+          {
+            "name": "Accordion Varient1",
+            "value": "accordion-varient1"
+          },
+          {
+            "name": "Accordion Varient2",
+            "value": "accordion-varient2"
+          },
+          {
+            "name": "Accordion Varient3",
+            "value": "accordion-varient3"
+          },
+          {
             "name": "Highlight",
             "value": "highlight"
           }

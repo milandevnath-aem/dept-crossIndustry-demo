@@ -5,7 +5,9 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 let tabBlockCnt = 0;
 
 export default async function decorate(block) {
-  console.log(block,"TAB");
+  const getElement = block.closest("main").querySelector('.accordion-container');
+  console.log(getElement);
+  
   // Get the tabs style from data-aue-prop
   const tabsStyleParagraph = block.querySelector('p[data-aue-prop="tabsstyle"]');
   const tabsStyle = tabsStyleParagraph?.textContent?.trim() || '';
