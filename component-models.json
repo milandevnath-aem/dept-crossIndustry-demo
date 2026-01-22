@@ -6130,6 +6130,26 @@
         "value": "",
         "label": "Content",
         "valueType": "string"
+      },
+      {
+        "component": "multifield",
+        "name": "accordion_items",
+        "label": "Accordion Items",
+        "itemLabel": "Accordion Item",
+        "fields": [
+          {
+            "component": "text",
+            "name": "accordion_title",
+            "label": "Accordion Title",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "accordion_description",
+            "label": "Accordion Description",
+            "valueType": "string"
+          }
+        ]
       }
     ]
   },
