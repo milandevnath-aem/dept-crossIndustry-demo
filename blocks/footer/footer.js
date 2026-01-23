@@ -34,7 +34,8 @@ export default async function decorate(block) {
   const footerPath = parentPath=='/' ? footerMeta ? new URL(footerMeta, window.location).pathname : '/footer' : footerMeta ? new URL(footerMeta, window.location).pathname : parentPath+'/footer';
   //console.log("footerPath footer: ", footerPath);
   */
-  footerPath = "/footer"
+  // footerPath = "/footer"
+  footerPath = "/footer2"
   const fragment = await loadFragment(footerPath);
 
   // decorate footer DOM
@@ -47,8 +48,8 @@ if(window.innerWidth > 992) {
   block.querySelectorAll(".accordion-item").forEach(function(ele){
     ele.open = true;
 })
-block.querySelectorAll(".accordion-wrapper .accordion details").forEach(function(ele){
-    ele.removeEventListener("click");
-})
+// block.querySelectorAll(".accordion-wrapper .accordion details").forEach(function(ele){
+//     ele.removeEventListener("click");
+// })
 }
 }
