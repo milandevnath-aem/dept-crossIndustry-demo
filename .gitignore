@@ -10,4 +10,4 @@ helix-importer-ui
 .idea
 
 # Sidekick library JSON (generated from SharePoint/GDrive)
-tools/sidekick/library.json
+# tools/sidekick/library.json
