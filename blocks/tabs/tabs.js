@@ -5,9 +5,6 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 let tabBlockCnt = 0;
 
 export default async function decorate(block) {
-  const getElement = block.closest("main").querySelector('.accordion-container');
-  console.log(getElement);
-  
   // Get the tabs style from data-aue-prop
   const tabsStyleParagraph = block.querySelector('p[data-aue-prop="tabsstyle"]');
   const tabsStyle = tabsStyleParagraph?.textContent?.trim() || '';
@@ -178,8 +175,18 @@ export default async function decorate(block) {
     if (tab && tab.parentElement === tabpanel) {
       tab.remove();
     }
-
   });
+  
+  const accordionVariants = [
+    ...block.closest("main").querySelectorAll('[class*="accordion-varient"]'),
+  ];
 
+  tabItems.forEach((item, i) => {
+    const { tabpanel } = item;
+    const matchingAccordion = accordionVariants[i];
+    if (matchingAccordion) {
+      tabpanel.appendChild(matchingAccordion);
+    }
+  });
   block.prepend(tablist);
 }
