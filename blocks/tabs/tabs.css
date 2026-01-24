@@ -149,11 +149,6 @@
   }
 }
 
-.varient3,
-.header-wrapper {
-  display: none;
-}
-
 .tabs-panel>div:first-child {
   display: none;
 }
