@@ -361,10 +361,10 @@ body.green-theme {
   --nav-text-color:#000000;
 }
 /*brand header footer brand themes*/
-body header .nav-wrapper{
+/* body header .nav-wrapper{
   background-color: var(--nav-background-color);
   color: var(--nav-text-color);
-}
+} */
 body footer {
   background-color: var(--footer-background-color);
   color: var(--footer-text-color);
