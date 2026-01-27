@@ -227,6 +227,30 @@
           {
             "name": "Footer Variant 3",
             "value": "footer-variant3"
+          },
+          {
+            "name": "Header Variant 1",
+            "value": "header-variant1"
+          },
+          {
+            "name": "Header Variant 2",
+            "value": "header-variant2"
+          },
+          {
+            "name": "Header Variant 3",
+            "value": "header-variant3"
+          },
+          {
+            "name": "Accordion-Variant 1",
+            "value": "accordion-variant1"
+          },
+          {
+            "name": "Accordion-Variant 2",
+            "value": "accordion-variant2"
+          },
+          {
+            "name": "Accordion-Variant 3",
+            "value": "accordion-variant3"
           }
         ]
       }

@@ -126,21 +126,21 @@
   margin: 0;
 }
 
-.varient1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion .accordion-item-body p {
+.accordion-variant1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion .accordion-item-body p {
   font-size: 14px;
   line-height: 20px;
   font-weight: var(--font-weight-400, 400);
   color: #696969;
 }
 
-.varient1 .default-content-wrapper>p {
+.accordion-variant1 .default-content-wrapper>p {
   font-size: 30px;
   line-height: 40px;
   font-weight: var(--font-weight-500, 500);
   color: var(--Charcoal);
 }
 
-.varient1.accordion-container {
+.accordion-variant1.accordion-container {
   display: flex;
   flex-wrap: wrap;
   padding: 0 88px;
@@ -148,11 +148,11 @@
   margin: 0 auto;
 }
 
-.varient1.accordion-container>div:first-child>p:last-child {
+.accordion-variant1.accordion-container>div:first-child>p:last-child {
   display: none;
 }
 
-.varient1.accordion-container>div:first-child {
+.accordion-variant1.accordion-container>div:first-child {
   width: 100%;
   display: flex;
   margin-bottom: 64px;
@@ -161,7 +161,7 @@
   width: 34%;
 }
 
-.varient1.accordion-container .combined-wrapper {
+.accordion-variant1.accordion-container .combined-wrapper {
   display: flex;
   justify-content: space-between;
   padding: 0;
@@ -169,41 +169,41 @@
   width: 100%;
 }
 
-.varient1.accordion-container .combined-wrapper .default-content-wrapper ul {
+.accordion-variant1.accordion-container .combined-wrapper .default-content-wrapper ul {
   display: none;
 }
 
-.varient1.accordion-container .combined-wrapper .accordion-item-wrapper {
+.accordion-variant1.accordion-container .combined-wrapper .accordion-item-wrapper {
   width: 46.9%;
 }
 
-.varient1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart {
+.accordion-variant1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart {
   height: 100%;
   width: 66.8%;
 }
 
-.varient1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .accordion-ul-wrapper {
+.accordion-variant1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .accordion-ul-wrapper {
   display: flex;
   justify-content: space-between;
   margin-top: 48px;
 }
 
-.varient1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body ul {
+.accordion-variant1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body ul {
   list-style: none;
   padding: 0;
   width: 100%;
 }
 
 /* .varient 2 */
-.varient2.accordion-container>div:first-child>p:last-child {
+.accordion-variant2.accordion-container>div:first-child>p:last-child {
   display: none;
 }
 
-.varient2.accordion-container .combined-wrapper .default-content-wrapper {
+.accordion-variant2.accordion-container .combined-wrapper .default-content-wrapper {
   display: none;
 }
 
-.varient2 .default-content-wrapper>p {
+.accordion-variant2 .default-content-wrapper>p {
   font-size: 30px;
   line-height: 40px;
   font-weight: var(--font-weight-500, 500);
@@ -212,14 +212,14 @@
   margin-bottom: 32px;
 }
 
-.varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .accordion-ul-wrapper {
+.accordion-variant2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .accordion-ul-wrapper {
   display: flex;
   justify-content: space-between;
   margin-top: 48px;
   width: 78.8%;
 }
 
-.varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary {
+.accordion-variant2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary {
   padding: 32px 0;
   cursor: pointer;
   list-style: none;
@@ -231,31 +231,31 @@
   color: var(--Charcoal);
 }
 
-.varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details[open] summary {
+.accordion-variant2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details[open] summary {
   padding-bottom: 12px;
 }
 
-.varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion .accordion-item-body p {
+.accordion-variant2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion .accordion-item-body p {
   font-size: 16px;
   line-height: 20px;
   font-weight: var(--font-weight-400, 400);
   color: #696969;
 }
 
-.varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart {
+.accordion-variant2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart {
   height: 100%;
   width: 66.8%;
 }
 
-.varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body ul {
+.accordion-variant2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body ul {
   list-style: none;
   padding: 0;
   width: 100%;
 }
 
-.varient1.accordion-container .accordion-ul-wrapper ul li,
-.varient2.accordion-container .accordion-ul-wrapper ul li,
-.varient3.accordion-container .accordion-ul-wrapper ul li {
+.accordion-variant1.accordion-container .accordion-ul-wrapper ul li,
+.accordion-variant2.accordion-container .accordion-ul-wrapper ul li,
+.accordion-variant3.accordion-container .accordion-ul-wrapper ul li {
   padding: 22px 0 22px 13px;
   font-size: 12px;
   line-height: 17.27px;
@@ -264,18 +264,18 @@
   border-left: 0.43px solid #D8D8D6;
 }
 
-.varient1.accordion-container .accordion-ul-wrapper ul li:first-child,
-.varient2.accordion-container .accordion-ul-wrapper ul li:first-child,
-.varient3.accordion-container .accordion-ul-wrapper ul li:first-child {
+.accordion-variant1.accordion-container .accordion-ul-wrapper ul li:first-child,
+.accordion-variant2.accordion-container .accordion-ul-wrapper ul li:first-child,
+.accordion-variant3.accordion-container .accordion-ul-wrapper ul li:first-child {
   padding: 11px 0 11px 13px;
   background-color: #F2F2F2;
   color: #1F4DA8;
   border-top: 0.43px solid #D8D8D6;
 }
 
-.varient1.accordion-container .accordion-ul-wrapper ul:last-child,
-.varient2.accordion-container .accordion-ul-wrapper ul:last-child,
-.varient3.accordion-container .accordion-ul-wrapper ul:last-child {
+.accordion-variant1.accordion-container .accordion-ul-wrapper ul:last-child,
+.accordion-variant2.accordion-container .accordion-ul-wrapper ul:last-child,
+.accordion-variant3.accordion-container .accordion-ul-wrapper ul:last-child {
   border-right: 0.43px solid #D8D8D6;
 }
 
@@ -288,70 +288,70 @@
     padding-bottom: 24px;
   }
 
-  .varient1.accordion-container {
+  .accordion-variant1.accordion-container {
     padding: 0 24px;
   }
 
-  .varient1.accordion-container .combined-wrapper {
+  .accordion-variant1.accordion-container .combined-wrapper {
     flex-direction: column;
   }
 
-  .varient1.accordion-container .combined-wrapper .accordion-item-wrapper {
+  .accordion-variant1.accordion-container .combined-wrapper .accordion-item-wrapper {
     width: 100%;
   }
 
-  .varient1 .default-content-wrapper>p,
-  .varient2 .default-content-wrapper>p {
+  .accordion-variant1 .default-content-wrapper>p,
+  .accordion-variant2 .default-content-wrapper>p {
     font-size: 24px;
     margin-bottom: 0;
   }
 
-  .varient2 .default-content-wrapper>p {
+  .accordion-variant2 .default-content-wrapper>p {
     margin-bottom: 24px;
   }
 
-  .varient1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary,
-  .varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary,
-  .varient3.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary {
+  .accordion-variant1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary,
+  .accordion-variant2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary,
+  .accordion-variant3.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary {
     padding: 24px 0;
     font-size: 14px;
     line-height: 20px;
   }
 
-  .varient1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion .accordion-item-body p,
-  .varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion .accordion-item-body p,
-  .varient3.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion .accordion-item-body p {
+  .accordion-variant1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion .accordion-item-body p,
+  .accordion-variant2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion .accordion-item-body p,
+  .accordion-variant3.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion .accordion-item-body p {
     font-size: 14px;
     line-height: 20px;
   }
 
-  .varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details[open] summary {
+  .accordion-variant2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details[open] summary {
     padding-bottom: 8px;
   }
 
-  .varient1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart,
-  .varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart,
-  .varient3.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart {
+  .accordion-variant1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart,
+  .accordion-variant2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart,
+  .accordion-variant3.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart {
     width: 100%;
   }
 
-  .varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .accordion-ul-wrapper {
+  .accordion-variant2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .accordion-ul-wrapper {
     margin-top: 24px;
     width: 100%;
   }
 
-  .varient1.accordion-container .accordion-ul-wrapper ul li,
-  .varient2.accordion-container .accordion-ul-wrapper ul li,
-  .varient3.accordion-container .accordion-ul-wrapper ul li {
+  .accordion-variant1.accordion-container .accordion-ul-wrapper ul li,
+  .accordion-variant2.accordion-container .accordion-ul-wrapper ul li,
+  .accordion-variant3.accordion-container .accordion-ul-wrapper ul li {
     padding: 8.8px 0 8.8px 5.46px;
     /* font-size: 4.78px; */
     font-size: 7px;
     line-height: 6.83px;
   }
 
-  .varient1.accordion-container .accordion-ul-wrapper ul li:first-child,
-  .varient2.accordion-container .accordion-ul-wrapper ul li:first-child,
-  .varient3.accordion-container .accordion-ul-wrapper ul li:first-child {
+  .accordion-variant1.accordion-container .accordion-ul-wrapper ul li:first-child,
+  .accordion-variant2.accordion-container .accordion-ul-wrapper ul li:first-child,
+  .accordion-variant3.accordion-container .accordion-ul-wrapper ul li:first-child {
     padding: 4.4px 0 4.4px 5.46px;
   }
 }
