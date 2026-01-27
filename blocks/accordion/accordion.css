@@ -254,7 +254,8 @@
 }
 
 .varient1.accordion-container .accordion-ul-wrapper ul li,
-.varient2.accordion-container .accordion-ul-wrapper ul li {
+.varient2.accordion-container .accordion-ul-wrapper ul li,
+.varient3.accordion-container .accordion-ul-wrapper ul li {
   padding: 22px 0 22px 13px;
   font-size: 12px;
   line-height: 17.27px;
@@ -264,7 +265,8 @@
 }
 
 .varient1.accordion-container .accordion-ul-wrapper ul li:first-child,
-.varient2.accordion-container .accordion-ul-wrapper ul li:first-child {
+.varient2.accordion-container .accordion-ul-wrapper ul li:first-child,
+.varient3.accordion-container .accordion-ul-wrapper ul li:first-child {
   padding: 11px 0 11px 13px;
   background-color: #F2F2F2;
   color: #1F4DA8;
@@ -272,7 +274,8 @@
 }
 
 .varient1.accordion-container .accordion-ul-wrapper ul:last-child,
-.varient2.accordion-container .accordion-ul-wrapper ul:last-child {
+.varient2.accordion-container .accordion-ul-wrapper ul:last-child,
+.varient3.accordion-container .accordion-ul-wrapper ul:last-child {
   border-right: 0.43px solid #D8D8D6;
 }
 
@@ -308,14 +311,16 @@
   }
 
   .varient1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary,
-  .varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary {
+  .varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary,
+  .varient3.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion details summary {
     padding: 24px 0;
     font-size: 14px;
     line-height: 20px;
   }
 
   .varient1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion .accordion-item-body p,
-  .varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion .accordion-item-body p {
+  .varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion .accordion-item-body p,
+  .varient3.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-wrapper .accordion .accordion-item-body p {
     font-size: 14px;
     line-height: 20px;
   }
@@ -325,7 +330,8 @@
   }
 
   .varient1.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart,
-  .varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart {
+  .varient2.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart,
+  .varient3.accordion-container .combined-wrapper .accordion-item-wrapper .accordion-item-body .icon-pie-chart {
     width: 100%;
   }
 
@@ -335,7 +341,8 @@
   }
 
   .varient1.accordion-container .accordion-ul-wrapper ul li,
-  .varient2.accordion-container .accordion-ul-wrapper ul li {
+  .varient2.accordion-container .accordion-ul-wrapper ul li,
+  .varient3.accordion-container .accordion-ul-wrapper ul li {
     padding: 8.8px 0 8.8px 5.46px;
     /* font-size: 4.78px; */
     font-size: 7px;
@@ -343,7 +350,8 @@
   }
 
   .varient1.accordion-container .accordion-ul-wrapper ul li:first-child,
-  .varient2.accordion-container .accordion-ul-wrapper ul li:first-child {
+  .varient2.accordion-container .accordion-ul-wrapper ul li:first-child,
+  .varient3.accordion-container .accordion-ul-wrapper ul li:first-child {
     padding: 4.4px 0 4.4px 5.46px;
   }
 }
