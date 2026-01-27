@@ -118,6 +118,7 @@ export default function decorate(block) {
           slidesPerView: 3,
           observer: true,
           observeParents: true,
+          spaceBetween: 32,
           pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -144,6 +145,7 @@ export default function decorate(block) {
       // Initialize Swiper with responsive breakpoints (mobile shows 2.5)
         Swiper(".blog-cards2 .swiper", {
           slidesPerView: 2.5,
+          spaceBetween: 32,
           pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -171,10 +173,16 @@ export default function decorate(block) {
       // Initialize Swiper with responsive breakpoints (mobile shows 2.5)
         Swiper(".product-variant1 .swiper", {
           slidesPerView: 1,
+          spaceBetween: 20,
           pagination: {
             el: '.swiper-pagination',
             clickable: true,
             type: "bullets",
-          }
+          },
+          breakpoints: {
+    1024: {
+      spaceBetween: 16
+    }
+  }
         });
     }
