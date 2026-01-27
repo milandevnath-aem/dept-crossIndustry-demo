@@ -1311,7 +1311,7 @@ line-height: 20px;
 display: none;
 }
 .products.cards-container .cards-wrapper .cards > ul {
-  gap: 0px;
+  gap: 20px;
 }
 /* .products .cards > ul > li .cards-card-image {
   left: -74px;
