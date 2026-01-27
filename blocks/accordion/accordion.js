@@ -48,7 +48,8 @@ export default function decorate(block) {
   if (!accordions.length) return;
   const combinedWrapperCheckvarient1 = block.closest(".accordion-container").classList.contains("accordion-variant1");
   const combinedWrapperCheckvarient2 = block.closest(".accordion-container").classList.contains("accordion-variant2");
-  if (combinedWrapperCheckvarient1 || combinedWrapperCheckvarient2) {
+  const combinedWrapperCheckvarient3 = block.closest(".accordion-container").classList.contains("accordion-variant3");
+  if (combinedWrapperCheckvarient1 || combinedWrapperCheckvarient2 || combinedWrapperCheckvarient3) {
     const accordionWrapper = document.createElement("div");
     accordionWrapper.className = "accordion-item-wrapper";
     accordions.forEach((acc) => accordionWrapper.appendChild(acc));
@@ -58,7 +59,7 @@ export default function decorate(block) {
   const wrapperItems = container.querySelectorAll(
     ":scope > div:nth-of-type(2), :scope > div:nth-of-type(3)"
   );
-  if ((combinedWrapperCheckvarient1 || combinedWrapperCheckvarient2) && wrapperItems.length) {
+  if ((combinedWrapperCheckvarient1 || combinedWrapperCheckvarient2 || combinedWrapperCheckvarient3) && wrapperItems.length) {
     const combinedWrapper = document.createElement("div");
     combinedWrapper.className = "combined-wrapper";
     container.insertBefore(combinedWrapper, wrapperItems[0]);
