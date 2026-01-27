@@ -46,8 +46,8 @@ export default function decorate(block) {
   if (container.querySelector(".accordion-item-wrapper")) return;
   const accordions = container.querySelectorAll(":scope > .accordion-wrapper");
   if (!accordions.length) return;
-  const combinedWrapperCheckvarient1 = block.closest(".accordion-container").classList.contains("varient1");
-  const combinedWrapperCheckvarient2 = block.closest(".accordion-container").classList.contains("varient2");
+  const combinedWrapperCheckvarient1 = block.closest(".accordion-container").classList.contains("accordion-variant1");
+  const combinedWrapperCheckvarient2 = block.closest(".accordion-container").classList.contains("accordion-variant2");
   if (combinedWrapperCheckvarient1 || combinedWrapperCheckvarient2) {
     const accordionWrapper = document.createElement("div");
     accordionWrapper.className = "accordion-item-wrapper";
