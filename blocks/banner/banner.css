@@ -56,7 +56,7 @@
 
 @media (max-width: 768px) {
     .simple-banner-varient1 {
-        padding: 48px 24px !important;
+        padding: 0px 24px 48px !important;
     }
     .simple-banner-varient1 .banner-wrapper{
         padding: 0px !important;
