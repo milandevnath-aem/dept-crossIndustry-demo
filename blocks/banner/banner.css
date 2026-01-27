@@ -55,6 +55,12 @@
 }
 
 @media (max-width: 768px) {
+    .simple-banner-varient1 {
+        padding: 48px 24px !important;
+    }
+    .simple-banner-varient1 .banner-wrapper{
+        padding: 0px !important;
+    }
     .notification-banner-varient1 .banner-wrapper .block {
         padding: 32px 24px;
     }

@@ -28,7 +28,8 @@
     max-width: 1440px;
     margin: 0 auto !important;
     padding: 120px 88px;
-    gap: 32px;
+    /* gap: 32px; */
+    gap: 24px;
 }
 
 .benefits-section-container {
@@ -52,7 +53,7 @@
     background: #f7f7f7;
     border-radius: 16px;
     /* width: 91.6%; */
-    width: 31.64%;
+    width: 32.03%;
     position: relative;
     padding: 32px;
     max-width: unset;
@@ -195,7 +196,8 @@
 .benefits-section2 .benefits-section-wrapper {
     overflow: hidden;
     height: 461px;
-        width: 30.07%;
+        /* width: 30.07%; */
+            width: 30.43%;
 }
 
 .benefits-section2 .benefits-card {
