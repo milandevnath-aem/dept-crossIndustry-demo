@@ -34,7 +34,7 @@ export default async function decorate(block) {
   const footerPath = parentPath=='/' ? footerMeta ? new URL(footerMeta, window.location).pathname : '/footer' : footerMeta ? new URL(footerMeta, window.location).pathname : parentPath+'/footer';
   //console.log("footerPath footer: ", footerPath);
   */
-  
+  footerPath = "/footer2";
   const fragment = await loadFragment(footerPath);
 
   // decorate footer DOM
@@ -43,4 +43,18 @@ export default async function decorate(block) {
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
   block.append(footer);
+console.log(block);
+let selectVariant = block.querySelector(".section").classList;
+if (!selectVariant.contains("footer-variant3")) {
+  if (window.innerWidth > 992) {
+    block.querySelectorAll(".accordion-item").forEach(function (ele) {
+      ele.open = true;
+    })
+  }
+
+} else {
+  block.querySelectorAll(".accordion-item").forEach(function (ele) {
+    ele.open = true;
+  })
+}
 }
