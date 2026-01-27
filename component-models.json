@@ -251,6 +251,18 @@
           {
             "name": "Accordion-Variant 3",
             "value": "accordion-variant3"
+          },
+          {
+            "name": "Header top",
+            "value": "header-top"
+          },
+          {
+            "name": "Header menu",
+            "value": "header-menu"
+          },
+          {
+            "name": "Header menu body",
+            "value": "header-menu-body"
           }
         ]
       }
