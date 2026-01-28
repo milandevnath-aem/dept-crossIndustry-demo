@@ -911,18 +911,17 @@
       {
         "component": "text",
         "name": "csskey",
-        "label": "Font Properties Key",
-        "description": "Enter the Font Properties name (e.g., primary-color, font-family)",
+        "label": "Font Name",
+        "description": "Enter the Font name",
         "valueType": "string",
         "required": true
       },
       {
-        "component": "text",
-        "name": "cssvalue",
-        "label": "Font Properties Value",
-        "description": "Enter the CSS value (e.g., #007bff, Arial, 1.5rem)",
+        "component": "reference",
         "valueType": "string",
-        "required": true
+        "name": "image",
+        "label": "Select Font",
+        "multi": false
       }
     ]
   },
