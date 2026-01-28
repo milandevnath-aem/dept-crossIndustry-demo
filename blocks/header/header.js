@@ -459,7 +459,7 @@ export default async function decorate(block) {
   //const navPath = locale ? `/${locale}/nav` : parentPath+'/nav';
   //const navPath = parentPath=='/' ? locale ? `/${locale}/nav` : '/nav' : locale ? `/${locale}/nav` : parentPath+'/nav';
   //console.log("navPath header: ", navPath);
-  navPath = "/nav";
+  navPath = "/us/nav";
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM

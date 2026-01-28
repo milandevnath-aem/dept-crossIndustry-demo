@@ -1,6 +1,7 @@
 /* header and nav layout */
 header .nav-wrapper {
   /* background-color: var(--dark-color-opacity); */
+  background-color: var(--Warm-White);
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -14,9 +15,9 @@ header nav {
   align-items: center;
   gap: 0 24px;
   margin: auto;
-  max-width: 1248px;
+  /* max-width: 1248px; */
   height: var(--nav-height);
-  padding: 0 24px;
+  /* padding: 0 24px; */
   font-family: var(--body-font-family);
   position: relative;
   min-height: 90px;
@@ -34,16 +35,12 @@ header nav[aria-expanded='true'] {
 @media (width >=900px) {
   header nav {
     display: flex;
-    justify-content: space-between;
-    gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
+    flex-direction: column;
   }
 
   header nav[aria-expanded='true'] {
     min-height: 0;
     overflow: visible;
-    padding: 22px 32px;
     height: auto;
   }
 }
@@ -161,7 +158,7 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
+  /* flex-basis: 128px; */
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
@@ -526,6 +523,7 @@ header nav .nav-tools .lang-switcher {
 }
 
 .section.header-variant1.header-top {
+  width: 100%;
   background-color: var(--Deep-Blue);
 }
 
@@ -552,6 +550,7 @@ header nav .nav-tools .lang-switcher {
   justify-content: space-between;
   align-items: center;
   padding: 36px 0px;
+  max-width: 1400px;
 }
 
 .section.header-variant1.header-menu .default-content-wrapper>ul {
