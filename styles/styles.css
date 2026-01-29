@@ -501,7 +501,7 @@ button {
 
 /* links */
 /* buttons */
-a, a:any-link, a.button:any-link,
+/* a, a:any-link, a.button:any-link,
 button {
   display: inline-block;
   padding: 0;
@@ -521,8 +521,8 @@ button {
   text-overflow: ellipsis;
   white-space: nowrap;
   text-decoration: none;
-}
-a::after, a.button::after {
+} */
+/* a::after, a.button::after {
   font-family: 'Font Awesome 5 Solid';
   content: "\f105";
   color: var(--link-color);
@@ -537,21 +537,21 @@ a::after, a.button::after {
   border-radius: 0;
   padding: 1px 10px;
   cursor: pointer;
-}
-a:hover,
+} */
+/* a:hover,
 a:focus,
 a.button:hover,
 a.button:focus {
   color: var(--link-hover-color);
   text-decoration: underline;
   cursor: pointer;
-}
-a:hover::after,
+} */
+/* a:hover::after,
 a:focus::after,
 a.button:hover::after,
 a.button:focus::after {
   color: var(--link-hover-color);
-}
+} */
 
 button:disabled,
 button:disabled:hover {
