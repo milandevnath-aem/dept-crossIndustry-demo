@@ -161,6 +161,8 @@ async function loadThemeFromPage(themePagePath) {
       const html = await resp.text();
       const doc = new DOMParser().parseFromString(html, 'text/html');
       const cssObj = {};
+      let fontFaceCSS = '';
+      let fontVars = ""
       doc.querySelectorAll('.css-variable').forEach((varDiv) => {
         const key = varDiv.querySelector(':scope > div:nth-child(1)')?.textContent?.trim();
         const value = varDiv.querySelector(':scope > div:nth-child(2)')?.textContent?.trim();
@@ -168,6 +170,26 @@ async function loadThemeFromPage(themePagePath) {
           cssObj[key] = value;
         }
       });
+
+        // ✅ Font faces
+    doc.querySelectorAll('.font-properties').forEach((el) => {
+      const fontName = el.querySelector(':scope > div a').innerText.trim();
+      const fontUrl = el.querySelector(':scope > div a').href.trim();
+      if (fontName) {
+        fontFaceCSS += `
+@font-face {
+  font-family: '${fontName}';
+  font-display: swap;
+  src: url('${fontUrl}') format('woff');
+}
+`;
+// CSS variable
+    fontVars += `
+  --${fontName.toLowerCase().replace(/\s+/g, '-')}: '${fontName}';
+`;
+      }
+    });
+
       let styleTag = document.getElementById('theme-configuration-styles');
       if (!styleTag) {
         styleTag = document.createElement('style');
@@ -179,6 +201,18 @@ async function loadThemeFromPage(themePagePath) {
         return `  ${cssVarName}: ${value};`;
       });
       styleTag.textContent = `:root {\n${cssVariables.join('\n')}\n}`;
+
+      // ✅ FINAL OUTPUT (Correct)
+    styleTag.textContent = `
+${fontFaceCSS}
+
+:root {
+${cssVariables}
+${fontVars}
+
+}
+
+`;
     }
   } catch (e) {
     console.error('Error loading theme from page:', e);

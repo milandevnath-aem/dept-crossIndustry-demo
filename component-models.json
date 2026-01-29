@@ -1153,6 +1153,21 @@
     ]
   },
   {
+    "id": "font-properties",
+    "fields": [
+      {
+        "component": "text",
+        "name": "linkText",
+        "label": "Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      }
+    ]
+  },
+  {
     "id": "forex",
     "fields": [
       {

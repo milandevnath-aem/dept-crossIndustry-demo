@@ -180,7 +180,8 @@
         "trackrecord",
         "banner",
         "accordion",
-        "tabs"
+        "tabs",
+        "font-properties"
       ]
     }
   ]
