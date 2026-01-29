@@ -19,12 +19,12 @@ export default function decorate(block) {
   // Create key div
   const keyDiv = document.createElement('div');
   keyDiv.className = 'font-key';
-  keyDiv.textContent = `key ${cssKey}`;
+  keyDiv.textContent = `${cssKey.split(" ").join("-")}`;
 
   // Create value div
   const valueDiv = document.createElement('div');
   valueDiv.className = 'font-value';
-  valueDiv.textContent = `value ${cssValue}`;
+  valueDiv.textContent = `${cssKey}`;
 
   // Append to block
   block.appendChild(keyDiv);

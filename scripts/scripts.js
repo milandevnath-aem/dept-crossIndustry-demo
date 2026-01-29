@@ -103,7 +103,6 @@ async function loadThemeConfiguration(themePath) {
 
 async function loadThemeFromPage(themePagePath) {
   try {
-    debugger;
     let url = themePagePath;
 
     // If no explicit path provided, search for theme-configurator in hierarchy
@@ -163,6 +162,7 @@ async function loadThemeFromPage(themePagePath) {
       const doc = new DOMParser().parseFromString(html, 'text/html');
       const cssObj = {};
       let fontFaceCSS = '';
+      let fontVars = ""
       doc.querySelectorAll('.css-variable').forEach((varDiv) => {
         const key = varDiv.querySelector(':scope > div:nth-child(1)')?.textContent?.trim();
         const value = varDiv.querySelector(':scope > div:nth-child(2)')?.textContent?.trim();
@@ -173,14 +173,19 @@ async function loadThemeFromPage(themePagePath) {
 
         // ✅ Font faces
     doc.querySelectorAll('.font-properties').forEach((el) => {
-      const fontName = el.querySelector(':scope > div:nth-child(1)')?.textContent?.trim();
+      const fontName = el.querySelector(':scope > div a').innerText.trim();
+      const fontUrl = el.querySelector(':scope > div a').href.trim();
       if (fontName) {
         fontFaceCSS += `
 @font-face {
   font-family: '${fontName}';
   font-display: swap;
-  src: url('../fonts/AdobeCleanLight.woff') format('woff');
+  src: url('${fontUrl}') format('woff');
 }
+`;
+// CSS variable
+    fontVars += `
+  --${fontName.toLowerCase().replace(/\s+/g, '-')}: '${fontName}';
 `;
       }
     });
@@ -197,18 +202,16 @@ async function loadThemeFromPage(themePagePath) {
       });
       styleTag.textContent = `:root {\n${cssVariables.join('\n')}\n}`;
 
-      // const fontVariables = Object.entries(fontObj).map(([key, value]) => {
-      //   const cssVarName = key.startsWith('--') ? key : `--${key}`;
-      //   return `  ${cssVarName}: ${value};`;
-      // });
-      // styleTag.textContent = `:root {\n${fontVariables.join('\n')}\n}`;
       // ✅ FINAL OUTPUT (Correct)
     styleTag.textContent = `
 ${fontFaceCSS}
 
 :root {
 ${cssVariables}
+${fontVars}
+
 }
+
 `;
     }
   } catch (e) {
