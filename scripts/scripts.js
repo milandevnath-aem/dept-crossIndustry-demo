@@ -203,14 +203,10 @@ async function loadThemeFromPage(themePagePath) {
       styleTag.textContent = `:root {\n${cssVariables.join('\n')}\n}`;
 
       // ✅ FINAL OUTPUT (Correct)
-    styleTag.textContent = `
-${fontFaceCSS}
-
+    styleTag.textContent = `${fontFaceCSS}
 :root {
 ${cssVariables}
-${fontVars}
-
-}
+${fontVars}}
 
 `;
     }
