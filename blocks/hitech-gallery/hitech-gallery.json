@@ -36,15 +36,11 @@
           "type": "text"
         },
         {
-          "name": "images",
-          "label": "Images",
-          "type": "multifield",
-          "fields": [
-            {
-              "name": "image",
-              "type": "aem-asset"
-            }
-          ]
+          "component": "reference",
+          "valueType": "string",
+          "name": "mobimage",
+          "label": "Select Mobile Image",
+          "multi": true
         }
       ]
     }
