@@ -6114,8 +6114,8 @@
         {
           "component": "reference",
           "valueType": "string",
-          "name": "mobimage",
-          "label": "Select Mobile Image",
+          "name": "gallery",
+          "label": "Select Gallery Images",
           "multi": true
         }
       ]
