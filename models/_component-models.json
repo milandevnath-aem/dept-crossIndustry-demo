@@ -187,6 +187,18 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Products v1",
+            "value": "product-variant1"
+          },
+          {
+            "name": "Products v2",
+            "value": "product-variant2"
+          },
+          {
+            "name": "Products v3",
+            "value": "product-variant3"
           }
         ]
       }
