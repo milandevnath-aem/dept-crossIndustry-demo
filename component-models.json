@@ -6105,9 +6105,11 @@
           ]
         },
         {
-          "name": "title",
-          "label": "Title",
-          "type": "text"
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
         },
         {
           "component": "reference",
