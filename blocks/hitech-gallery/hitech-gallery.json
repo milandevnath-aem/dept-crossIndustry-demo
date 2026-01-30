@@ -19,20 +19,6 @@
   "models": [
     {
       "id": "hitech-gallery",
-      "variants": [
-        {
-          "name": "Variant 1",
-          "id": "variant-1"
-        },
-        {
-          "name": "Variant 2",
-          "id": "variant-2"
-        },
-        {
-          "name": "Variant 3",
-          "id": "variant-3"
-        }
-      ],
       "fields": [
         {
           "name": "variant",
