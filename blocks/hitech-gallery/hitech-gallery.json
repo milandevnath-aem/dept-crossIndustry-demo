@@ -20,55 +20,48 @@
     {
       "id": "hitech-gallery",
       "variants": [
-    {
-      "name": "Variant 1",
-      "id": "variant-1"
-    },
-    {
-      "name": "Variant 2",
-      "id": "variant-2"
-    },
-    {
-      "name": "Variant 3",
-      "id": "variant-3"
-    }
-  ],
-  "fields": [
-    {
-      "name": "variant",
-      "label": "Layout Variant",
-      "type": "select",
-      "options": [
-        "variant-1",
-        "variant-2",
-        "variant-3"
-      ]
-    },
-    {
-      "name": "title",
-      "label": "Title",
-      "type": "text"
-    },
-    {
-      "name": "images",
-      "label": "Images",
-      "type": "multifield",
+        {
+          "name": "Variant 1",
+          "id": "variant-1"
+        },
+        {
+          "name": "Variant 2",
+          "id": "variant-2"
+        },
+        {
+          "name": "Variant 3",
+          "id": "variant-3"
+        }
+      ],
       "fields": [
         {
-          "name": "image",
-          "type": "aem-asset"
+          "name": "variant",
+          "label": "Layout Variant",
+          "type": "select",
+          "options": [
+            "variant-1",
+            "variant-2",
+            "variant-3"
+          ]
+        },
+        {
+          "name": "title",
+          "label": "Title",
+          "type": "text"
+        },
+        {
+          "name": "images",
+          "label": "Images",
+          "type": "multifield",
+          "fields": [
+            {
+              "name": "image",
+              "type": "aem-asset"
+            }
+          ]
         }
       ]
     }
-  ]
-    }
   ],
-  "filters": [
-    {
-      "id": "hitech-gallery",
-      "components": [
-        "css-variable"
-      ]
-    }
-  ]
+  "filters": []
 }
