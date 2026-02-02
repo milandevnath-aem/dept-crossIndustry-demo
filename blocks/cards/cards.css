@@ -458,3 +458,171 @@
   }
   
 }
+
+
+
+/* hi tech gallery variant 1 */
+
+.hitech-variant1 .cards-wrapper ul{
+display: grid;
+    grid-template-columns: repeat(5,1fr);
+        grid-row-gap: 12px;
+    grid-column-gap: 16px;
+    padding: 0px;
+}
+.hitech-variant1 .cards-wrapper ul li.big {
+    grid-row: span 1;
+    grid-column: span 3;
+  }
+  .hitech-variant1 .cards-wrapper ul li.small {
+    grid-row: span 1;
+    grid-column: span 2;
+  }
+
+  .hitech-variant2 .cards,
+  .hitech-variant3 .cards {
+        display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+.hitech-variant1 .cards > ul > li .cards-card-body,
+.hitech-variant2 .cards > ul > li .cards-card-body,
+.hitech-variant3 .cards > ul > li .cards-card-body {
+  display: none;
+}
+.hitech-variant1.cards-container,
+.hitech-variant2.cards-container,
+.hitech-variant3.cards-container {
+  max-width: 1440px;
+  margin: 0 auto;
+      padding: 120px 88px 80px;
+      display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+.hitech-variant1 .default-content-wrapper,
+.hitech-variant2 .default-content-wrapper,
+.hitech-variant3 .default-content-wrapper{
+    max-width: unset;
+    margin: unset;
+    padding: 0px;
+}
+.hitech-variant1 .default-content-wrapper h3,
+.hitech-variant2 .default-content-wrapper h3,
+.hitech-variant3 .default-content-wrapper h3{
+  color: #373739;
+    font-family: "Space Grotesk";
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 48px;
+  margin: 0px;
+}
+.hitech-variant1 .cards-wrapper,
+.hitech-variant2 .cards-wrapper,
+.hitech-variant3 .cards-wrapper {
+      max-width: unset;
+    margin: unset;
+    padding: 0px;
+}
+.hitech-variant2 .cards-wrapper ul,
+.hitech-variant3 .cards-wrapper ul {
+  gap: 0px;
+  padding: 0px;
+  /* transform: none !important; */
+}
+.hitech-variant2 .cards-wrapper li,
+.hitech-variant3 .cards-wrapper li {
+flex: none;
+}
+
+.hitech-variant2 .cards-wrapper li.button.swiper-slide.swiper-slide-active {
+  /* flex-basis: 65%; */
+  /* width: 50% !important; */
+}
+.hitech-variant2 .cards-wrapper li,
+.hitech-variant3 .cards-wrapper li {
+  /* flex: 10%; */
+  width: 17% !important;
+}
+/* .hitech-variant3 .cards-wrapper li {
+  flex-basis: 30%;
+}
+.hitech-variant3 .cards-wrapper li.button.swiper-slide.swiper-slide-active + li {
+flex-basis: 100%;
+} */
+.hitech-variant1 .cards > ul > li img,
+.hitech-variant2 .cards > ul > li img,
+.hitech-variant3 .cards > ul > li img {
+     min-height: unset;
+     max-height: unset;
+         height: 493px;
+         object-fit: unset;
+}
+.hitech-variant2 .swiper-pagination-bullet,
+.hitech-variant3 .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    aspect-ratio: 1 / 1;
+    display: inline-block;
+    background: #D8D8D6;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.hitech-variant2 span.swiper-pagination-bullet.swiper-pagination-bullet-active,
+.hitech-variant3 span.swiper-pagination-bullet.swiper-pagination-bullet-active{
+      border-radius: 6px;
+    background: #10172A;
+    width: 50px;
+    height: 8px;
+    display: inline-block;
+}
+
+.hitech-variant2 .swiper-pagination,
+.hitech-variant3 .swiper-pagination {
+      display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hitech-variant2 .cards-wrapper,
+/* .hitech-variant3 .cards-wrapper {
+  overflow: hidden;
+} */
+
+.hitech-variant2 .cards-wrapper li.swiper-slide.hover,
+.hitech-variant3 .cards-wrapper li.swiper-slide.hover {
+  /* flex: 0 0 60% !important; */
+  width: 81% !important;
+}
+.swiper-notification {
+  display: none;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .hitech-variant1.cards-container, .hitech-variant2.cards-container, .hitech-variant3.cards-container {
+        padding: 48px 24px;
+  }
+  .hitech-variant1.cards-container {
+    gap: 32px;
+  }
+  .hitech-variant1 .cards-wrapper .cards > ul > li {
+    margin: 0px 0px 12px 0px;
+  }
+  .hitech-variant1 .cards-wrapper .cards > ul > li:last-child {
+    margin: 0px;
+  }
+  .hitech-variant1 .cards > ul > li img {
+    height: 326px;
+  }
+  .hitech-variant1 .default-content-wrapper h3, .hitech-variant2 .default-content-wrapper h3, .hitech-variant3 .default-content-wrapper h3 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .hitech-variant2 .cards-wrapper, .hitech-variant2 .cards-wrapper li.swiper-slide.hover, .hitech-variant3 .cards-wrapper li.swiper-slide.hover {
+    width: 100%;
+  }
+  .hitech-variant2 .cards-wrapper li, .hitech-variant3 .cards-wrapper li {
+    width: 100% !important;
+  }
+}
