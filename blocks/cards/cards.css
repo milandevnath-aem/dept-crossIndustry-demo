@@ -622,7 +622,20 @@ flex-basis: 100%;
   .hitech-variant2 .cards-wrapper, .hitech-variant2 .cards-wrapper li.swiper-slide.hover, .hitech-variant3 .cards-wrapper li.swiper-slide.hover {
     width: 100%;
   }
-  .hitech-variant2 .cards-wrapper li, .hitech-variant3 .cards-wrapper li {
+  .hitech-variant2 .cards-wrapper ul li, .hitech-variant3 .cards-wrapper ul li {
     width: 100% !important;
+    margin: 0px !important;
+  }
+  .hitech-variant2 .cards-wrapper {
+    width: 100% !important;
+  }
+  .hitech-variant2 .cards > ul > li img {
+    height: 150px;
+  }
+  .hitech-variant2 .cards > ul > li img:hover {
+    height: 327px;
+  }
+  .hitech-variant2.cards-container {
+    gap: 32px;
   }
 }

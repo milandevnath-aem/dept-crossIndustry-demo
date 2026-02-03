@@ -81,79 +81,85 @@ export default function decorate(block) {
  
   block.textContent = '';
   block.append(ul);
+hitecgGalleryComp(block)
 
-    if(window.innerWidth > 1024) {
-    let classlistExists = block.closest(".cards-container").classList;
-    if(classlistExists.contains("hitech-variant1")) {
-       let cards = block.querySelectorAll(".cards-wrapper li")
-   cards.forEach((card, index) => {
-  card.classList.remove("small", "big");
-
-  const patternIndex = index % 4;
-
-  if (patternIndex === 0 || patternIndex === 3) {
-    card.classList.add("small");
-  } else {
-    card.classList.add("big");
-  }
-});
-    }
-  if (classlistExists.contains("hitech-variant2") || classlistExists.contains("hitech-variant3")) {
-    block.classList.add('swiper');
-    block.querySelector("ul").classList.add("swiper-wrapper");
-    Array.from(block.children[0].children).forEach((element) => {
-      element.classList.add('swiper-slide');
-    });
-    const paginationEl = document.createElement('div');
-    paginationEl.classList.add('swiper-pagination');
-    block.appendChild(paginationEl);
-
-    if (classlistExists.contains("hitech-variant2")){
-      hitechVariant1()
-    }
-    if(classlistExists.contains("hitech-variant3")) {
-     hitechVariant2()
-    }
-    block.querySelectorAll(".swiper-wrapper .swiper-slide").forEach(function (el,ind) {
-      if(ind == 0) {
- el.classList.add("hover");
-      }
-  el.addEventListener("mouseover", function () {
-    block.querySelectorAll(".swiper-wrapper .swiper-slide").forEach(function (slide) {
-      slide.classList.remove("hover");
-    });
-    this.classList.add("hover");
-  });
-});
-
-  }
 }
+
+
+
+function hitecgGalleryComp(block) {
+  if (window.innerWidth > 1024) {
+    let classlistExists = block.closest(".cards-container").classList;
+    if (classlistExists.contains("hitech-variant1")) {
+      let cards = block.querySelectorAll(".cards-wrapper li")
+      cards.forEach((card, index) => {
+        card.classList.remove("small", "big");
+
+        const patternIndex = index % 4;
+
+        if (patternIndex === 0 || patternIndex === 3) {
+          card.classList.add("small");
+        } else {
+          card.classList.add("big");
+        }
+      });
+    }
+    if (classlistExists.contains("hitech-variant2") || classlistExists.contains("hitech-variant3")) {
+      block.classList.add('swiper');
+      block.querySelector("ul").classList.add("swiper-wrapper");
+      Array.from(block.children[0].children).forEach((element) => {
+        element.classList.add('swiper-slide');
+      });
+      const paginationEl = document.createElement('div');
+      paginationEl.classList.add('swiper-pagination');
+      block.appendChild(paginationEl);
+
+      if (classlistExists.contains("hitech-variant2")) {
+        hitechVariant1()
+      }
+      if (classlistExists.contains("hitech-variant3")) {
+        hitechVariant2()
+      }
+      block.querySelectorAll(".swiper-wrapper .swiper-slide").forEach(function (el, ind) {
+        if (ind == 0) {
+          el.classList.add("hover");
+        }
+        el.addEventListener("mouseover", function () {
+          block.querySelectorAll(".swiper-wrapper .swiper-slide").forEach(function (slide) {
+            slide.classList.remove("hover");
+          });
+          this.classList.add("hover");
+        });
+      });
+
+    }
+  }
 }
 
 function hitechVariant1() {
-        Swiper(".hitech-variant2 .swiper", {
-          slidesPerView: 4,
-          slideToClickedSlide: true,
-          spaceBetween: 22,
-grabCursor: true,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            type: "bullets",
-          }
-        });
+  Swiper(".hitech-variant2 .swiper", {
+    slidesPerView: 4,
+    slideToClickedSlide: true,
+    spaceBetween: 22,
+    grabCursor: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      type: "bullets",
     }
+  });
+}
 
-    function hitechVariant2() {
-        Swiper(".hitech-variant3 .swiper", {
-          slidesPerView: 4,
-          slideToClickedSlide: true,
-          spaceBetween: 22,
-grabCursor: true,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            type: "bullets",
-          }
-        });
+function hitechVariant2() {
+  Swiper(".hitech-variant3 .swiper", {
+    slidesPerView: 4,
+    slideToClickedSlide: true,
+    spaceBetween: 22,
+    grabCursor: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      type: "bullets",
     }
+  });
+}
