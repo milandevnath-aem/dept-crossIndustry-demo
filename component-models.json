@@ -263,6 +263,42 @@
           {
             "name": "Header menu body",
             "value": "header-menu-body"
+          },
+          {
+            "name": "hitech gallery v1",
+            "value": "hitech-variant1"
+          },
+          {
+            "name": "hitech gallery v2",
+            "value": "hitech-variant2"
+          },
+          {
+            "name": "hitech gallery v3",
+            "value": "hitech-variant3"
+          },
+          {
+            "name": "hitech Articles v1",
+            "value": "hitech-articles1"
+          },
+          {
+            "name": "hitech Articles v2",
+            "value": "hitech-articles2"
+          },
+          {
+            "name": "hitech Articles v3",
+            "value": "hitech-articles3"
+          },
+          {
+            "name": "hitech Footer v1",
+            "value": "hitech-footerv1"
+          },
+          {
+            "name": "hitech Footer v2",
+            "value": "hitech-footerv2"
+          },
+          {
+            "name": "hitech Footer v3",
+            "value": "hitech-footerv3"
           }
         ]
       }
@@ -6077,20 +6113,36 @@
         "valueType": "string",
         "options": [
           {
-            "name": "Type 1",
+            "name": "Bfsi banner Varaint 1",
             "value": "Type 1"
           },
           {
-            "name": "Type 2",
+            "name": "Bfsi banner Varaint 2",
             "value": "Type 2"
           },
           {
-            "name": "Type 3",
+            "name": "Bfsi banner Varaint 3",
             "value": "Type 3"
           },
           {
-            "name": "Type 4",
+            "name": "Bfsi banner Varaint 4",
             "value": "Type 4"
+          },
+          {
+            "name": "Hitech banner Varaint 1",
+            "value": "hitech 1"
+          },
+          {
+            "name": "Hitech banner Varaint 2",
+            "value": "hitech 2"
+          },
+          {
+            "name": "Hitech banner Varaint 3",
+            "value": "hitech 3"
+          },
+          {
+            "name": "Hitech banner Varaint 4",
+            "value": "hitech 4"
           }
         ]
       },

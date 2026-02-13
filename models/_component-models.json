@@ -260,6 +260,42 @@
           },{
             "name": "Header menu body",
             "value": "header-menu-body"
+          },
+          {
+            "name": "hitech gallery v1",
+            "value": "hitech-variant1"
+          },
+          {
+            "name": "hitech gallery v2",
+            "value": "hitech-variant2"
+          },
+          {
+            "name": "hitech gallery v3",
+            "value": "hitech-variant3"
+          },
+          {
+            "name": "hitech Articles v1",
+            "value": "hitech-articles1"
+          },
+          {
+            "name": "hitech Articles v2",
+            "value": "hitech-articles2"
+          },
+          {
+            "name": "hitech Articles v3",
+            "value": "hitech-articles3"
+          },
+          {
+            "name": "hitech Footer v1",
+            "value": "hitech-footerv1"
+          },
+          {
+            "name": "hitech Footer v2",
+            "value": "hitech-footerv2"
+          },
+          {
+            "name": "hitech Footer v3",
+            "value": "hitech-footerv3"
           }
         ]
       }

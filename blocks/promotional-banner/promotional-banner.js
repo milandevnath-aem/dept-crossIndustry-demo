@@ -3,7 +3,8 @@ import {
   div,
   h2,
   img,
-  p
+  p,
+  span
 } from "../../scripts/dom-helpers.js";
 
 export default function decorate(block) {
@@ -22,15 +23,33 @@ export default function decorate(block) {
   } else if (getType.contains("type-4")) {
     block.closest(".promotional-banner-container").classList.add("banner-varient4");
     block.append(bannerType4(block));
-  } else {
-    block.append(bannerType1(block));
+  } 
+  // else {
+  //   block.append(bannerType1(block));
+  // }
+
+  if (getType.contains("hitech-1")) {
+    block.closest(".promotional-banner-container").classList.add("hitech-banner-variant1");
+    block.append(hitechBanner(block));
+  } 
+  if (getType.contains("hitech-2")) {
+    block.closest(".promotional-banner-container").classList.add("hitech-banner-variant2");
+    block.append(hitechBanner(block));
+  } 
+  if (getType.contains("hitech-3")) {
+    block.closest(".promotional-banner-container").classList.add("hitech-banner-variant3");
+    block.append(hitechBanner(block));
+  }
+  if (getType.contains("hitech-4")) {
+    block.closest(".promotional-banner-container").classList.add("hitech-banner-variant4");
+    block.append(hitechBanner(block));
   }
 }
 
 
 function bannerType1(block) {
-  let source = window.innerWidth > 1024 ? block.querySelectorAll("img")[0].src.trim() : block.querySelectorAll("img")[1].src.trim();
-  source = block.querySelectorAll("img").length > 1 ? source : block.querySelectorAll("img")[0].src.trim();
+  let source = window.innerWidth > 1024 ? block?.querySelectorAll("picture img")[0]?.src.trim() : block.querySelectorAll("picture img")[1]?.src.trim();
+  source = block.querySelectorAll("picture img").length > 1 ? source : block?.querySelectorAll("picture img")[0]?.src.trim();
   let heading = block.querySelector("h2").innerText.trim();
   let description = block.querySelector("p").innerText.trim();
   let buttons = block.querySelectorAll("a");
@@ -242,6 +261,70 @@ function bannerType4(block) {
               },
               secondAnchorText
             )
+          )
+        )
+      ),
+    );
+  block.textContent = '';
+
+  return promotionalBanner;
+}
+
+function hitechBanner(block) {
+  let source = window.innerWidth > 1024 ? block?.querySelectorAll("picture img")[0]?.src.trim() : block.querySelectorAll("picture img")[1]?.src.trim();
+  source = block.querySelectorAll("picture img").length > 1 ? source : block?.querySelectorAll("picture img")[0]?.src.trim();
+  let heading = block.querySelector("h2").innerText.trim();
+  let description = block.querySelector("p").innerText.trim();
+  let buttons = block.querySelectorAll("a");
+  let fisrtAnchorText = buttons[0]?.innerText.trim() || "";
+  let fisrtAnchorHref = buttons[0]?.href.trim() || "";
+  let fisrtAnchorTitle = buttons[0]?.title.trim() || "";
+  let redirectionArrow = block.querySelector(".icon img")?.src?.trim() || "";
+
+  const promotionalBanner =
+    div({
+        class: "promotionalbanner promotionalbanner-content block type1",
+        "data-block-name": "promotionalbanner",
+        "data-block-status": "loaded",
+      },
+      // -------- Image Section --------
+      div({
+          class: "bannner-image"
+        },
+        div({},
+          img({
+            loading: "eager",
+            fetchpriority: "high",
+            alt: "",
+            src: `${source}`,
+          })
+        )
+      ),
+      // -------- Content Section --------
+      div({
+          class: "banner-conetent"
+        },
+        div({
+            class: "grid-content"
+          },
+          h2({
+              id: "upgrade-to-smarter-stronger-rewards"
+            },
+            heading
+          ),
+          p({},
+            description
+          ),
+          p({
+              class: "redirections"
+            },
+            a({
+                href: `${fisrtAnchorHref}`,
+                title: `${fisrtAnchorTitle}`
+              },
+              fisrtAnchorText,
+              redirectionArrow ? span(img({ src: redirectionArrow, alt: "" })) : ""
+            ),
           )
         )
       ),

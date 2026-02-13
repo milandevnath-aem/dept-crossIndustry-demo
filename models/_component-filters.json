@@ -30,7 +30,11 @@
       "trackrecord",
       "accordion",
       "tabs",
-      "font-properties"
+      "css-variable",
+      "font-properties",
+      "promotionalbanner",
+      "benefitssection",
+      "blogs"
     ]
   },
   {
