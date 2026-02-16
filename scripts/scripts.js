@@ -140,6 +140,7 @@ async function loadThemeFromPage(themePagePath) {
           }
         } catch (e) {
           // Continue to next candidate
+          console.warn(`Theme configurator not found at ${candidate}`);
         }
       }
 

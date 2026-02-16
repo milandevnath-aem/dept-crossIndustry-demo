@@ -52,4 +52,20 @@ export default function decorate(block) {
   container?.classList.add(variant);
   // Append
   // block.append(handler);
+  const sections = document.querySelectorAll(".process-step-varient1");
+  sections.forEach((section) => {
+    const richTextDivs = section.querySelectorAll(
+      'div[data-aue-type="richtext"]',
+    );
+    richTextDivs.forEach((richDiv) => {
+      const parentP = richDiv.closest("p");
+      if (!parentP) return;
+      // move all children of richtext div before the <p>
+      while (richDiv.firstChild) {
+        parentP.parentNode.insertBefore(richDiv.firstChild, parentP);
+      }
+      // remove the empty <p>
+      parentP.remove();
+    });
+  });
 }

@@ -510,8 +510,8 @@ function decorateSections(main) {
     if (sectionMeta) {
       const meta = readBlockConfig(sectionMeta);
       Object.keys(meta).forEach((key) => {
-        if (key === 'style') {
-          const styles = meta.style
+        if (key.startsWith('style')) {
+          const styles = meta[key]
             .split(',')
             .filter((style) => style)
             .map((style) => toClassName(style.trim()));

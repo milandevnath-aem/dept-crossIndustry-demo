@@ -203,7 +203,7 @@
   display: none;
 }
 
-.accordion-variant2 .default-content-wrapper>p:first-of-type {
+.accordion-variant2.accordion-container .default-content-wrapper p:first-child {
   font-size: 30px;
   line-height: 40px;
   font-weight: var(--font-weight-500, 500);

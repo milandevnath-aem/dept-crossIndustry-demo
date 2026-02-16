@@ -402,12 +402,12 @@
     }
 }
 
-/* simple-banner-varient3 */
-.simple-banner-varient3 .banner-wrapper .block picture {
+/* simple-banner-type-3 */
+.simple-banner-type-3.block picture {
     display: none;
 }
 
-.simple-banner-varient3 .banner-wrapper .block {
+.simple-banner-type-3.block {
     border-radius: 20px;
     background: var(--Charcoal);
     overflow: hidden;
@@ -415,7 +415,7 @@
     padding: 60px;
 }
 
-.simple-banner-varient3 .banner-wrapper .block>div>div>p:nth-of-type(1) {
+.simple-banner-type-3.block>div>div>p:nth-of-type(1) {
     font-size: 40px;
     line-height: 62px;
     margin-bottom: 16px;
@@ -425,7 +425,7 @@
     color: var(--Warm-White);
 }
 
-.simple-banner-varient3 .banner-wrapper .block>div>div>p:nth-of-type(2) {
+.simple-banner-type-3.block>div>div>p:nth-of-type(2) {
     font-family: var(--DM-Sans, sans-serif);
     font-weight: var(--font-weight-400, 400);
     letter-spacing: var(--letter-spacing, 0);
@@ -435,24 +435,24 @@
     margin-bottom: 80px;
 }
 
-.simple-banner-varient3 .banner-wrapper .block>div:last-child>div>div {
+.simple-banner-type-3.block>div:last-child>div>div {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.simple-banner-varient3 .banner-wrapper .block>div:last-child>div>div>div:first-child {
+.simple-banner-type-3.block>div:last-child>div>div>div:first-child {
     display: flex;
     gap: 80px;
 }
 
-.simple-banner-varient3 .banner-wrapper .block>div>div>div>div ul {
+.simple-banner-type-3.block>div>div>div>div ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.simple-banner-varient3 .banner-wrapper .block>div>div>div>div ul li:first-child {
+.simple-banner-type-3.block>div>div>div>div ul li:first-child {
     font-size: 72px;
     line-height: 62px;
     margin-bottom: 8px;
@@ -462,7 +462,7 @@
     letter-spacing: var(--letter-spacing, 0);
 }
 
-.simple-banner-varient3 .banner-wrapper .block>div>div>div>div ul li:last-child {
+.simple-banner-type-3.block>div>div>div>div ul li:last-child {
     font-size: 14px;
     line-height: 24px;
     font-family: var(--DM-Sans, sans-serif);
@@ -471,15 +471,15 @@
     color: var(--Warm-White);
 }
 
-.simple-banner-varient3 .banner-wrapper .block ul {
+.simple-banner-type-3.block ul {
     display: inline-block;
 }
 
-.simple-banner-varient3 .banner-wrapper .block>div>div>div>div {
+.simple-banner-type-3.block>div>div>div>div {
     align-self: flex-end;
 }
 
-.simple-banner-varient3 .banner-wrapper .block>div>div>div>div .button {
+.simple-banner-type-3.block>div>div>div>div .button {
     background: var(--Warm-White);
     color: var(--Charcoal);
     padding: 16px 32px;
@@ -493,22 +493,22 @@
 }
 
 @media (max-width: 768px) {
-    .simple-banner-varient3 .banner-wrapper .block {
+    .simple-banner-type-3.block {
         padding: 32px 24px;
     }
 
-    .simple-banner-varient3 .banner-wrapper .block>div>div>p:nth-of-type(1) {
+    .simple-banner-type-3.block>div>div>p:nth-of-type(1) {
         font-size: 24px;
         line-height: 30px;
     }
 
-    .simple-banner-varient3 .banner-wrapper .block>div>div>p:nth-of-type(2) {
+    .simple-banner-type-3.block>div>div>p:nth-of-type(2) {
         font-size: 14px;
         line-height: 20px;
         margin-bottom: 40px;
     }
 
-    .simple-banner-varient3 .banner-wrapper .block>div:last-child>div>div {
+    .simple-banner-type-3.block>div:last-child>div>div {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -516,22 +516,22 @@
         gap: 32px;
     }
 
-    .simple-banner-varient3 .banner-wrapper .block>div>div>div>div ul li:first-child {
+    .simple-banner-type-3.block>div>div>div>div ul li:first-child {
         font-size: 48px;
         line-height: 48px;
         margin-bottom: 4px;
     }
 
-    .simple-banner-varient3 .banner-wrapper .block>div:last-child>div>div>div:first-child {
+    .simple-banner-type-3.block>div:last-child>div>div>div:first-child {
         flex-direction: column;
         gap: 32px;
     }
 
-    .simple-banner-varient3 .banner-wrapper .block>div>div>div>div {
+    .simple-banner-type-3.block>div>div>div>div {
         align-self: baseline;
     }
 
-    .simple-banner-varient3 .banner-wrapper .block>div>div>div>div .button {
+    .simple-banner-type-3.block>div>div>div>div .button {
         padding: 12px 24px;
         font-size: 14px;
     }
@@ -673,7 +673,7 @@
 }
 
 
-.simple-banner-varient3 .banner-wrapper .block a::after {
+.simple-banner-type-3.block a::after {
     text-decoration: none;
     underline: none;
     display: unset;

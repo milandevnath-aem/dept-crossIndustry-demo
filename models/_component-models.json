@@ -301,6 +301,9 @@
       }
     ]
   },
+    {
+    "...": "./_section-v2.json#/models"
+  },
   {
     "id": "card",
     "fields": [

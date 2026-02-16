@@ -488,16 +488,61 @@ export default async function decorate(block) {
 
   //const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
 
-  const pathSegments = window.location.pathname.split("/").filter(Boolean);
-  //console.log("pathSegments header: ", pathSegments);
-  const parentPath =
-    pathSegments.length > 2 ? `/${pathSegments.slice(0, 3).join("/")}` : "/";
-  //console.log("parentPath header: ", parentPath);
-  //const navPath = locale ? `/${locale}/nav` : parentPath+'/nav';
-  //const navPath = parentPath=='/' ? locale ? `/${locale}/nav` : '/nav' : locale ? `/${locale}/nav` : parentPath+'/nav';
-  //console.log("navPath header: ", navPath);
-  navPath = "/us/nav";
-  const fragment = await loadFragment(navPath);
+  /**
+   * Try to load navigation in hierarchical order
+   * Example: /us/new-bfsi/page -> tries /us/new-bfsi/nav then /us/nav
+   */
+  async function loadNavHierarchically() {
+    const pathSegments = window.location.pathname.split("/").filter(Boolean);
+    
+    // Build paths to try in order (most specific to least specific)
+    const pathsToTry = [];
+    
+    if (!isAuthor) {
+      // For published site: try current path hierarchy
+      for (let i = pathSegments.length; i > 0; i--) {
+        const pathPrefix = pathSegments.slice(0, i).join("/");
+        pathsToTry.push(`/${pathPrefix}/nav`);
+      }
+    } else {
+      // For author environment: use content path structure
+      if (navMeta) {
+        pathsToTry.push(new URL(navMeta, window.location).pathname);
+      } else {
+        // Build hierarchy with /content/{siteName} prefix
+        for (let i = pathSegments.length; i > 0; i--) {
+          const pathPrefix = pathSegments.slice(0, i).join("/");
+          pathsToTry.push(`/content/${siteName}${PATH_PREFIX}/${pathPrefix}/nav`);
+        }
+        // Fallback to base language nav
+        pathsToTry.push(`/content/${siteName}${PATH_PREFIX}/${langCode}/nav`);
+      }
+    }
+    
+    // Remove duplicates while preserving order
+    const uniquePaths = [...new Set(pathsToTry)];
+    
+    console.log("Trying to load nav from paths:", uniquePaths);
+    
+    // Try each path until one succeeds
+    for (const path of uniquePaths) {
+      try {
+        const fragment = await loadFragment(path);
+        if (fragment && fragment.firstElementChild) {
+          console.log("Successfully loaded nav from:", path);
+          return fragment;
+        }
+      } catch (error) {
+        console.log(`Nav not found at ${path}, trying next...`);
+      }
+    }
+    
+    // If nothing worked, return null
+    console.warn("No navigation found in hierarchy");
+    return null;
+  }
+
+  const fragment = await loadNavHierarchically();
 
   // decorate nav DOM
   block.textContent = "";
@@ -747,15 +792,18 @@ export default async function decorate(block) {
       const ps = wrapper.querySelectorAll(":scope > p");
       const ul = wrapper.querySelector(":scope > ul");
 
-      if (ps.length >= 2 && ul) {
+      // find the <p> that contains a <span>
+      const pWithSpan = Array.from(ps).find((p) => p.querySelector("span"));
+
+      if (pWithSpan && ul) {
         const langWrapper = document.createElement("div");
         langWrapper.className = "header-lang-wrapper";
 
-        // insert wrapper before second <p>
-        ps[1].before(langWrapper);
+        // insert wrapper before the <p> that has span
+        pWithSpan.before(langWrapper);
 
-        // move second <p> and <ul> inside it
-        langWrapper.appendChild(ps[1]);
+        // move the <p> and <ul> inside wrapper
+        langWrapper.appendChild(pWithSpan);
         langWrapper.appendChild(ul);
       }
     }
@@ -858,21 +906,26 @@ export default async function decorate(block) {
         ul.classList.toggle("active");
       });
     });
-    const sections = document.querySelectorAll(".process-step-varient1");
-    sections.forEach((section) => {
-      const richTextDivs = section.querySelectorAll(
-        'div[data-aue-type="richtext"]',
-      );
-      richTextDivs.forEach((richDiv) => {
-        const parentP = richDiv.closest("p");
-        if (!parentP) return;
-        // move all children of richtext div before the <p>
-        while (richDiv.firstChild) {
-          parentP.parentNode.insertBefore(richDiv.firstChild, parentP);
-        }
-        // remove the empty <p>
-        parentP.remove();
-      });
+
+    const langWrapper = document.querySelector(".header-lang-wrapper");
+    const ul = langWrapper.querySelector("ul");
+
+    langWrapper.addEventListener("click", () => {
+      langWrapper.classList.toggle("open");
+    });
+    ul.addEventListener("click", (e) => {
+      if (e.target.tagName === "LI") {
+        const first = ul.children[0];
+        const clicked = e.target;
+
+        // swap text
+        [first.textContent, clicked.textContent] = [
+          clicked.textContent,
+          first.textContent,
+        ];
+
+        wrapper.classList.remove("open");
+      }
     });
   try {
     const iconEl = document.querySelector("header .search.search-icon .icon");
