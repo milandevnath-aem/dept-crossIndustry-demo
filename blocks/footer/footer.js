@@ -39,33 +39,38 @@ export default async function decorate(block) {
    * Try to load footer in hierarchical order
    * Example: /us/new-bfsi/page -> tries /us/new-bfsi/footer then /us/footer
    */
-  async function loadFooterHierarchically() {
-    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+  async function loadFooterHierarchically(footer = "") {
+    const pathSegments = footer.split('/').filter(Boolean) || window.location.pathname.split('/').filter(Boolean);
 
     // Build paths to try in order (most specific to least specific)
     const pathsToTry = [];
 
-    if (!isAuthor) {
-      // For published site: try current path hierarchy
-      // eslint-disable-next-line no-plusplus
-      for (let i = pathSegments.length; i > 0; i--) {
-        const pathPrefix = pathSegments.slice(0, i).join("/");
-        pathsToTry.push(`/${pathPrefix}/footer`);
-      }
-    } else {
-      // For author environment: use content path structure
-      if (footerMeta) {
-        pathsToTry.push(new URL(footerMeta, window.location).pathname);
-      } else {
-        // Build hierarchy with /content/{siteName} prefix
+    if(footer === ''){
+      if (!isAuthor) {
+        // For published site: try current path hierarchy
+        // eslint-disable-next-line no-plusplus
         for (let i = pathSegments.length; i > 0; i--) {
-          const pathPrefix = pathSegments.slice(0, i).join('/');
-          pathsToTry.push(`/content/${siteName}${PATH_PREFIX}/${pathPrefix}/footer`);
+          const pathPrefix = pathSegments.slice(0, i).join("/");
+          pathsToTry.push(`/${pathPrefix}/footer`);
         }
-        // Fallback to base language footer
-        pathsToTry.push(`/content/${siteName}${PATH_PREFIX}/${langCode}/footer`);
+      } else {
+        // For author environment: use content path structure
+        if (footerMeta) {
+          pathsToTry.push(new URL(footerMeta, window.location).pathname);
+        } else {
+          // Build hierarchy with /content/{siteName} prefix
+          for (let i = pathSegments.length; i > 0; i--) {
+            const pathPrefix = pathSegments.slice(0, i).join('/');
+            pathsToTry.push(`/content/${siteName}${PATH_PREFIX}/${pathPrefix}/footer`);
+          }
+          // Fallback to base language footer
+          pathsToTry.push(`/content/${siteName}${PATH_PREFIX}/${langCode}/footer`);
+        }
       }
+    }else{
+      pathsToTry.push(footer);
     }
+    
 
     // Remove duplicates while preserving order
     const uniquePaths = [...new Set(pathsToTry)];
@@ -89,8 +94,7 @@ export default async function decorate(block) {
     console.warn("No footer found in hierarchy");
     return null;
   }
-
-  const fragment = await loadFooterHierarchically();
+  const fragment = await loadFooterHierarchically("/footer");
 
   // decorate footer DOM
   block.textContent = '';

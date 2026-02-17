@@ -492,12 +492,13 @@ export default async function decorate(block) {
    * Try to load navigation in hierarchical order
    * Example: /us/new-bfsi/page -> tries /us/new-bfsi/nav then /us/nav
    */
-  async function loadNavHierarchically() {
-    const pathSegments = window.location.pathname.split("/").filter(Boolean);
+  async function loadNavHierarchically(header = "") {
+    const pathSegments = header.split('/').filter(Boolean) || window.location.pathname.split("/").filter(Boolean);
     
     // Build paths to try in order (most specific to least specific)
     const pathsToTry = [];
     
+    if(header === '') {
     if (!isAuthor) {
       // For published site: try current path hierarchy
       for (let i = pathSegments.length; i > 0; i--) {
@@ -518,6 +519,9 @@ export default async function decorate(block) {
         pathsToTry.push(`/content/${siteName}${PATH_PREFIX}/${langCode}/nav`);
       }
     }
+  } else {
+ pathsToTry.push(header);
+  }
     
     // Remove duplicates while preserving order
     const uniquePaths = [...new Set(pathsToTry)];
@@ -542,7 +546,7 @@ export default async function decorate(block) {
     return null;
   }
 
-  const fragment = await loadNavHierarchically();
+  const fragment = await loadNavHierarchically("/us/nav");
 
   // decorate nav DOM
   block.textContent = "";

@@ -22,47 +22,6 @@
       "id": "promotionalbanner",
       "fields": [
         {
-          "component": "select",
-          "name": "classes",
-          "value": "",
-          "label": "select type",
-          "valueType": "string",
-          "options": [
-            {
-              "name": "Bfsi banner Varaint 1",
-              "value": "Type 1"
-            },
-            {
-              "name": "Bfsi banner Varaint 2",
-              "value": "Type 2"
-            },
-            {
-              "name": "Bfsi banner Varaint 3",
-              "value": "Type 3"
-            },
-            {
-              "name": "Bfsi banner Varaint 4",
-              "value": "Type 4"
-            },
-            {
-              "name": "Hitech banner Varaint 1",
-              "value": "hitech 1"
-            },
-            {
-              "name": "Hitech banner Varaint 2",
-              "value": "hitech 2"
-            },
-            {
-              "name": "Hitech banner Varaint 3",
-              "value": "hitech 3"
-            },
-            {
-              "name": "Hitech banner Varaint 4",
-              "value": "hitech 4"
-            }
-          ]
-        },
-        {
           "component": "reference",
           "valueType": "string",
           "name": "image",

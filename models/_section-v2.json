@@ -61,8 +61,331 @@
                         {
                             "name": "Benefits",
                             "value": "benefits"
+                        },
+                        {
+                            "name": "Footer",
+                            "value": "footer"  
+                        },
+                        {
+                            "name": "HitechGallery",
+                            "value": "hitechgallery"  
+                        },
+                        {
+                            "name": "HitechArticles",
+                            "value": "hitechArticles"  
+                        },
+                        {
+                            "name": "Banner",
+                            "value": "banner"
+                        },
+                        {
+                            "name": "NotificationBanner",
+                            "value": "notificationbanner"
+                        },
+                        {
+                            "name": "Faq",
+                            "value": "faq"
+                        },
+                        {
+                            "name": "TrackRecord",
+                            "value": "trackrecord"
                         }
 
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleTrackRecord",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "trackRecord"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "TrackRecord",
+                            "children": [
+                                {
+                                    "name": "Trackrecord Type 1",
+                                    "value": "track-record-varient1"
+                                },
+                                {
+                                    "name": "Trackrecord Type 2",
+                                    "value": "track-record-varient2"
+                                },
+                                {
+                                    "name": "Trackrecord Type 3",
+                                    "value": "track-record-varient3"
+                                },
+                                {
+                                    "name": "Process Step Type 1",
+                                    "value": "process-step-varient1"
+                                },
+                                {
+                                    "name": "Process Step Type 2",
+                                    "value": "process-step-varient2"
+                                },
+                                {
+                                    "name": "Process Step Type 3",
+                                    "value": "process-step-varient3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleFaq",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "faq"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "Faq",
+                            "children": [
+                                {
+                                    "name": "Accordion Variant 1",
+                                    "value": "accordion-variant1"
+                                },
+                                {
+                                    "name": "Accordion Variant 2",
+                                    "value": "accordion-variant2"
+                                },
+                                {
+                                    "name": "Accordion Variant 3",
+                                    "value": "accordion-variant3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleNotificationBanner",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "notificationbanner"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "NotificationBanner",
+                            "children": [
+                                {
+                                    "name": "Notification Banner Type 1",
+                                    "value": "notification-banner-varient1"
+                                },
+                                {
+                                    "name": "Notification Banner Type 2",
+                                    "value": "notification-banner-varient2"
+                                },
+                                {
+                                    "name": "Notification Banner Type 3",
+                                    "value": "notification-banner-varient3"
+                                },
+                                {
+                                    "name": "Simple Banners Type 1",
+                                    "value": "simple-banner-varient1"
+                                },
+                                {
+                                    "name": "Simple Banners Type 2",
+                                    "value": "simple-banner-varient2"
+                                },
+                                {
+                                    "name": "Simple Banners Type 3",
+                                    "value": "simple-banner-varient3"
+                                },
+                                {
+                                    "name": "Simple Banners Type 4",
+                                    "value": "simple-banner-varient4"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleBanner",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "banner"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "Banner",
+                            "children": [
+                                {
+                                    "name": "Bfsi banner Varaint 1",
+                                    "value": "banner-varient1"
+                                },
+                                {
+                                    "name": "Bfsi banner Varaint 2",
+                                    "value": "banner-varient2"
+                                },
+                                {
+                                    "name": "Bfsi banner Varaint 3",
+                                    "value": "banner-varient3"
+                                },
+                                {
+                                    "name": "Bfsi banner Varaint 4",
+                                    "value": "banner-varient4"
+                                },
+                                {
+                                    "name": "Hitech banner Varaint 1",
+                                    "value": "hitech-banner-variant1"
+                                },
+                                {
+                                    "name": "Hitech banner Varaint 2",
+                                    "value": "hitech-banner-variant2"
+                                },
+                                {
+                                    "name": "Hitech banner Varaint 3",
+                                    "value": "hitech-banner-variant3"
+                                },
+                                {
+                                    "name": "Hitech banner Varaint 4",
+                                    "value": "hitech-banner-variant4"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleHitechArticles",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "hitechArticles"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "HitechArticles",
+                            "children": [
+                           {
+                                "name": "hitech Articles v1",
+                                "value": "hitech-articles1"
+                            },
+                            {
+                                "name": "hitech Articles v2",
+                                "value": "hitech-articles2"
+                            },
+                            {
+                                "name": "hitech Articles v3",
+                                "value": "hitech-articles3"
+                            }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleHitechGallery",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "hitechgallery"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "HitechGallery",
+                            "children": [
+                            {
+                                "name": "hitech gallery v1",
+                                "value": "hitech-variant1"
+                            },
+                            {
+                                "name": "hitech gallery v2",
+                                "value": "hitech-variant2"
+                            },
+                            {
+                                "name": "hitech gallery v3",
+                                "value": "hitech-variant3"
+                            }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleFooter",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "footer"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "Footer",
+                            "children": [
+                                {
+                                    "name": "Footer variant Main",
+                                    "value": "footer-main"
+                                },
+                                {
+                                    "name": "Footer variant Bottom",
+                                    "value": "footer-bottom"
+                                },
+                                {
+                                    "name": "Footer Variant 2",
+                                    "value": "footer-variant2"
+                                },
+                                {
+                                    "name": "Footer Variant 3",
+                                    "value": "footer-variant3"
+                                },
+                                {
+                                    "name": "hitech Footer variant 1",
+                                    "value": "hitech-footerv1"
+                                },
+                                {
+                                    "name": "hitech Footer variant 2",
+                                    "value": "hitech-footerv2"
+                                },
+                                {
+                                    "name": "hitech Footer variant 3",
+                                    "value": "hitech-footerv3"
+                                }
+                            ]
+                        }
                     ]
                 },
                 {
