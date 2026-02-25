@@ -248,6 +248,43 @@
           {
             "name": "HitechOverview",
             "value": "hitechoverview"
+          },
+          {
+            "name": "Compare",
+            "value": "compare"
+          }
+        ]
+      },
+      {
+        "component": "multiselect",
+        "name": "styleCompare",
+        "label": "Style",
+        "valueType": "string[]",
+        "condition": {
+          "===": [
+            {
+              "var": "sectionType"
+            },
+            "compare"
+          ]
+        },
+        "options": [
+          {
+            "name": "Compare",
+            "children": [
+              {
+                "name": "Compare Component Variant 1",
+                "value": "compare-variant1"
+              },
+              {
+                "name": "Compare Component Variant 2",
+                "value": "compare-variant2"
+              },
+              {
+                "name": "Compare Component Variant3",
+                "value": "compare-variant3"
+              }
+            ]
           }
         ]
       },

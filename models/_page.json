@@ -206,12 +206,8 @@
         "label": "Style",
         "options": [
           {
-            "name": "Highlights",
+            "name": "Highlight",
             "value": "highlight"
-          },
-          {
-            "name": "Product Compare Container V1",
-            "value": "product-compare-container-v1"
           }
         ]
       }
