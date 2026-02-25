@@ -295,11 +295,6 @@ function hitechArticles(block) {
     buttonWrapper.appendChild(nextbutton);
     block.closest(".hitech-articles3").querySelector(".default-content-wrapper").appendChild(buttonWrapper);
     hitechArticles3();
-    buttonWrapper.querySelector(".swiper-button-prev").innerHTML = "";
-    buttonWrapper.querySelector(".swiper-button-next").innerHTML = "";
-    let img = document.createElement("img");
-        img.src = '/content/dam/dept-crossIndustry/hi-tech-images/nex-arrow.svg';
-    prevButton.appendChild(img);
   }
 }
 function hitechArticles1() {

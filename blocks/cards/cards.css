@@ -2035,6 +2035,7 @@ font-weight: 400;
 line-height: 48px;
 margin: 0px;
 }
+
 .hitech-articles1 .default-content-wrapper .button-container,
 .hitech-articles2 .default-content-wrapper .button-container {
     /* height: 48px; */
@@ -2042,6 +2043,39 @@ margin: 0px;
     border-radius: 4px;
 background: var(--Primary, #10172A);
 }
+.hitech-articles3 .default-content-wrapper .button-wrapper .swiper-button-next svg, 
+.hitech-articles3 .default-content-wrapper .button-wrapper .swiper-button-prev svg {
+  display: none;
+}
+
+/* 2. Set your custom image as background */
+.hitech-articles3 .default-content-wrapper .button-wrapper {
+  gap: 12px;
+}
+.hitech-articles3 .default-content-wrapper .button-wrapper .swiper-button-prev,
+.hitech-articles3 .default-content-wrapper .button-wrapper .swiper-button-next {
+  background-image: url('/icons/arrow.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: #10172A;
+  border-radius: 41px;
+  background-size: 16px 16px;
+  margin-top : 0px;
+}
+
+.hitech-articles3 .default-content-wrapper .button-wrapper .swiper-button-next {
+  transform: rotate(180deg);
+}
+
+.hitech-articles3 .default-content-wrapper .button-wrapper .swiper-button-prev.swiper-button-disabled,
+.hitech-articles3 .default-content-wrapper .button-wrapper .swiper-button-next.swiper-button-disabled {
+  background-image: url('/icons/arrow.svg');
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  cursor: not-allowed;
+} 
+
 .hitech-articles3 .default-content-wrapper .button-container {
   display: none;
 }
