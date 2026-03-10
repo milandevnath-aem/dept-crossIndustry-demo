@@ -130,6 +130,18 @@
                                 {
                                     "name": "Compare Component Variant3",
                                     "value": "compare-variant3"
+                                },
+                                {
+                                    "name": "Healthcare round tab swiper variant",
+                                    "value": "healthcare-round-tab-swiper"
+                                },
+                                {
+                                    "name": "Healthcare tab swiper variant",
+                                    "value": "healthcare-tab-swiper"
+                                },
+                                {
+                                    "name": "Healthcare tab without swiper variant",
+                                    "value": "healthcare-tab-without-swiper"
                                 }
                             ]
                         }
