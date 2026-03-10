@@ -2600,6 +2600,7 @@ padding: 9px 24px;
 
 .section.compare-variant1 .default-content-wrapper{
   text-align: center;
+  padding-left: 0px;
 }
 
 .section.compare-variant2 .default-content-wrapper p{
@@ -2610,14 +2611,16 @@ padding: 9px 24px;
   max-width: 900px;
   margin-bottom: 40px;
   text-align: left;
+  margin-left: 36px;
     @media screen and (max-width: 768px) {
     font-size: 24px;
     line-height: 32px;
     margin-bottom: 32px;
+    margin-left: unset;
+      text-align: left;
   }
 }
-.section.compare-variant1 .default-content-wrapper p,
-.section.compare-variant3 .default-content-wrapper p {
+.section.compare-variant1 .default-content-wrapper p{
   font-size: 36px;
   line-height: 48px;
   font-weight: 400;
@@ -2626,6 +2629,21 @@ padding: 9px 24px;
   margin: 0 auto 48px;
   @media screen and (max-width: 768px) {
     font-size: 24px;
+    line-height: 32px;
+    margin: unset;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+}
+.section.compare-variant3 .default-content-wrapper p {
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 400;
+  text-align: left;
+  max-width: 900px;
+  margin-bottom: 48px;
+  @media screen and (max-width: 768px) {
+     font-size: 24px;
     line-height: 32px;
     margin: unset;
     margin-bottom: 32px;
