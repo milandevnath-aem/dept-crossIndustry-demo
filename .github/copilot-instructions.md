@@ -199,6 +199,229 @@ export default async function decorate(block) {
 - Stylelint: `stylelint-config-standard`
 - Husky pre-commit hooks enforce linting
 
+### ESLint - JavaScript Code Standards
+
+This project uses `airbnb-base` style guide with AEM EDS-specific rules. **Always follow these conventions:**
+
+#### String Quotes
+```javascript
+// ✅ Correct - use single quotes
+const className = 'my-class';
+const selector = 'a[href]';
+
+// ❌ Wrong - double quotes
+const className = "my-class";
+```
+
+#### Variable Declarations
+```javascript
+// ✅ Correct - use const for variables that are never reassigned
+const source = getImageSource(block);
+const heading = block.querySelector('h2')?.innerText || '';
+
+// ❌ Wrong - using let when value never changes
+let source = getImageSource(block);
+```
+
+#### Import Extensions
+```javascript
+// ✅ Correct - always include .js extension
+import { div, p, a } from '../../scripts/dom-helpers.js';
+
+// ❌ Wrong - missing extension
+import { div, p, a } from '../../scripts/dom-helpers';
+```
+
+#### Trailing Commas
+```javascript
+// ✅ Correct - trailing comma in multiline imports/objects/arrays
+import {
+  a,
+  div,
+  h2,
+  img,
+  p,
+} from '../../scripts/dom-helpers.js';
+
+const config = {
+  loading: 'eager',
+  alt: '',
+};
+
+// ❌ Wrong - missing trailing comma
+import {
+  a,
+  div,
+  p
+} from '../../scripts/dom-helpers.js';
+```
+
+#### Console Statements
+```javascript
+// ✅ Correct - no console statements in production code
+// (remove or comment out before committing)
+
+// ❌ Wrong - console statements will fail linting
+console.log(block);
+```
+
+#### Function Hoisting
+```javascript
+// ✅ Correct - define functions before using them, or use function declarations
+function helperFunction(block) {
+  // ...
+}
+
+export default function decorate(block) {
+  helperFunction(block);
+}
+
+// ❌ Wrong - using function before definition (with const/let)
+export default function decorate(block) {
+  helperFunction(block); // Error: used before defined
+}
+
+const helperFunction = (block) => { /* ... */ };
+```
+
+#### Empty Lines
+```javascript
+// ✅ Correct - maximum one blank line between code blocks
+
+function foo() {}
+
+function bar() {}
+
+// ❌ Wrong - multiple blank lines
+function foo() {}
+
+
+function bar() {}
+```
+
+#### File Endings
+```javascript
+// ✅ Correct - files must end with a newline character
+export default function decorate(block) {}
+// ← newline here
+
+// ❌ Wrong - no newline at end of file
+export default function decorate(block) {}
+```
+
+#### Line Breaks
+- Use Unix-style line endings (`LF`, not `CRLF`)
+- Configure your editor to use LF for this project
+
+### Stylelint - CSS Code Standards
+
+This project uses `stylelint-config-standard`. **Follow these conventions:**
+
+#### Property Order
+```css
+/* ✅ Correct - logical property grouping */
+.block {
+  /* Positioning */
+  position: relative;
+  top: 0;
+  
+  /* Display & Box Model */
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  margin: 0;
+  
+  /* Visual */
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  
+  /* Typography */
+  font-size: 1rem;
+  color: var(--color-text);
+}
+```
+
+#### CSS Custom Properties
+```css
+/* ✅ Correct - use CSS custom properties for theming */
+.banner {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* ❌ Avoid - hardcoded colors */
+.banner {
+  background-color: #ffffff;
+  color: #333333;
+}
+```
+
+#### Selector Naming (BEM-like)
+```css
+/* ✅ Correct - block-element pattern */
+.cards { }
+.cards-card { }
+.cards-card-image { }
+.cards-card-body { }
+
+/* ❌ Wrong - inconsistent naming */
+.cards { }
+.card { }
+.cardImage { }
+```
+
+#### Units and Values
+```css
+/* ✅ Correct - use relative units, no units for zero */
+.block {
+  margin: 0;
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+
+/* ❌ Wrong - unnecessary units */
+.block {
+  margin: 0px;
+  padding: 16px;
+}
+```
+
+#### Media Queries
+```css
+/* ✅ Correct - mobile-first approach */
+.block {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .block {
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .block {
+    max-width: 1200px;
+  }
+}
+```
+
+### Running Linters
+```bash
+# Run all linters
+npm run lint
+
+# Fix auto-fixable issues
+npm run lint -- --fix        # ESLint
+npx stylelint "**/*.css" --fix  # Stylelint
+```
+
+### Pre-commit Hooks
+Husky is configured to run linting before commits. If linting fails:
+1. Fix the reported issues
+2. Stage the fixed files
+3. Commit again
+
 ### Real User Monitoring (RUM)
 - Handled by `sampleRUM()` in `aem.js`
 - Tracks checkpoints: `top`, `lazy`, `cwv` (Core Web Vitals)
