@@ -6253,6 +6253,207 @@
     ]
   },
   {
+    "id": "sub-section",
+    "fields": [
+      {
+        "component": "select",
+        "name": "style",
+        "value": "",
+        "label": "Background Style",
+        "description": "Select background color/style for the sub-section.",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Transparent / Default",
+            "value": "bg-transparent"
+          },
+          {
+            "name": "White",
+            "value": "bg-white"
+          },
+          {
+            "name": "Light Gray",
+            "value": "bg-light"
+          },
+          {
+            "name": "Dark",
+            "value": "bg-dark"
+          },
+          {
+            "name": "Primary",
+            "value": "bg-primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "bg-secondary"
+          },
+          {
+            "name": "Accent",
+            "value": "bg-accent"
+          },
+          {
+            "name": "Neutrals 10",
+            "value": "bg-neutrals-10"
+          },
+          {
+            "name": "Neutrals 20",
+            "value": "bg-neutrals-20"
+          },
+          {
+            "name": "Primary Blue",
+            "value": "bg-primary-blue"
+          },
+          {
+            "name": "Primary Blue 90",
+            "value": "bg-primary-blue-90"
+          },
+          {
+            "name": "Primary Blue 70",
+            "value": "bg-primary-blue-70"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "layout",
+        "value": "",
+        "label": "Layout",
+        "description": "Content layout arrangement.",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Stack (Vertical)",
+            "value": "stack"
+          },
+          {
+            "name": "Grid",
+            "value": "grid"
+          },
+          {
+            "name": "Flex (Responsive Row)",
+            "value": "flex"
+          },
+          {
+            "name": "Center Aligned",
+            "value": "center"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "width",
+        "value": "",
+        "label": "Width",
+        "description": "Sub-section width constraint.",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Full Width",
+            "value": "full"
+          },
+          {
+            "name": "Contained (1200px)",
+            "value": "contained"
+          },
+          {
+            "name": "Narrow (800px)",
+            "value": "narrow"
+          },
+          {
+            "name": "Wide (1400px)",
+            "value": "wide"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacing-top",
+        "value": "",
+        "label": "Spacing Top",
+        "description": "Top padding of the sub-section.",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "None",
+            "value": "none"
+          },
+          {
+            "name": "Small",
+            "value": "small"
+          },
+          {
+            "name": "Medium",
+            "value": "medium"
+          },
+          {
+            "name": "Large",
+            "value": "large"
+          },
+          {
+            "name": "Extra Large",
+            "value": "xlarge"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacing-bottom",
+        "value": "",
+        "label": "Spacing Bottom",
+        "description": "Bottom padding of the sub-section.",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "None",
+            "value": "none"
+          },
+          {
+            "name": "Small",
+            "value": "small"
+          },
+          {
+            "name": "Medium",
+            "value": "medium"
+          },
+          {
+            "name": "Large",
+            "value": "large"
+          },
+          {
+            "name": "Extra Large",
+            "value": "xlarge"
+          }
+        ]
+      },
+      {
+        "component": "multiselect",
+        "name": "extras",
+        "value": "",
+        "label": "Additional Styles",
+        "description": "Additional visual styling options.",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Bordered",
+            "value": "bordered"
+          },
+          {
+            "name": "Rounded Corners",
+            "value": "rounded"
+          },
+          {
+            "name": "Shadow",
+            "value": "shadow"
+          },
+          {
+            "name": "Large Shadow",
+            "value": "shadow-lg"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "tabs",
     "fields": [
       {
