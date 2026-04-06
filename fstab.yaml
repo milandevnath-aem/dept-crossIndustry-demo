@@ -3,3 +3,7 @@ mountpoints:
     url: "https://author-p153659-e1796191.adobeaemcloud.com//bin/franklin.delivery/milandevnath-aem/dept-crossIndustry-demo/main"
     type: "markup"
     suffix: ".html"
+
+metadata:
+  exclude:
+    - /tools/**
