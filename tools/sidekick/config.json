@@ -1,5 +1,12 @@
 {
   "project": "AEM XWalk Boilerplate",
   "editUrlLabel": "AEM Editor",
-  "editUrlPattern": "{{contentSourceUrl}}{{pathname}}?cmd=open"
+  "editUrlPattern": "{{contentSourceUrl}}{{pathname}}?cmd=open",
+  "plugins": [
+    {
+      "id": "library",
+      "title": "Library",
+      "url": "https://main--dept-crossindustry-demo--milandevnath-aem.aem.live/tools/library.html"
+    }
+  ]
 }
