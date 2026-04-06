@@ -2,15 +2,6 @@
 
 This directory contains the Sidekick Library configuration for displaying block variants to content authors.
 
-## What Is Already Implemented In This Repo
-
-- `tools/sidekick/library.html` is configured to load the library from `/tools/sidekick/library.json` (official pattern).
-- `tools/sidekick/config.json` includes the `library` sidekick plugin configuration.
-- `fstab.yaml` excludes `/tools/**` from indexing metadata.
-- `tools/sidekick/library.json` is included as a starter placeholder so the endpoint resolves immediately.
-
-Replace the starter `library.json` by previewing/publishing a real `library.xlsx` workbook in your content source.
-
 ## What You Need to Do
 
 ### 1. Create the Library Workbook
