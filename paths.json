@@ -3,7 +3,8 @@
     "/content/dept-crossIndustry/:/",
     "/content/dept-crossIndustry/configuration:/.helix/config.json",
     "/content/dept-crossIndustry/metadata:/metadata.json",
-    "/content/dept-crossIndustry/us/theme-configuration:/en/theme-configuration.json"
+    "/content/dept-crossIndustry/us/theme-configuration:/en/theme-configuration.json",
+    "/content/dept-crossIndustry/block-list/library.json:/block-list/library.json"
   ],
   "includes": [
     "/content/dept-crossIndustry",
