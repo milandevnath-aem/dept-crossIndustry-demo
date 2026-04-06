@@ -2,4 +2,11 @@
   "project": "AEM XWalk Boilerplate",
   "editUrlLabel": "AEM Editor",
   "editUrlPattern": "{{contentSourceUrl}}{{pathname}}?cmd=open"
+},
+{
+  "id": "Library",
+  "title": "Block Library",
+  "environments": ["edit", "preview", "publish"],
+  "url": "/tools/sidekick/library.html",
+  "includePaths": ["/content/**"],
 }
