@@ -41,7 +41,7 @@ async function loadThemeConfiguration(themePath) {
 
     // If no path provided, try to get from metadata or use default
     if (!configPath) {
-      const metadataTheme = getMetadata('theme-configuration');
+      const    = getMetadata('theme-configuration');
       if (metadataTheme) {
         configPath = metadataTheme;
       } else {
@@ -500,7 +500,10 @@ async function loadEager(doc) {
   // await loadThemeConfiguration();
 
   // Load theme from page (theme-configurator-root)
-  await loadThemeFromPage();
+  const themeConfigCFPath = getMetadata('theme_cf_reference');
+  if (!themeConfigCFPath) {
+    await loadThemeFromPage();
+  }
 
   // Preconnect dynamically to speed up LCP fetch without hardcoding hosts
   try {
