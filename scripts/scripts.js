@@ -41,7 +41,7 @@ async function loadThemeConfiguration(themePath) {
 
     // If no path provided, try to get from metadata or use default
     if (!configPath) {
-      const    = getMetadata('theme-configuration');
+      const metadataTheme = getMetadata('theme-configuration');
       if (metadataTheme) {
         configPath = metadataTheme;
       } else {
