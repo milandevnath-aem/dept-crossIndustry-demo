@@ -1,0 +1,154 @@
+.product-compare-cards-container {
+  background: #f7f8fb;
+}
+
+.product-compare-cards-container > .default-content-wrapper p:first-child {
+  margin: 0 0 20px;
+  color: #1a2235;
+  font-size: 32px;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+.product-compare-cards {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.product-compare-cards .product-compare-cards-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.product-compare-cards .product-compare-cards-item {
+  border: 1px solid #d9deea;
+  border-radius: 4px;
+  background: #fff;
+  padding: 14px;
+}
+
+.product-compare-cards .product-compare-cards-thumb {
+  background: radial-gradient(circle at 25% 20%, #72f2ff 0%, #183a57 58%, #0f1a30 100%);
+  height: 112px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-compare-cards .product-compare-cards-thumb span {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  right: 10px;
+  text-align: center;
+  color: rgb(255 255 255 / 90%);
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-compare-cards .product-compare-cards-swatches {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 10px;
+}
+
+.product-compare-cards .product-compare-cards-swatch {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid #b8bfd2;
+  padding: 0;
+}
+
+.product-compare-cards .product-compare-cards-title {
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 500;
+  color: #1a2235;
+  margin: 0 0 8px;
+}
+
+.product-compare-cards .product-compare-cards-description {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6b7389;
+  margin: 0 0 8px;
+}
+
+.product-compare-cards .product-compare-cards-performance {
+  margin: 0 0 10px;
+  color: #7a63ff;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.product-compare-cards .product-compare-cards-specs {
+  margin: 0 0 12px;
+  padding-left: 14px;
+}
+
+.product-compare-cards .product-compare-cards-specs li {
+  margin-bottom: 4px;
+  color: #1f2434;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.product-compare-cards .button-container {
+  margin: 0;
+}
+
+.product-compare-cards .button-container a.button {
+  width: 100%;
+  min-height: 34px;
+  border-radius: 2px;
+  background: #1b2133;
+  border: 1px solid #1b2133;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  text-decoration: none;
+}
+
+.product-compare-cards.compare-variant2 .product-compare-cards-thumb {
+  display: none;
+}
+
+.product-compare-cards.compare-variant2 .product-compare-cards-item {
+  padding-top: 18px;
+}
+
+.product-compare-cards.compare-variant3 .product-compare-cards-featured-label {
+  margin: -14px -14px 12px;
+  padding: 6px 10px;
+  background: #5f42c5;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.product-compare-cards.compare-variant3 .product-compare-cards-item.is-featured {
+  border-color: #5f42c5;
+  box-shadow: 0 8px 18px rgb(42 26 103 / 15%);
+}
+
+@media (width <= 900px) {
+  .product-compare-cards-container > .default-content-wrapper p:first-child {
+    font-size: 24px;
+  }
+
+  .product-compare-cards .product-compare-cards-list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

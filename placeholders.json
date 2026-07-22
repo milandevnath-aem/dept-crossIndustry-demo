@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "Key": "search",
+      "Text": "Search"
+    },
+    {
+      "Key": "open-navigation",
+      "Text": "Open navigation"
+    },
+    {
+      "Key": "close-navigation",
+      "Text": "Close navigation"
+    }
+  ]
+}

@@ -6985,7 +6985,29 @@
   },
   {
     "id": "techspecsfeatures",
-    "fields": []
+    "fields": [
+      {
+        "component": "select",
+        "name": "versionselector",
+        "label": "Version Selector",
+        "value": "gold",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Gold",
+            "value": "gold"
+          },
+          {
+            "name": "Silver",
+            "value": "silver"
+          },
+          {
+            "name": "Bronze",
+            "value": "bronze"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "theme-configurator",

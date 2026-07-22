@@ -76,16 +76,18 @@ function focusNavSection() {
  * @param {Element} sections The container element
  * @param {Boolean} expanded Whether the element should be expanded or collapsed
  */
-/* function toggleAllNavSections(sections, expanded = false) {
+function toggleAllNavSections(sections, expanded = false) {
+  if (!sections) return;
+
   const navSections = sections.querySelectorAll(
-    ".nav-sections .default-content-wrapper > ul > li",
+    '.nav-sections .default-content-wrapper > ul > li',
   );
   if (navSections && navSections.length > 0) {
     navSections.forEach((section) => {
-      section.setAttribute("aria-expanded", expanded);
+      section.setAttribute('aria-expanded', expanded);
     });
   }
-} 
+}
 
 async function overlayLoad(navSections) {
   const langCode = getLanguage();
@@ -120,12 +122,9 @@ async function overlayLoad(navSections) {
  * @param {*} forceExpanded Optional param to force nav expand behavior when not null
  */
 async function toggleMenu(nav, navSections, forceExpanded = null) {
-  /*
-  if (window.navigationData) {
-    await overlayLoad(navSections);
-  } else {
+  if (!window.navigationData) {
     return;
-  }*/
+  }
 
   const expanded =
     forceExpanded !== null
