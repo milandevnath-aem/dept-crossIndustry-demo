@@ -5,7 +5,7 @@
       "section"
     ]
   },
-   {
+  {
     "id": "section",
     "components": [
       "button",
@@ -37,7 +37,8 @@
       "blogs",
       "font-properties",
       "techspecsfeatures",
-      "hitechoverview"
+      "hitechoverview",
+      "product-compare-cards"
     ]
   },
   {
@@ -59,7 +60,7 @@
       "dm-asset",
       "dm-template",
       "image",
-      "text",      
+      "text",
       "title",
       "video"
     ]

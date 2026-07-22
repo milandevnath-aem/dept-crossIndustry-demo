@@ -246,6 +246,43 @@
           {
             "name": "HitechOverview",
             "value": "hitechoverview"
+          },
+          {
+            "name": "Compare",
+            "value": "compare"
+          }
+        ]
+      },
+      {
+        "component": "multiselect",
+        "name": "styleCompare",
+        "label": "Style",
+        "valueType": "string[]",
+        "condition": {
+          "===": [
+            {
+              "var": "sectionType"
+            },
+            "compare"
+          ]
+        },
+        "options": [
+          {
+            "name": "Compare",
+            "children": [
+              {
+                "name": "Compare Component Variant 1",
+                "value": "compare-variant1"
+              },
+              {
+                "name": "Compare Component Variant 2",
+                "value": "compare-variant2"
+              },
+              {
+                "name": "Compare Component Variant3",
+                "value": "compare-variant3"
+              }
+            ]
           }
         ]
       },
@@ -854,43 +891,6 @@
               {
                 "name": "Header Variant 3",
                 "value": "header-variant3"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "component": "multiselect",
-        "name": "styleFooter",
-        "label": "Footer Style",
-        "valueType": "string[]",
-        "condition": {
-          "===": [
-            {
-              "var": "sectionType"
-            },
-            "footer"
-          ]
-        },
-        "options": [
-          {
-            "name": "Footer",
-            "children": [
-              {
-                "name": "Footer Main",
-                "value": "footer-main"
-              },
-              {
-                "name": "Footer Bottom",
-                "value": "footer-bottom"
-              },
-              {
-                "name": "Footer Variant 2",
-                "value": "footer-variant2"
-              },
-              {
-                "name": "Footer Variant 3",
-                "value": "footer-variant3"
               }
             ]
           }
@@ -6638,6 +6638,76 @@
         "value": "",
         "label": "iFrame URL",
         "description": "Please provide a URL to an iFrame app."
+      }
+    ]
+  },
+  {
+    "id": "product-compare-card",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Product Image",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "color",
+        "label": "Color (Hex Code)",
+        "valueType": "string",
+        "description": "Enter the hex code for the product color (e.g., #FF5733)."
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "productmodel",
+        "label": "Product Model",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "specs",
+        "label": "Specifications (Bullet List)",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "ctaText",
+        "label": "CTA Text",
+        "valueType": "string",
+        "value": "Add to Cart"
+      },
+      {
+        "component": "select",
+        "name": "ctaStyle",
+        "label": "CTA Style",
+        "valueType": "string",
+        "value": "button",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "button"
+          },
+          {
+            "name": "Secondary",
+            "value": "button-secondary"
+          },
+          {
+            "name": "Dark",
+            "value": "button-dark"
+          }
+        ]
       }
     ]
   },

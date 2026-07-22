@@ -62,11 +62,11 @@
                         },
                         {
                             "name": "HitechGallery",
-                            "value": "hitechgallery"  
+                            "value": "hitechgallery"
                         },
                         {
                             "name": "HitechArticles",
-                            "value": "hitechArticles"  
+                            "value": "hitechArticles"
                         },
                         {
                             "name": "Banner",
@@ -95,8 +95,44 @@
                         {
                             "name": "HitechOverview",
                             "value": "hitechoverview"
+                        },
+                        {
+                            "name": "Compare",
+                            "value": "compare"
                         }
-
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleCompare",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "compare"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "Compare",
+                            "children": [
+                                {
+                                    "name": "Compare Component Variant 1",
+                                    "value": "compare-variant1"
+                                },
+                                {
+                                    "name": "Compare Component Variant 2",
+                                    "value": "compare-variant2"
+                                },
+                                {
+                                    "name": "Compare Component Variant3",
+                                    "value": "compare-variant3"
+                                }
+                            ]
+                        }
                     ]
                 },
                 {
@@ -124,7 +160,6 @@
                                     "name": "Hitech Feature Variant 2",
                                     "value": "hitech-feature-variant2"
                                 }
-
                             ]
                         }
                     ]
@@ -416,18 +451,18 @@
                         {
                             "name": "HitechArticles",
                             "children": [
-                           {
-                                "name": "hitech Articles v1",
-                                "value": "hitech-articles1"
-                            },
-                            {
-                                "name": "hitech Articles v2",
-                                "value": "hitech-articles2"
-                            },
-                            {
-                                "name": "hitech Articles v3",
-                                "value": "hitech-articles3"
-                            }
+                                {
+                                    "name": "hitech Articles v1",
+                                    "value": "hitech-articles1"
+                                },
+                                {
+                                    "name": "hitech Articles v2",
+                                    "value": "hitech-articles2"
+                                },
+                                {
+                                    "name": "hitech Articles v3",
+                                    "value": "hitech-articles3"
+                                }
                             ]
                         }
                     ]
@@ -449,18 +484,18 @@
                         {
                             "name": "HitechGallery",
                             "children": [
-                            {
-                                "name": "hitech gallery v1",
-                                "value": "hitech-variant1"
-                            },
-                            {
-                                "name": "hitech gallery v2",
-                                "value": "hitech-variant2"
-                            },
-                            {
-                                "name": "hitech gallery v3",
-                                "value": "hitech-variant3"
-                            }
+                                {
+                                    "name": "hitech gallery v1",
+                                    "value": "hitech-variant1"
+                                },
+                                {
+                                    "name": "hitech gallery v2",
+                                    "value": "hitech-variant2"
+                                },
+                                {
+                                    "name": "hitech gallery v3",
+                                    "value": "hitech-variant3"
+                                }
                             ]
                         }
                     ]
@@ -534,11 +569,11 @@
                                 {
                                     "name": "Benefits Variant 1",
                                     "value": "benefits-section1"
-                                    },
-                                    {
+                                },
+                                {
                                     "name": "Benefits Variant 2",
                                     "value": "benefits-section2"
-                                    }
+                                }
                             ]
                         }
                     ]
@@ -703,43 +738,6 @@
                                 {
                                     "name": "Header Variant 3",
                                     "value": "header-variant3"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "component": "multiselect",
-                    "name": "styleFooter",
-                    "label": "Footer Style",
-                    "valueType": "string[]",
-                    "condition": {
-                        "===": [
-                            {
-                                "var": "sectionType"
-                            },
-                            "footer"
-                        ]
-                    },
-                    "options": [
-                        {
-                            "name": "Footer",
-                            "children": [
-                                {
-                                    "name": "Footer Main",
-                                    "value": "footer-main"
-                                },
-                                {
-                                    "name": "Footer Bottom",
-                                    "value": "footer-bottom"
-                                },
-                                {
-                                    "name": "Footer Variant 2",
-                                    "value": "footer-variant2"
-                                },
-                                {
-                                    "name": "Footer Variant 3",
-                                    "value": "footer-variant3"
                                 }
                             ]
                         }

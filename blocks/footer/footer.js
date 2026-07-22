@@ -40,7 +40,7 @@ export default async function decorate(block) {
    * Example: /us/new-bfsi/page -> tries /us/new-bfsi/footer then /us/footer
    */
   async function loadFooterHierarchically(footer = "") {
-    const pathSegments = footer.split('/').filter(Boolean) || window.location.pathname.split('/').filter(Boolean);
+    const pathSegments = footer !== "" ? footer.split('/').filter(Boolean) : window.location.pathname.split('/').filter(Boolean);
 
     // Build paths to try in order (most specific to least specific)
     const pathsToTry = [];
@@ -94,7 +94,7 @@ export default async function decorate(block) {
     console.warn("No footer found in hierarchy");
     return null;
   }
-  const fragment = await loadFooterHierarchically("/hi-tech-footer1");
+  const fragment = await loadFooterHierarchically();
 
   // decorate footer DOM
   block.textContent = '';

@@ -2538,6 +2538,20 @@ padding: 9px 24px;
         display: inline-flex;
     align-items: center;
 }
+
+.section.compare-variant1 .default-content-wrapper{
+  text-align: center;
+}
+
+.section.compare-variant1 .default-content-wrapper p{
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 400;
+  text-align: center;
+  max-width: 900px;
+  /* margin: 0 auto 48px; */
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .hitech-feature-variant1.cards-container {
     padding: 48px 24px;

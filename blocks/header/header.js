@@ -911,12 +911,12 @@ export default async function decorate(block) {
     });
 
     const langWrapper = document.querySelector(".header-lang-wrapper");
-    const ul = langWrapper.querySelector("ul");
+    const ul = langWrapper?.querySelector("ul");
 
-    langWrapper.addEventListener("click", () => {
+    langWrapper?.addEventListener("click", () => {
       langWrapper.classList.toggle("open");
     });
-    ul.addEventListener("click", (e) => {
+    ul?.addEventListener("click", (e) => {
       if (e.target.tagName === "LI") {
         const first = ul.children[0];
         const clicked = e.target;

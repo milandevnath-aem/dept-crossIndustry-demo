@@ -1,154 +1,241 @@
+/* Section background */
 .product-compare-cards-container {
-  background: #f7f8fb;
+  background: #f5f6f7;
+  padding: 120px 88px ;
+      background: #FAFAFA;
+    max-width: 1440px;
+    margin: 0 auto;
+        display: flex;
+    flex-direction: column;
+    gap: 80px;
+    margin-top: 0px;
 }
 
-.product-compare-cards-container > .default-content-wrapper p:first-child {
-  margin: 0 0 20px;
-  color: #1a2235;
-  font-size: 32px;
-  line-height: 1.25;
-  font-weight: 500;
-}
-
-.product-compare-cards {
-  max-width: 1320px;
-  margin: 0 auto;
-}
-
-.product-compare-cards .product-compare-cards-list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 26px;
-}
-
-.product-compare-cards .product-compare-cards-item {
-  border: 1px solid #d9deea;
-  border-radius: 4px;
-  background: #fff;
-  padding: 14px;
-}
-
-.product-compare-cards .product-compare-cards-thumb {
-  background: radial-gradient(circle at 25% 20%, #72f2ff 0%, #183a57 58%, #0f1a30 100%);
-  height: 112px;
-  border-radius: 2px;
-  margin-bottom: 10px;
-  position: relative;
-  overflow: hidden;
-}
-
-.product-compare-cards .product-compare-cards-thumb span {
-  position: absolute;
-  bottom: 8px;
-  left: 10px;
-  right: 10px;
-  text-align: center;
-  color: rgb(255 255 255 / 90%);
-  font-size: 11px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.product-compare-cards .product-compare-cards-swatches {
+/* Grid Layout */
+.product-compare-cards-container.compare-variant1 .compare-grid {
+  /* max-width: 1200px; */
+  /* margin: 60px auto 0; */
   display: flex;
-  gap: 7px;
-  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  /* grid-template-columns: repeat(3, 1fr); */
+  gap: 16px;
 }
 
-.product-compare-cards .product-compare-cards-swatch {
-  width: 9px;
-  height: 9px;
+/* Card */
+.product-compare-cards-container.compare-variant1 .compare-card {
+     /* background: #ffffff; */
+    padding: 0px 80px 40px 80px;
+    border-radius: 12px;
+    /* text-align: center; */
+    /* border: 1px solid #e6e6e6; */
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    width: 31.65%;
+    min-height: 595px;
+    position: relative;
+}
+.product-compare-cards-container.compare-variant1 .compare-card::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(90deg, rgba(203, 203, 203, 0.00) -10.96%, #CBCBCB 51.51%, rgba(203, 203, 203, 0.00) 115.19%);
+  width: 0.7px;
+      height: 100%;
+      right: 0px;
+}
+.product-compare-cards-container.compare-variant1 .compare-card:last-child:after  {
+display: none;
+}
+.product-compare-cards-container.compare-variant1 .compare-card .hidden-authoring-fields {
+    display: none;
+}
+
+/* Hover effect */
+/* .product-compare-cards-container.compare-variant1 .compare-card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+} */
+
+/* Image */
+.product-compare-cards-container.compare-variant1 .compare-card__image img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+
+/* Swatches Container */
+.product-compare-cards-container.compare-variant1 .compare-card__swatches {
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* Increased slightly to accommodate the ring */
+  margin: 18px 0;
+}
+
+.product-compare-cards-container.compare-variant1 .compare-swatch {
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  border: 1px solid #b8bfd2;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  /* Use a thin border or box-shadow for a subtle inner edge if needed */
+  border: 1px solid rgba(0,0,0,0.1); 
+  box-sizing: border-box;
+}
+
+/* The "Selected" or "Active" state */
+.product-compare-cards-container.compare-variant1 .compare-swatch.is-active,
+.product-compare-cards-container.compare-variant1 .compare-swatch:hover {
+  /* This creates the outer ring */
+  outline: 2px solid #7A63FF; /* The blue color from your image */
+  /* This creates the white space between the swatch and the ring */
+  outline-offset: 3px; 
+  transform: scale(0.9); /* Slightly shrink the inner circle for a better look */
+}
+
+/* Title */
+.product-compare-cards-container.compare-variant1 .compare-card__title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* Description */
+.product-compare-cards-container.compare-variant1 .compare-card__desc {
+  font-size: 14px;
+  color: #6b7280;
+  text-align: left;
+}
+
+/* Specs */
+
+.product-compare-cards-container.compare-variant1 .compare-card__model {
+  display: inline-block;
+  background: #F4F4F4;
+  color: #6b7280;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  border: #D8D8D6 solid 1px;
+  margin: 10px 0 18px;
+}
+
+.product-compare-cards-container.compare-variant1 .compare-card__specs {
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.product-compare-cards-container.compare-variant1 .compare-card__specs ul {
+  list-style: none;
   padding: 0;
-}
-
-.product-compare-cards .product-compare-cards-title {
-  font-size: 18px;
-  line-height: 1.3;
-  font-weight: 500;
-  color: #1a2235;
-  margin: 0 0 8px;
-}
-
-.product-compare-cards .product-compare-cards-description {
-  font-size: 13px;
-  line-height: 1.5;
-  color: #6b7389;
-  margin: 0 0 8px;
-}
-
-.product-compare-cards .product-compare-cards-performance {
-  margin: 0 0 10px;
-  color: #7a63ff;
-  font-weight: 500;
-  font-size: 12px;
-}
-
-.product-compare-cards .product-compare-cards-specs {
-  margin: 0 0 12px;
-  padding-left: 14px;
-}
-
-.product-compare-cards .product-compare-cards-specs li {
-  margin-bottom: 4px;
-  color: #1f2434;
-  font-size: 12px;
-  line-height: 1.45;
-}
-
-.product-compare-cards .button-container {
   margin: 0;
 }
 
-.product-compare-cards .button-container a.button {
-  width: 100%;
-  min-height: 34px;
-  border-radius: 2px;
-  background: #1b2133;
-  border: 1px solid #1b2133;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 10px;
+.product-compare-cards-container.compare-variant1 .compare-card__specs li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.4;
+}
+
+/* Tick circle */
+.product-compare-cards-container.compare-variant1 .compare-card__specs li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #111827;
+
+  background-image: url("/icons/tick.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
+
+/* CTA */
+.product-compare-cards-container.compare-variant1 .compare-card__cta {
+  margin-top: auto;
+}
+
+.product-compare-cards-container.compare-variant1 .compare-card__cta button{
+    width: 100%;
+}
+
+.product-compare-cards-container.compare-variant1 .button-dark {
+  display: inline-block;
+  padding: 8px 24px;
+  background: #111827;
+  color: #E6E8F1;
+  border-radius: 6px;
   text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  transition: background 0.3s ease;
 }
 
-.product-compare-cards.compare-variant2 .product-compare-cards-thumb {
-  display: none;
+.product-compare-cards-container.compare-variant1 .button-dark:hover {
+  background: #000000;
 }
 
-.product-compare-cards.compare-variant2 .product-compare-cards-item {
-  padding-top: 18px;
-}
-
-.product-compare-cards.compare-variant3 .product-compare-cards-featured-label {
-  margin: -14px -14px 12px;
-  padding: 6px 10px;
-  background: #5f42c5;
-  color: #fff;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.product-compare-cards.compare-variant3 .product-compare-cards-item.is-featured {
-  border-color: #5f42c5;
-  box-shadow: 0 8px 18px rgb(42 26 103 / 15%);
-}
-
-@media (width <= 900px) {
-  .product-compare-cards-container > .default-content-wrapper p:first-child {
-    font-size: 24px;
+/* Responsive */
+@media (max-width: 1024px) {
+  .product-compare-cards-container.compare-variant1 .compare-grid {
+    overflow: auto;
+    gap: 24px;
   }
-
-  .product-compare-cards .product-compare-cards-list {
-    grid-template-columns: 1fr;
-    gap: 16px;
+  .product-compare-cards-container.compare-variant1 .compare-card {
+    padding: 0 24px;
+    width: 45.9%;
   }
+  .product-compare-cards-container.compare-variant1 .compare-card__title {
+    font-size: 16px;
+    line-height: 28px;
+    color: #1B1B1E;
+  }
+  .product-compare-cards-container.compare-variant1 .compare-card__desc {
+    font-size: 12px;
+    line-height: 18px
+  }
+  .product-compare-cards-container.compare-variant1 .compare-card__model {
+    font-size: 12px;
+    margin: 16px 0px 32px;
+  }
+  .product-compare-cards-container.compare-variant1 .compare-card__specs li {
+    font-size: 12px;
+  }
+  .product-compare-cards-container.compare-variant1 .button-dark {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .compare-variant1 .compare-card__image {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-compare-cards-container.compare-variant1 .compare-grid {
+    overflow: auto;
+  }
+   .product-compare-cards-container.compare-variant1 .compare-card {
+    padding: 0 24px;
+    width: 100%;
+  }
+  .product-compare-cards-container.compare-variant1 .compare-card .compare-card__image{
+    text-align: center;
+  }
+  .product-compare-cards-container.compare-variant1 .compare-card__image img {
+    width: unset;
+  }
+}
+
+.compare-variant1 .product-compare-cards-wrapper {
+  padding: 0px;
+  margin: unset;
 }
