@@ -12,34 +12,15 @@ const DEFAULT_VARIATION = 'gold';
  * <div><div><p><a>value3</a></p></div></div> -> folderpath
  */
 function extractConfigFromRows(block) {
-  const rows = Array.from(block.children);
-  if (rows.length < 3) {
-    return null; // Need at least 3 rows
-  }
-
   const config = {};
   const keys = ['versionselector', 'graphqlendpoint', 'folderpath'];
 
-  rows.forEach((row, idx) => {
-    if (idx >= keys.length) return; // Only process first 3 rows
-
-    const key = keys[idx];
-    // Navigate through the nested div/p structure
-    let value = '';
-
-    // Try to find text in various possible structures
-    const link = row.querySelector('a');
-    if (link) {
-      // If there's a link, get its href or text
-      value = link.getAttribute('href') || link.getAttribute('title') || link.textContent;
-    } else {
-      // Otherwise get the text content of the row
-      value = row.textContent;
-    }
-
-    if (value) {
-      config[key] = value.trim();
-    }
+  Array.from(block.children).forEach((row, idx) => {
+    if (!keys[idx]) return; // Only process first 3 rows
+    // Use text, never the href: EDS lowercases hrefs and drops trailing
+    // punctuation, which breaks case-sensitive content fragment paths.
+    const value = row.textContent.trim();
+    if (value) config[keys[idx]] = value;
   });
 
   return config;
@@ -69,76 +50,36 @@ function resolveVariant(block) {
 }
 
 async function fetchData(variation, graphqlPath, folderPath) {
-  const queryViaDirectGet = async () => {
-    const directUrl = `${graphqlPath};variation=${variation};folderPath=${folderPath}`;
-    console.log('tech-specs-features: Fetching via direct GET:', directUrl);
-    const response = await fetch(directUrl, { method: 'GET' });
+  // AEM publish sends no Access-Control-Allow-Origin, so the persisted query
+  // cannot be called from the browser directly - it must go through the wrapper.
+  // The wrapper forwards graphQLPath verbatim but maps its own cfPath to a
+  // variable name this query does not use, so the matrix params are baked in here.
+  const url = `${graphqlPath};variation=${variation};folderPath=${folderPath}`;
+
+  try {
+    const response = await fetch(WRAPPER_SERVICE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ graphQLPath: url, cfPath: folderPath, variation }),
+    });
+
     if (!response.ok) {
-      console.error('tech-specs-features: Direct GET failed with status:', response.status);
+      console.error('tech-specs-features: Wrapper request failed with status:', response.status);
       return null;
     }
 
-    const json = await response.json();
-    if (Array.isArray(json?.errors) && json.errors.length) {
-      console.error('tech-specs-features: GraphQL errors:', json.errors);
+    const data = await response.json();
+
+    // Wrapper may return HTTP 200 with GraphQL validation errors.
+    if (Array.isArray(data?.errors) && data.errors.length) {
+      console.error('tech-specs-features: GraphQL errors:', data.errors);
       return null;
     }
-    if (!json?.data) {
+    if (!data?.data) {
       console.error('tech-specs-features: No data in GraphQL response');
       return null;
     }
 
-    return json;
-  };
-
-  // Wrapper fallback if direct query is unavailable.
-  const graphQLPaths = [graphqlPath];
-
-  const bodyFor = (gqlPath) => ({
-    graphQLPath: gqlPath,
-    cfPath: folderPath,
-    variation,
-  });
-
-  const requestData = async (graphQLPath) => {
-    const response = await fetch(WRAPPER_SERVICE_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(bodyFor(graphQLPath)),
-    });
-
-    if (!response.ok) return null;
-    const json = await response.json();
-
-    // Wrapper may return HTTP 200 with GraphQL validation errors.
-    if (Array.isArray(json?.errors) && json.errors.length) return null;
-    if (!json?.data) return null;
-
-    return json;
-  };
-
-  try {
-    let data = null;
-
-    // Always try direct GET first with matrix params
-    data = await queryViaDirectGet();
-
-    // Fallback path: wrapper API if direct fails.
-    if (!data) {
-      console.log('tech-specs-features: Direct GET failed, trying wrapper API');
-      for (let i = 0; i < graphQLPaths.length; i += 1) {
-        // eslint-disable-next-line no-await-in-loop
-        data = await requestData(graphQLPaths[i]);
-        if (data) break;
-      }
-    }
-
-    if (!data) {
-      console.error('tech-specs-features: No data returned from GraphQL');
-      return null;
-    }
-
-    console.log('tech-specs-features: GraphQL response:', data);
     const item = data?.data?.hiTechModelList?.items?.[0]
       || data?.data?.hiTechProductV3List?.items?.[0];
     if (!item) {
@@ -156,6 +97,7 @@ async function fetchData(variation, graphqlPath, folderPath) {
 
     return { cardDetails, label };
   } catch (e) {
+    console.error('tech-specs-features: Fetch failed:', e);
     return null;
   }
 }
@@ -163,15 +105,16 @@ async function fetchData(variation, graphqlPath, folderPath) {
 export default async function decorate(block) {
   const variant = resolveVariant(block);
 
-  block.textContent = '';
-
+  // Read config BEFORE emptying the block - both readers need the authored rows.
   // Try custom extraction first (for EDS/Universal Editor model rendering)
   let config = extractConfigFromRows(block);
-  
+
   // Fallback to readBlockConfig for traditional Franklin structure
-  if (!config || !config.graphqlendpoint || !config.folderpath) {
+  if (!config.graphqlendpoint || !config.folderpath) {
     config = readBlockConfig(block);
   }
+
+  block.textContent = '';
 
   // Require both graphql endpoint and folderpath to be authored - no fallback
   const graphqlEndpoint = config?.graphqlendpoint;
@@ -186,8 +129,6 @@ export default async function decorate(block) {
 
   const selectedVersion = config.versionselector || config.version || DEFAULT_VARIATION;
   const variation = selectedVersion.toLowerCase().trim() || DEFAULT_VARIATION;
-
-  console.log('tech-specs-features: Config for this instance -', { graphqlEndpoint, graphqlPath, folderPath, variation });
 
   const wrapper = document.createElement('div');
   const leftSide = document.createElement('div');
