@@ -4,6 +4,47 @@ const WRAPPER_SERVICE_URL = 'https://3635370-refdemoapigateway-stage.adobeiorunt
 const GRAPHQL_BASE_URL = 'https://publish-p153659-e1796191.adobeaemcloud.com/graphql/execute.json/global/';
 const DEFAULT_VARIATION = 'gold';
 
+/**
+ * Extract config from block children rows
+ * Expected structure from EDS/Universal Editor:
+ * <div><div><p>value1</p></div></div>  -> versionselector
+ * <div><div><p>value2</p></div></div>  -> graphqlendpoint
+ * <div><div><p><a>value3</a></p></div></div> -> folderpath
+ */
+function extractConfigFromRows(block) {
+  const rows = Array.from(block.children);
+  if (rows.length < 3) {
+    return null; // Need at least 3 rows
+  }
+
+  const config = {};
+  const keys = ['versionselector', 'graphqlendpoint', 'folderpath'];
+
+  rows.forEach((row, idx) => {
+    if (idx >= keys.length) return; // Only process first 3 rows
+
+    const key = keys[idx];
+    // Navigate through the nested div/p structure
+    let value = '';
+
+    // Try to find text in various possible structures
+    const link = row.querySelector('a');
+    if (link) {
+      // If there's a link, get its href or text
+      value = link.getAttribute('href') || link.getAttribute('title') || link.textContent;
+    } else {
+      // Otherwise get the text content of the row
+      value = row.textContent;
+    }
+
+    if (value) {
+      config[key] = value.trim();
+    }
+  });
+
+  return config;
+}
+
 function getHtml(value) {
   if (typeof value === 'string') return value;
   return value?.html || '';
@@ -121,13 +162,20 @@ async function fetchData(variation, graphqlPath, folderPath) {
 
 export default async function decorate(block) {
   const variant = resolveVariant(block);
-  const config = readBlockConfig(block);
 
   block.textContent = '';
 
+  // Try custom extraction first (for EDS/Universal Editor model rendering)
+  let config = extractConfigFromRows(block);
+  
+  // Fallback to readBlockConfig for traditional Franklin structure
+  if (!config || !config.graphqlendpoint || !config.folderpath) {
+    config = readBlockConfig(block);
+  }
+
   // Require both graphql endpoint and folderpath to be authored - no fallback
-  const graphqlEndpoint = config.graphqlendpoint;
-  const folderPath = config.folderpath;
+  const graphqlEndpoint = config?.graphqlendpoint;
+  const folderPath = config?.folderpath;
   if (!graphqlEndpoint || !folderPath) {
     console.warn('tech-specs-features: Missing required config. graphqlendpoint:', graphqlEndpoint, 'folderpath:', folderPath);
     return;
