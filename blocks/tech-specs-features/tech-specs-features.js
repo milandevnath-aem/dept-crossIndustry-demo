@@ -1,9 +1,7 @@
 import { readBlockConfig } from '../../scripts/aem.js';
 
 const WRAPPER_SERVICE_URL = 'https://3635370-refdemoapigateway-stage.adobeioruntime.net/api/v1/web/ref-demo-api-gateway/fetch-cf';
-const DEFAULT_GRAPHQL_PATH = 'https://publish-p153659-e1796191.adobeaemcloud.com/graphql/execute.json/global/hi-tech-product-v3';
-const DEFAULT_GRAPHQL_HOST = 'https://publish-p153659-e1796191.adobeaemcloud.com';
-const DEFAULT_FOLDER_PATH = '/content/dam/dept-crossIndustry/content-fregment-/products/hi-tech'; // kept as fallback for wrapper API
+const DEFAULT_FOLDER_PATH = '/content/dam/dept-crossIndustry/content-fregment-/products/hi-tech';
 const DEFAULT_VARIATION = 'gold';
 
 function getHtml(value) {
@@ -125,11 +123,9 @@ export default async function decorate(block) {
   const variant = resolveVariant(block);
   const config = readBlockConfig(block);
 
-  const rawGraphqlPath = config.graphqlpath || DEFAULT_GRAPHQL_PATH;
-  // pathbrowser returns a path like /graphql/execute.json/... — prepend the host if needed
-  const graphqlPath = rawGraphqlPath.startsWith('http')
-    ? rawGraphqlPath
-    : `${DEFAULT_GRAPHQL_HOST}${rawGraphqlPath}`;
+  const graphqlPath = config.graphqlpath;
+  if (!graphqlPath) return;
+
   const selectedVersion = config.versionselector || config.version || DEFAULT_VARIATION;
   const variation = selectedVersion.toLowerCase().trim() || DEFAULT_VARIATION;
 
