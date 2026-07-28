@@ -59,9 +59,9 @@
         },
         {
           "component": "text",
-          "name": "graphqlpath",
+          "name": "graphqlendpoint",
           "label": "GraphQL Endpoint",
-          "description": "Base persisted query URL e.g. https://publish-xxx.adobeaemcloud.com/graphql/execute.json/global/hi-tech-product-v3",
+          "description": "Persisted query name only (e.g. hi-tech-product-v3). Base URL is environment-managed.",
           "valueType": "string"
         },
         {

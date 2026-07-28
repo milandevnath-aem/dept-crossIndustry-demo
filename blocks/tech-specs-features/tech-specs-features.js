@@ -1,6 +1,7 @@
 import { readBlockConfig } from '../../scripts/aem.js';
 
 const WRAPPER_SERVICE_URL = 'https://3635370-refdemoapigateway-stage.adobeioruntime.net/api/v1/web/ref-demo-api-gateway/fetch-cf';
+const GRAPHQL_BASE_URL = 'https://publish-p153659-e1796191.adobeaemcloud.com/graphql/execute.json/global/';
 const DEFAULT_VARIATION = 'gold';
 
 function getHtml(value) {
@@ -124,18 +125,21 @@ export default async function decorate(block) {
 
   block.textContent = '';
 
-  // Require both graphqlpath and folderpath to be authored - no fallback
-  const graphqlPath = config.graphqlpath;
+  // Require both graphql endpoint and folderpath to be authored - no fallback
+  const graphqlEndpoint = config.graphqlendpoint;
   const folderPath = config.folderpath;
-  if (!graphqlPath || !folderPath) {
-    console.warn('tech-specs-features: Missing required config. graphqlpath:', graphqlPath, 'folderpath:', folderPath);
+  if (!graphqlEndpoint || !folderPath) {
+    console.warn('tech-specs-features: Missing required config. graphqlendpoint:', graphqlEndpoint, 'folderpath:', folderPath);
     return;
   }
+
+  // Construct full GraphQL path from base URL + authored endpoint
+  const graphqlPath = `${GRAPHQL_BASE_URL}${graphqlEndpoint}`;
 
   const selectedVersion = config.versionselector || config.version || DEFAULT_VARIATION;
   const variation = selectedVersion.toLowerCase().trim() || DEFAULT_VARIATION;
 
-  console.log('tech-specs-features: Config for this instance -', { graphqlPath, folderPath, variation });
+  console.log('tech-specs-features: Config for this instance -', { graphqlEndpoint, graphqlPath, folderPath, variation });
 
   const wrapper = document.createElement('div');
   const leftSide = document.createElement('div');
