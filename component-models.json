@@ -7078,12 +7078,11 @@
         ]
       },
       {
-        "component": "pathbrowser",
+        "component": "text",
         "name": "graphqlpath",
         "label": "GraphQL Path",
-        "description": "Select the AEM persisted query path e.g. /graphql/execute.json/global/hi-tech-product-v3",
-        "valueType": "string",
-        "rootPath": "/graphql/execute.json"
+        "description": "Full AEM persisted query URL e.g. https://publish-xxx.adobeaemcloud.com/graphql/execute.json/global/hi-tech-product-v3",
+        "valueType": "string"
       }
     ]
   },
