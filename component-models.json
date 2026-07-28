@@ -7076,6 +7076,20 @@
             "value": "bronze"
           }
         ]
+      },
+      {
+        "component": "text",
+        "name": "graphqlpath",
+        "label": "GraphQL Endpoint",
+        "description": "Base persisted query URL e.g. https://publish-xxx.adobeaemcloud.com/graphql/execute.json/global/hi-tech-product-v3",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "folderpath",
+        "label": "Folder Path",
+        "description": "Content fragment folder path e.g. /content/dam/dept-crossIndustry/content-fregment-/products/hi-tech",
+        "valueType": "string"
       }
     ]
   },

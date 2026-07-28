@@ -1,9 +1,6 @@
 import { readBlockConfig } from '../../scripts/aem.js';
 
 const WRAPPER_SERVICE_URL = 'https://3635370-refdemoapigateway-stage.adobeioruntime.net/api/v1/web/ref-demo-api-gateway/fetch-cf';
-const GRAPHQL_PATH = 'https://publish-p153659-e1796191.adobeaemcloud.com/graphql/execute.json/global/hi-tech-product-v3';
-const GRAPHQL_PATH_FALLBACK = 'https://publish-p153659-e1796191.adobeaemcloud.com/graphql/execute.json/global/hi-tech-product-v3';
-const FOLDER_PATH = '/content/dam/dept-crossIndustry/content-fregment-/products/hi-tech';
 const DEFAULT_VARIATION = 'gold';
 
 function getHtml(value) {
@@ -29,11 +26,9 @@ function resolveVariant(block) {
   return normalizedVariant;
 }
 
-async function fetchData(variation) {
-  const isLocal = window.location.hostname.includes('localhost');
-
+async function fetchData(variation, graphqlPath, folderPath) {
   const queryViaDirectGet = async () => {
-    const directUrl = `${GRAPHQL_PATH};variation=${variation};folderPath=${FOLDER_PATH}`;
+    const directUrl = `${graphqlPath};variation=${variation};folderPath=${folderPath}`;
     console.log('tech-specs-features: Fetching via direct GET:', directUrl);
     const response = await fetch(directUrl, { method: 'GET' });
     if (!response.ok) {
@@ -54,12 +49,12 @@ async function fetchData(variation) {
     return json;
   };
 
-  // Wrapper/component fallback if direct v3 query is unavailable.
-  const graphQLPaths = [GRAPHQL_PATH_FALLBACK, GRAPHQL_PATH];
+  // Wrapper fallback if direct query is unavailable.
+  const graphQLPaths = [graphqlPath];
 
-  const bodyFor = (graphQLPath) => ({
-    graphQLPath,
-    cfPath: FOLDER_PATH,
+  const bodyFor = (gqlPath) => ({
+    graphQLPath: gqlPath,
+    cfPath: folderPath,
     variation,
   });
 
@@ -89,7 +84,6 @@ async function fetchData(variation) {
     // Fallback path: wrapper API if direct fails.
     if (!data) {
       console.log('tech-specs-features: Direct GET failed, trying wrapper API');
-      // Try primary query order by environment to avoid local render delays.
       for (let i = 0; i < graphQLPaths.length; i += 1) {
         // eslint-disable-next-line no-await-in-loop
         data = await requestData(graphQLPaths[i]);
@@ -127,12 +121,22 @@ async function fetchData(variation) {
 export default async function decorate(block) {
   const variant = resolveVariant(block);
   const config = readBlockConfig(block);
-  const selectedVersion = config.versionselector
-    || config.version
-    || DEFAULT_VARIATION;
-  const variation = selectedVersion.toLowerCase().trim() || DEFAULT_VARIATION;
 
   block.textContent = '';
+
+  // Require both graphqlpath and folderpath to be authored - no fallback
+  const graphqlPath = config.graphqlpath;
+  const folderPath = config.folderpath;
+  if (!graphqlPath || !folderPath) {
+    console.warn('tech-specs-features: Missing required config. graphqlpath:', graphqlPath, 'folderpath:', folderPath);
+    return;
+  }
+
+  const selectedVersion = config.versionselector || config.version || DEFAULT_VARIATION;
+  const variation = selectedVersion.toLowerCase().trim() || DEFAULT_VARIATION;
+
+  console.log('tech-specs-features: Config for this instance -', { graphqlPath, folderPath, variation });
+
   const wrapper = document.createElement('div');
   const leftSide = document.createElement('div');
   const rightSide = document.createElement('div');
@@ -143,8 +147,11 @@ export default async function decorate(block) {
   wrapper.append(leftSide, rightSide);
   block.appendChild(wrapper);
 
-  const data = await fetchData(variation);
-  if (!data) return;
+  const data = await fetchData(variation, graphqlPath, folderPath);
+  if (!data) {
+    console.error('tech-specs-features: Failed to fetch data for variation:', variation);
+    return;
+  }
 
   leftSide.innerHTML = `<h2>${data?.label?.[0] || ''}</h2>
     ${getHtml(data?.label?.[1])}
